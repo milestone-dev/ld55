@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bb4be"]
 [ext_resource type="PackedScene" uid="uid://blnvvm8f071dv" path="res://scenes/casting_ui.tscn" id="2_6xmc5"]
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
-[ext_resource type="PackedScene" path="res://scenes/projectile.tscn" id="2_oojk5"]
+[ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectile.tscn" id="2_oojk5"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
 [ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/Shop/shop_screen.tscn" id="6_qtx7u"]
 

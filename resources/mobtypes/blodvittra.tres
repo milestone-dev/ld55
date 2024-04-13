@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://ci08ip8pjeq2q"]
+
+[ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_cweo1"]
+[ext_resource type="Texture2D" uid="uid://bd1dveiihl6g0" path="res://assets/sprites/NMY-VITTRA-Sheet.png" id="2_fi2ig"]
+
+[resource]
+script = ExtResource("1_cweo1")
+max_hp = 100
+speed = 6000
+attack_damage = 5
+attack_cooldown_max = 0.3
+attack_range = 8
+exp = 5
+sprite = ExtResource("2_fi2ig")
+color = Color(1, 0.615686, 0.556863, 1)
+scale = 1.5

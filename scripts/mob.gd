@@ -15,6 +15,8 @@ func _ready():
 	$Sprite2D.texture = type.sprite
 	player_target = get_tree().get_nodes_in_group("player")[0];
 	hp = type.max_hp
+	modulate = type.color
+	scale = Vector2(type.scale,type.scale)
 
 func _physics_process(delta):
 	if !alive: return

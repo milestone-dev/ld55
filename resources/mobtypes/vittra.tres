@@ -6,9 +6,11 @@
 [resource]
 script = ExtResource("1_20pmk")
 max_hp = 100
-speed = 6000
+speed = 4000
 attack_damage = 5
 attack_cooldown_max = 0.3
 attack_range = 8
 exp = 5
 sprite = ExtResource("2_es0np")
+color = Color(1, 1, 1, 1)
+scale = 1.0

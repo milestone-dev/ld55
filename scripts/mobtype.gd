@@ -8,6 +8,8 @@ class_name Mobtype
 @export var attack_range = 8;
 @export var exp : int = 5;
 @export var sprite: Texture2D
+@export var color : Color = Color.WHITE;
+@export var scale : float = 1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
