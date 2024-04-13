@@ -23,5 +23,22 @@ func _on_mob_spawn_timer_timeout():
 	if get_tree().get_nodes_in_group("mob").size() > max_mobs - 1: return;
 	if not mob_scene: return
 	var mob = mob_scene.instantiate();
-	mob.position = Vector2(randf_range(-300, 300),randf_range(-300, 300));	
+	mob.position = _random_new_mob_position()
 	add_child(mob);
+	
+func _screen_to_world(pos: Vector2) -> Vector2:
+	return player.camera.get_global_transform_with_canvas().affine_inverse().basis_xform(pos)
+
+func _random_new_mob_position() -> Vector2:
+	var margin = Vector2(25, 25)
+	var size = _screen_to_world(get_viewport_rect().size) / 2 + margin
+	var side = randi_range(0, 3)
+	var position = Vector2(randf() * size.x, randf() * size.y)*2 - size
+	if side == 0: position.x = -size.x;
+	if side == 1: position.x = size.x;
+	if side == 2: position.y = -size.y;
+	if side == 3: position.y = size.y;
+	position += player.position
+	return position
+	
+	
