@@ -2,11 +2,11 @@ name: "godot-ci export"
 on: 
   push: 
     branches: 
-      - "*"
+      - "main"
 
 env:
   GODOT_VERSION: 4.2.1
-  EXPORT_NAME: Project 55
+  EXPORT_NAME: TrollDOOM
   # Set up these as Github Secrets:
   # ITCHIO_API_KEY
   # ITCHIO_USERNAME
@@ -14,8 +14,8 @@ env:
 
 jobs:
   deploy-web:
-    name: Web Export
-    runs-on: ubuntu-latest
+    name: Godot Export
+    runs-on: ubuntu-20.04
     container:
       image: docker://barichello/godot-ci:4.2.1
     steps:
@@ -31,19 +31,19 @@ jobs:
 
       - name: Web Build
         working-directory: project
-        run: godot --headless -v --export-release "Web" ../build/web/index.html
+        run: godot --headless -v --export-release "Web" build/web/index.html
 
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Mac OSX" ../build/mac/$EXPORT_NAME.zip
+          godot --headless --verbose --export-release "Mac OSX" build/mac/$EXPORT_NAME.zip
 
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
+          godot --headless --verbose --export-release "Windows Desktop" build/windows/$EXPORT_NAME.exe
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
