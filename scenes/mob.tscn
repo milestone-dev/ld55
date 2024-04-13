@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fx4257b48mvr"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_8hhfd"]
-[ext_resource type="Texture2D" uid="uid://cgbady3oe3oxy" path="res://assets/sprites/icon.svg" id="2_e1bui"]
+[ext_resource type="Texture2D" uid="uid://03b0ht4uwre2" path="res://assets/icons/icon.svg" id="2_qy0r6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 32.0
@@ -15,4 +15,4 @@ shape = SubResource("CircleShape2D_so115")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.411765, 0.411765, 1)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_e1bui")
+texture = ExtResource("2_qy0r6")
