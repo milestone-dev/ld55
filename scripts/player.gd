@@ -63,7 +63,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		if position.distance_to(mob.position) < spell.range:
 			mob.take_damage(spell.damage)
 	
-	print("Casting spell", spell.name)
+	prints("Casting spell", spell.name)
 
 func _on_damage_area_body_entered(body):
 	if not body is Mob: return;

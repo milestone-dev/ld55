@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://c2tw4ppjl8ek8"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_emu3g"]
+
+[resource]
+script = ExtResource("1_emu3g")
+name = "Gift of Idun"
+code = "A0B2C4"
+damage = 1.0
+range = 1.0
+heal = 1000.0

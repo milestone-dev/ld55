@@ -36,8 +36,8 @@ func reset_nodes():
 		node.scale = Vector2.ONE;
 	conneted_nodes.clear();
 
-func draw_line_to_node(node:Control):
-	conneted_nodes.push_back(node)
+func draw_line_to_node(node:Control, add_node : bool):
+	if add_node: conneted_nodes.push_back(node)
 	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 	#line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 
@@ -63,8 +63,8 @@ func _process(delta):
 		print("start drag. set mouse origin", mouse_origin);
 		line.clear_points()
 		reset_nodes()
-		draw_line_to_node(first_node)
-		draw_line_to_node(first_node) #and one for the mouse pointer		
+		draw_line_to_node(first_node, true)
+		draw_line_to_node(first_node, false) #and one for the mouse pointer		
 		active = true;
 	
 	if active:
