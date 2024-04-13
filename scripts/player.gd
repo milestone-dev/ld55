@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 @export var max_hp : float = 100;
-@export var max_speed : float = 30000;
-@export var attack_cooldown_max : float= 0.15;
+@export var max_speed : float = 8000;
+@export var attack_cooldown_max : float= 0.85;
 
 @export var camera : Camera2D;
 @export var sprite : Sprite2D;
