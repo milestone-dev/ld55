@@ -1,34 +1,32 @@
 extends CharacterBody2D
 class_name Mob
 
-@export var max_hp = 100;
-@export var speed = 1000;
-@export var attack_damage = 5;
-@export var attack_cooldown_max = 0.3;
-@export var attack_range = 8;
 @export var animation_tree : AnimationTree;
-@export var exp : int = 5;
+
+var type: Mobtype
 
 var alive = true
-var hp = max_hp;
+var hp = 0;
 var attack_cooldown = 0;
 
 var player_target : Player;
 
 func _ready():
+	$Sprite2D.texture = type.sprite
 	player_target = get_tree().get_nodes_in_group("player")[0];
+	hp = type.max_hp
 
 func _physics_process(delta):
 	if !alive: return
-	if position.distance_to(player_target.position) < attack_range:
+	if position.distance_to(player_target.position) < type.attack_range:
 		if attack_cooldown <= 0:
-			attack_cooldown = attack_cooldown_max
-			player_target.take_damage(attack_damage)
+			attack_cooldown = type.attack_cooldown_max
+			player_target.take_damage(type.attack_damage)
 		else:
 			attack_cooldown -= delta
 
 	if position.distance_to(player_target.position) > 5:
-		velocity = (player_target.position - position).normalized() * speed * delta;
+		velocity = (player_target.position - position).normalized() * type.speed * delta;
 	else:
 		velocity = Vector2.ZERO
 	animation_tree.set("parameters/Walk/blend_position", velocity.x);
@@ -39,7 +37,7 @@ func take_damage(damage : float) -> int:
 	hp -= damage;
 	if hp <= 0: 
 		die();
-		return exp;
+		return type.exp;
 	return 0;
 
 func die():

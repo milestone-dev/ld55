@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv8tsyngxdtoc"]
+
+[ext_resource type="Material" uid="uid://b2isolwqwqvb7" path="res://shaders/fire_ball.tres" id="1_4a7cg"]
+[ext_resource type="Script" path="res://resources/spell_effects/particle_oneshot.gd" id="2_qf5uq"]
+
+[sub_resource type="Curve" id="Curve_0khkt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.613333, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ep1bg"]
+curve = SubResource("Curve_0khkt")
+
+[sub_resource type="Curve" id="Curve_rwe4c"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e816s"]
+curve = SubResource("Curve_rwe4c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hfi2y"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+scale_min = 10.0
+scale_max = 30.0
+scale_curve = SubResource("CurveTexture_ep1bg")
+scale_over_velocity_max = 258.43
+scale_over_velocity_curve = SubResource("CurveTexture_e816s")
+turbulence_noise_speed_random = 0.33
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = ExtResource("1_4a7cg")
+position = Vector2(2.08165e-12, 2.08165e-12)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_hfi2y")
+lifetime = 2.0
+explosiveness = 1.0
+script = ExtResource("2_qf5uq")

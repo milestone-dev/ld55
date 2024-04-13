@@ -1,11 +1,19 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://d4m0ma6w4qh5c"]
+[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://d4m0ma6w4qh5c"]
 
+[ext_resource type="PackedScene" uid="uid://dv8tsyngxdtoc" path="res://resources/spell_effects/fire ring.tscn" id="1_15r7a"]
+[ext_resource type="Texture2D" uid="uid://duj1nlyxrcax6" path="res://assets/sprites/projectile_fireball.png" id="1_eb5qf"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_hwq5e"]
 
 [resource]
 script = ExtResource("1_hwq5e")
-name = "Rain of fire"
+name = "Fireball Single-Fire Projectile"
 code = "A0B0C0"
 damage = 100.0
 range = 3200.0
 heal = 2.08165e-12
+effect = ExtResource("1_15r7a")
+projectile_texture = ExtResource("1_eb5qf")
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 2

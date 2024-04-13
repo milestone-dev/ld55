@@ -4,8 +4,12 @@
 
 [resource]
 script = ExtResource("1_8rfeb")
-name = "Ragnarök"
+name = "Ragnarök AOE"
 code = "A0B1C2"
 damage = 10000.0
 range = 10000.0
 heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 2

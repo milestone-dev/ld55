@@ -52,7 +52,7 @@ func _process(delta):
 		mouse_origin = Vector2.ZERO;
 		active = false;
 		line.clear_points()
-		print("end drag");
+		#print("end drag");
 		cast_complete.emit(conneted_nodes);
 		reset_nodes();
 		visible = false;
@@ -61,7 +61,7 @@ func _process(delta):
 		visible = true;
 		#Input.warp_mouse(panel.position + first_node.position + first_node.pivot_offset)
 		mouse_origin = get_viewport().get_mouse_position();
-		print("start drag. set mouse origin", mouse_origin);
+		#print("start drag. set mouse origin", mouse_origin);
 		line.clear_points()
 		reset_nodes()
 		draw_line_to_node(first_node, true)

@@ -1,39 +1,54 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8hor65lbfgy2"]
+[gd_scene load_steps=5 format=3 uid="uid://b8hor65lbfgy2"]
 
-[ext_resource type="Shader" path="res://fire.gdshader" id="1_vaxmb"]
+[ext_resource type="Material" uid="uid://b2isolwqwqvb7" path="res://shaders/fire_ball.tres" id="2_w0tiv"]
+[ext_resource type="PackedScene" uid="uid://dv8tsyngxdtoc" path="res://resources/spell_effects/fire ring.tscn" id="3_soppc"]
+
+[sub_resource type="Shader" id="Shader_371b3"]
+code = "/* 
+Original shader from Fubucci – https://www.febucci.com/2019/05/fire-shader/ 
+Converted to Godot Shader Language by Godot Shaders - godotshaders.com/shader/2D-fire/
+*/
+
+shader_type canvas_item;
+
+uniform sampler2D noise_tex : repeat_enable;
+uniform sampler2D gradient_tex;
+
+uniform vec4 brighter_color : source_color = vec4(1.0, 0.8, 0.0, 1.0);
+uniform vec4 middle_color : source_color  = vec4(1.0, 0.56, 0.0, 1.0);
+uniform vec4 darker_color : source_color  = vec4(0.64, 0.2, 0.05, 1.0);
+
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+
+void fragment()
+{
+	float f = TIME;// - floor(TIME);
+	float x = 90.; // pixelation
+	vec2 uv = floor(UV*x)/x;
+	float noise_value = texture(noise_tex, uv-vec2(.5) + vec2(f*.1, f)).x;
+	// The .yx swizzle is when using the built in horizontal gradient texture. If you have a vertical gradient texture remove .yx
+	float gradient_value = texture(gradient_tex, UV).x;
+	
+	gradient_value -= smoothstep(spread, spread + 0.5, length(uv + vec2(-0.5, -0.5)) / spread);
+	
+	float step1 = step(noise_value, gradient_value);
+	float step2 = step(noise_value, gradient_value - 0.2);
+	float step3 = step(noise_value, gradient_value - 0.4);
+	
+	vec3 bd_color = mix(brighter_color.rgb, darker_color.rgb, step1 - step2);
+	
+	vec4 color = vec4(bd_color, step1);
+	color.rgb = mix(color.rgb, middle_color.rgb, step2 - step3);
+
+	COLOR = color;
+}"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5jgyt"]
-shader = ExtResource("1_vaxmb")
+shader = SubResource("Shader_371b3")
 shader_parameter/brighter_color = Color(1, 0.8, 0, 1)
 shader_parameter/middle_color = Color(1, 0.56, 0, 1)
 shader_parameter/darker_color = Color(0.64, 0.2, 0.05, 1)
 shader_parameter/spread = 0.5
-
-[sub_resource type="Gradient" id="Gradient_q8b80"]
-offsets = PackedFloat32Array(0.336066, 0.688525, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xqklt"]
-gradient = SubResource("Gradient_q8b80")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.9, 0.9)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_a3b7m"]
-seed = 11
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s06c8"]
-seamless = true
-noise = SubResource("FastNoiseLite_a3b7m")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwtdr"]
-shader = ExtResource("1_vaxmb")
-shader_parameter/brighter_color = Color(1, 0.8, 0, 1)
-shader_parameter/middle_color = Color(1, 0.56, 0, 1)
-shader_parameter/darker_color = Color(0.64, 0.2, 0.05, 1)
-shader_parameter/spread = 0.799
-shader_parameter/noise_tex = SubResource("NoiseTexture2D_s06c8")
-shader_parameter/gradient_tex = SubResource("GradientTexture2D_xqklt")
 
 [node name="SpellEffect" type="Node2D"]
 
@@ -42,10 +57,14 @@ material = SubResource("ShaderMaterial_5jgyt")
 position = Vector2(70, 42)
 
 [node name="FireShader" type="Panel" parent="Node2D"]
-material = SubResource("ShaderMaterial_fwtdr")
-offset_left = 79.0
-offset_top = -4.0
-offset_right = 672.0
-offset_bottom = 582.0
+visible = false
+material = ExtResource("2_w0tiv")
+offset_left = -38.0
+offset_top = -311.0
+offset_right = 555.0
+offset_bottom = 275.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("3_soppc")]
+visible = false

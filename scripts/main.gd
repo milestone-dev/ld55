@@ -4,9 +4,14 @@ extends Node2D
 @export var mob_scene : PackedScene
 @export var max_mobs : int = 25;
 
+var mobtypes: Array[Mobtype]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Hello TrollDoom!")
+	for file_name : String in DirAccess.open("res://resources/mobtypes").get_files():
+		print ("Found Mobtype", file_name)
+		mobtypes.push_back(ResourceLoader.load("res://resources/mobtypes/" + file_name));	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,6 +28,7 @@ func _on_mob_spawn_timer_timeout():
 	if get_tree().get_nodes_in_group("mob").size() > max_mobs - 1: return;
 	if not mob_scene: return
 	var mob = mob_scene.instantiate();
+	mob.type = mobtypes.pick_random()
 	mob.position = _random_new_mob_position()
 	add_child(mob);
 	

@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 @export var max_hp : float = 100;
-@export var max_speed : float = 30000;
-@export var attack_cooldown_max : float= 0.15;
+@export var max_speed : float = 8000;
+@export var attack_cooldown_max : float= 0.85;
 
 @export var camera : Camera2D;
 @export var sprite : Sprite2D;
@@ -26,6 +26,13 @@ var attack_cooldown : float = 0;
 var mouse_down = false;
 var summoning_mode = false;
 
+#spell effects
+var current_single_fire_projectile_spell : Spell
+var current_replace_projectile_spell : Spell
+var current_timed_projectile_spells : Array[SpellTimer]
+var current_aoe_effect_spells : Array[SpellTimer]
+# single-fire AOE happens immediately and don't need tracking
+
 func _ready() -> void:
 	for file_name : String in DirAccess.open("res://resources/spells").get_files():
 		print (file_name)
@@ -34,9 +41,16 @@ func _ready() -> void:
 func _physics_process(delta):
 	
 	if attack_cooldown > 0: attack_cooldown -= delta
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and attack_cooldown <= 0:
-		attack_cooldown = attack_cooldown_max
-		shoot_projectile();
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):	
+		if current_single_fire_projectile_spell != null:
+			shoot_projectile(current_single_fire_projectile_spell);
+			current_single_fire_projectile_spell = null
+		elif attack_cooldown <= 0:
+			attack_cooldown = attack_cooldown_max
+			shoot_projectile();
+			
+	for spell_timer : SpellTimer in current_timed_projectile_spells:
+		spell_timer.update(delta)
 	
 	hud.hp_bar.value = hp;
 	hud.hp_bar.max_value = max_hp;
@@ -63,13 +77,19 @@ func _physics_process(delta):
 		animation_tree.set("parameters/Walk/blend_position", velocity.x);
 		move_and_slide()
 
-func shoot_projectile():
+func shoot_projectile(projectile_spell : Spell = null, random_direction = false):
 	var proj = projectile_scene.instantiate() as Projectile
 	proj.player = self;
 	proj.position = position
-	proj.damage = 50
-	proj.velocity = (get_global_mouse_position() - global_position).normalized()
 	proj.look_at(velocity)
+	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
+	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
+	if projectile_spell:
+		proj.damage = projectile_spell.damage
+		proj.texture = projectile_spell.projectile_texture
+	else:
+		proj.damage = 50
+		
 	get_parent().add_child(proj)
 	
 func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
@@ -84,11 +104,22 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			spell = potential_spell
 			break
 			
-	if not spell: return
+	if not spell:
+		prints("No spell for", code)
+		return
 	
-	for mob : Mob in get_tree().get_nodes_in_group("mob"):
-		if position.distance_to(mob.position) < spell.range:
-			add_experience(mob.take_damage(spell.damage))
+	if spell.effect_area_behavior == Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
+		if spell.effect:
+			var effect = spell.effect.instantiate()
+			add_child(effect)
+		for mob : Mob in get_tree().get_nodes_in_group("mob"):
+			if position.distance_to(mob.position) < spell.range:
+				add_experience(mob.take_damage(spell.damage))
+	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.SINGLE_FIRE:
+		current_single_fire_projectile_spell = spell
+	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.ADD_TIMED:
+		current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
+		
 	
 	prints("Casting spell", spell.name)
 
@@ -100,7 +131,7 @@ func add_experience(experience : int):
 		max_exp *= 1.5
 
 func take_damage(damage : float):
-	prints("take damage", damage);
+	# prints("take damage", damage);
 	if god_mode: return;
 	hp -= damage;
 	if hp <= 0: die();
