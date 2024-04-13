@@ -49,8 +49,12 @@ func _physics_process(delta):
 			attack_cooldown = attack_cooldown_max
 			shoot_projectile();
 			
-	for spell_timer : SpellTimer in current_timed_projectile_spells:
-		spell_timer.update(delta)
+	# process timers
+	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
+		if projectile_spell_timer.update(delta): current_timed_projectile_spells.erase(projectile_spell_timer)
+	
+	for area_spell_timer : SpellTimer in current_aoe_effect_spells:
+		if area_spell_timer.update(delta): current_aoe_effect_spells.erase(area_spell_timer)
 	
 	hud.hp_bar.value = hp;
 	hud.hp_bar.max_value = max_hp;
