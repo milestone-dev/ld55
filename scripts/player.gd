@@ -103,19 +103,14 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	if not spell: return	
 	
 	if spell.effect_area_behavior == Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
+		if spell.effect:
+			var effect = spell.effect.instantiate()
+			add_child(effect)
 		for mob : Mob in get_tree().get_nodes_in_group("mob"):
 			if position.distance_to(mob.position) < spell.range:
 				add_experience(mob.take_damage(spell.damage))
 	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.SINGLE_FIRE:
 		current_single_fire_projectile_spell = spell
-
-	if spell.effect:
-		var effect = spell.effect.instantiate()
-		add_child(effect)		
-		for mob : Mob in get_tree().get_nodes_in_group("mob"):
-			if position.distance_to(mob.position) < spell.range:
-				add_experience(mob.take_damage(spell.damage))
-
 	
 	prints("Casting spell", spell.name)
 
