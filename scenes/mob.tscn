@@ -180,6 +180,7 @@ shape = SubResource("CircleShape2D_so115")
 texture_filter = 1
 texture = ExtResource("2_3fp5a")
 hframes = 12
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationTree")
