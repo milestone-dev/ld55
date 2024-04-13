@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bdbn0bpn0oxnr"]
 
-[ext_resource type="Shader" path="res://shaders/fire2.gdshader" id="1_0bxgb"]
+[ext_resource type="Shader" path="res://shaders/fire.gdshader" id="1_0bxgb"]
 
 [sub_resource type="Gradient" id="Gradient_q8b80"]
 offsets = PackedFloat32Array(0.336066, 0.688525, 1)

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b2isolwqwqvb7"]
 
-[ext_resource type="Shader" path="res://shaders/fire2.gdshader" id="1_2ql7c"]
+[ext_resource type="Shader" path="res://shaders/fire.gdshader" id="1_2ql7c"]
 
 [sub_resource type="Gradient" id="Gradient_nmx5g"]
 
