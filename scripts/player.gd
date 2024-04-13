@@ -41,8 +41,8 @@ func _physics_process(delta):
 		animation_tree.get("parameters/playback").travel("Idle")
 	else:
 		animation_tree.get("parameters/playback").travel("Walk")
-		animation_tree.set("parameters/Idle/blend_position", velocity);
-		animation_tree.set("parameters/Walk/blend_position", velocity);
+		animation_tree.set("parameters/Idle/blend_position", velocity.x);
+		animation_tree.set("parameters/Walk/blend_position", velocity.x);
 		move_and_slide()
 	
 func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
@@ -64,11 +64,6 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			mob.take_damage(spell.damage)
 	
 	prints("Casting spell", spell.name)
-
-func _on_damage_area_body_entered(body):
-	if not body is Mob: return;
-	var mob = body as Mob;
-	take_damage(mob.damage);
 
 func take_damage(damage : float):
 	prints("take damage", damage);

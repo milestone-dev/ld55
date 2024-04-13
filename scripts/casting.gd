@@ -47,7 +47,8 @@ func _on_node_mouse_entered(panel:Panel):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and active:
+	var is_holding_activation_key = Input.is_key_pressed(KEY_SPACE)
+	if not is_holding_activation_key and active:
 		mouse_origin = Vector2.ZERO;
 		active = false;
 		line.clear_points()
@@ -56,7 +57,7 @@ func _process(delta):
 		reset_nodes();
 		visible = false;
 		
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not active:
+	if is_holding_activation_key and not active:
 		visible = true;
 		#Input.warp_mouse(panel.position + first_node.position + first_node.pivot_offset)
 		mouse_origin = get_viewport().get_mouse_position();
