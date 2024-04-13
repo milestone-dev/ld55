@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dofqci16iopij"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_bcjag"]
+[ext_resource type="Texture2D" uid="uid://duj1nlyxrcax6" path="res://assets/sprites/projectile_fireball.png" id="1_jhqma"]
+
+[resource]
+script = ExtResource("1_bcjag")
+name = "Flame breath"
+code = "A0B2C4"
+damage = 10.0
+range = 32.0
+heal = 0.0
+projectile_texture = ExtResource("1_jhqma")
+effect_duration = 2.0
+effect_cooldown_max = 0.05
+projectile_behavior = 1
+effect_area_behavior = 0

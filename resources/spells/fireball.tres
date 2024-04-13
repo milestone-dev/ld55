@@ -14,5 +14,6 @@ heal = 2.08165e-12
 effect = ExtResource("1_15r7a")
 projectile_texture = ExtResource("1_eb5qf")
 effect_duration = 0.0
+effect_cooldown_max = 0.0
 projectile_behavior = 0
 effect_area_behavior = 2

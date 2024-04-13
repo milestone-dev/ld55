@@ -24,6 +24,7 @@ enum SpellEffectAreaBehavior {
 @export var projectile_texture : Texture2D
 
 @export var effect_duration : float = 0;
+@export var effect_cooldown_max : float = 0;
 
 @export var projectile_behavior : SpellProjectileBehavior;
 @export var effect_area_behavior : SpellEffectAreaBehavior;
@@ -34,5 +35,4 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func validate_code(input_code: String) -> bool:
-	prints(input_code, "vs", code)
-	return input_code == code;
+	return input_code.replace(",","") == code.replace(",","");

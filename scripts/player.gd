@@ -29,8 +29,8 @@ var summoning_mode = false;
 #spell effects
 var current_single_fire_projectile_spell : Spell
 var current_replace_projectile_spell : Spell
-var current_timed_projectile_spells : Array[Spell]
-var current_aoe_effect_spells : Array[Spell]
+var current_timed_projectile_spells : Array[SpellTimer]
+var current_aoe_effect_spells : Array[SpellTimer]
 # single-fire AOE happens immediately and don't need tracking
 
 func _ready() -> void:
@@ -48,6 +48,9 @@ func _physics_process(delta):
 		elif attack_cooldown <= 0:
 			attack_cooldown = attack_cooldown_max
 			shoot_projectile();
+			
+	for spell_timer : SpellTimer in current_timed_projectile_spells:
+		spell_timer.update(delta)
 	
 	hud.hp_bar.value = hp;
 	hud.hp_bar.max_value = max_hp;
@@ -74,12 +77,13 @@ func _physics_process(delta):
 		animation_tree.set("parameters/Walk/blend_position", velocity.x);
 		move_and_slide()
 
-func shoot_projectile(projectile_spell : Spell = null):
+func shoot_projectile(projectile_spell : Spell = null, random_direction = false):
 	var proj = projectile_scene.instantiate() as Projectile
 	proj.player = self;
 	proj.position = position
 	proj.look_at(velocity)
-	proj.velocity = (get_global_mouse_position() - global_position).normalized()
+	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
+	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
 	if projectile_spell:
 		proj.damage = projectile_spell.damage
 		proj.texture = projectile_spell.projectile_texture
@@ -100,7 +104,9 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			spell = potential_spell
 			break
 			
-	if not spell: return	
+	if not spell:
+		prints("No spell for", code)
+		return
 	
 	if spell.effect_area_behavior == Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
 		if spell.effect:
@@ -111,6 +117,9 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 				add_experience(mob.take_damage(spell.damage))
 	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.SINGLE_FIRE:
 		current_single_fire_projectile_spell = spell
+	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.ADD_TIMED:
+		current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
+		
 	
 	prints("Casting spell", spell.name)
 
@@ -122,7 +131,7 @@ func add_experience(experience : int):
 		max_exp *= 1.5
 
 func take_damage(damage : float):
-	prints("take damage", damage);
+	# prints("take damage", damage);
 	if god_mode: return;
 	hp -= damage;
 	if hp <= 0: die();
