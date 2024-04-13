@@ -7,6 +7,8 @@ class_name Player
 @export var sprite : Sprite2D;
 @export var casting_ui : CastingUI;
 
+@export var animation_tree : AnimationTree;
+
 var available_spells: Array[Spell];
 
 var god_mode = false;
@@ -25,8 +27,13 @@ func _physics_process(delta):
 	velocity.y = Input.get_axis("move_up", "move_down")
 	velocity = velocity.normalized() *  max_speed * delta;
 	
-	sprite.flip_h = velocity.x < 0;
-	move_and_slide()
+	if velocity == Vector2.ZERO:
+		animation_tree.get("parameters/playback").travel("Idle")
+	else:
+		animation_tree.get("parameters/playback").travel("Walk")
+		animation_tree.set("parameters/Idle/blend_position", velocity);
+		animation_tree.set("parameters/Walk/blend_position", velocity);
+		move_and_slide()
 	
 func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	print(available_spells)
