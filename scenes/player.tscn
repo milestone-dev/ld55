@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://de8jmpdoukjsq"]
+[gd_scene load_steps=23 format=3 uid="uid://de8jmpdoukjsq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bb4be"]
 [ext_resource type="PackedScene" uid="uid://blnvvm8f071dv" path="res://scenes/casting_ui.tscn" id="2_6xmc5"]
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
+[ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectile.tscn" id="2_oojk5"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
@@ -181,6 +182,7 @@ camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
 casting_ui = NodePath("CanvasLayer/CastingUI")
 hud = NodePath("CanvasLayer/HUD")
+projectile_scene = ExtResource("2_oojk5")
 animation_tree = NodePath("BaseSprite/AnimationTree")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

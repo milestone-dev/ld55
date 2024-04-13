@@ -1,22 +1,27 @@
 extends CharacterBody2D
 class_name Player
 
-@export var max_hp = 100;
-@export var max_speed = 30000;
+@export var max_hp : float = 100;
+@export var max_speed : float = 30000;
+@export var attack_cooldown_max : float= 0.15;
+
 @export var camera : Camera2D;
 @export var sprite : Sprite2D;
 @export var casting_ui : CastingUI;
 @export var hud : HUD;
+
+@export var projectile_scene : PackedScene;
 
 @export var animation_tree : AnimationTree;
 
 var available_spells: Array[Spell];
 
 var god_mode = false;
-var hp = 100;
-var exp = 0;
-var max_exp = 100;
-var level = 1;
+var hp : float = 100;
+var exp : int = 0;
+var max_exp : int = 100;
+var level : int = 1;
+var attack_cooldown : float = 0;
 
 var mouse_down = false;
 var summoning_mode = false;
@@ -27,6 +32,11 @@ func _ready() -> void:
 		available_spells.push_back(ResourceLoader.load("res://resources/spells/" + file_name));
 	
 func _physics_process(delta):
+	
+	if attack_cooldown > 0: attack_cooldown -= delta
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and attack_cooldown <= 0:
+		attack_cooldown = attack_cooldown_max
+		shoot_projectile();
 	
 	hud.hp_bar.value = hp;
 	hud.hp_bar.max_value = max_hp;
@@ -52,6 +62,15 @@ func _physics_process(delta):
 		animation_tree.set("parameters/Idle/blend_position", velocity.x);
 		animation_tree.set("parameters/Walk/blend_position", velocity.x);
 		move_and_slide()
+
+func shoot_projectile():
+	var proj = projectile_scene.instantiate() as Projectile
+	proj.player = self;
+	proj.position = position
+	proj.damage = 50
+	proj.velocity = (get_global_mouse_position() - global_position).normalized()
+	proj.look_at(velocity)
+	get_parent().add_child(proj)
 	
 func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	print(available_spells)
