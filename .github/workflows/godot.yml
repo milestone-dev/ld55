@@ -31,18 +31,18 @@ jobs:
 
       - name: Web Build
         working-directory: project
-        run: godot --headless -v --export-release "Web" build/web/index.html
+        run: |
+            mkdir -v -p build/web
+            godot --headless -v --export-release "Web" build/web/index.html
 
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
-          cd $PROJECT_PATH
           godot --headless --verbose --export-release "Mac OSX" build/mac/$EXPORT_NAME.zip
 
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
-          cd $PROJECT_PATH
           godot --headless --verbose --export-release "Windows Desktop" build/windows/$EXPORT_NAME.exe
 
       - name: Upload Artifact
