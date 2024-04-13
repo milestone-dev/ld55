@@ -6,6 +6,7 @@ class_name CastingUI
 @export var line : Line2D;
 @export var first_node : Node;
 @export var node_snap = 16;
+@export var debug_node: Panel;
 
 signal cast_complete(nodes);
 
@@ -55,6 +56,13 @@ func _process(delta):
 		var d = get_viewport().get_mouse_position() - mouse_origin;
 		
 		var pos = line.points[0] + d;
+		debug_node.position = pos - debug_node.pivot_offset;
+		
+		for node : Control in node_container.get_children():
+			var target = node.position + node.pivot_offset
+			print("pos: ", pos)
+			pos = magnetic(pos, target, 10, 1);
+			print("pos + gravity: ", pos)
 		
 		#print(get_viewport().get_mouse_position() - mouse_origin);
 		line.points[line.points.size() - 1] = pos;
@@ -74,3 +82,8 @@ func _process(delta):
 				mouse_origin += pos - (node.position + node.pivot_offset)
 		
 		#print("mouseleft")
+	# Return pos gravitated towards target
+func magnetic(pos: Vector2, target: Vector2, gravity: float, range: float) -> Vector2:
+	var distance = pos.distance_to(target);
+	
+	return pos + (target - pos).normalized() * distance / 2;
