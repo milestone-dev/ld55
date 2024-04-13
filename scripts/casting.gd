@@ -33,7 +33,6 @@ func _ready():
 
 func reset_nodes():
 	for node : Control in conneted_nodes:
-		node.modulate = Color(1,1,1,0.1);
 		node.scale = Vector2.ONE;
 	conneted_nodes.clear();
 
@@ -63,7 +62,7 @@ func _process(delta):
 		mouse_origin = get_viewport().get_mouse_position();
 		print("start drag. set mouse origin", mouse_origin);
 		line.clear_points()
-		conneted_nodes.clear()
+		reset_nodes()
 		draw_line_to_node(first_node)
 		draw_line_to_node(first_node) #and one for the mouse pointer		
 		active = true;
@@ -87,7 +86,7 @@ func _process(delta):
 				# Add node to connected nodes list
 				conneted_nodes.push_back(node)
 				node.modulate = Color(1,1,1,1);
-				node.scale = Vector2.ONE * 1.5;
+				node.scale = Vector2.ONE * 2;
 				# Move last point to the new node
 				line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
 				# Add a new point that will follow the mouse cursor
@@ -113,7 +112,6 @@ func gravitate_towards(pos: Vector2) -> Vector2:
 		var target = closest.position + closest.pivot_offset
 		if distance < radius and distance > 0:
 			var magnitude = exp(alpha * distance/radius) * (1 - distance / radius)
-			print(magnitude)
 			force += (target - pos) * magnitude * 1/gravity
 	
 	return pos + force
