@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://de8jmpdoukjsq"]
+[gd_scene load_steps=26 format=3 uid="uid://de8jmpdoukjsq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bb4be"]
 [ext_resource type="PackedScene" uid="uid://blnvvm8f071dv" path="res://scenes/casting_ui.tscn" id="2_6xmc5"]
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
+[ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 16.0
@@ -194,13 +195,14 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_icbei")
 states/Walk/position = Vector2(522, 91)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_tf814"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_mk5t1"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_tokqj")]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "animation_tree") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "hud", "animation_tree") groups=["player"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bb4be")
 camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
-casting_ui = NodePath("Camera2D/CastingUI")
+casting_ui = NodePath("CanvasLayer/CastingUI")
+hud = NodePath("CanvasLayer/HUD")
 animation_tree = NodePath("AnimationTree")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -213,7 +215,6 @@ offset = Vector2(2.08165e-12, 2.08165e-12)
 flip_h = true
 hframes = 8
 vframes = 2
-frame = 3
 
 [node name="DamageArea" type="Area2D" parent="."]
 
@@ -223,13 +224,6 @@ debug_color = Color(0.929412, 0, 0.666667, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-
-[node name="CastingUI" parent="Camera2D" instance=ExtResource("2_6xmc5")]
-visible = false
-offset_left = -128.0
-offset_top = -128.0
-offset_right = -128.0
-offset_bottom = -128.0
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -245,5 +239,22 @@ libraries = {
 "": SubResource("AnimationLibrary_b7so1")
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CastingUI" parent="CanvasLayer" instance=ExtResource("2_6xmc5")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_n0tr4")]
+
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
-[connection signal="cast_complete" from="Camera2D/CastingUI" to="." method="_on_casting_ui_cast_complete"]
+[connection signal="cast_complete" from="CanvasLayer/CastingUI" to="." method="_on_casting_ui_cast_complete"]

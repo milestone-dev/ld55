@@ -18,8 +18,15 @@ func _ready():
 	for panel : Panel in node_container.get_children():
 		panel.mouse_entered.connect(_on_node_mouse_entered.bind(panel))
 
-	visible = false;	
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	visible = false;
+	reset_nodes();
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN);
+
+func reset_nodes():
+	for node : Control in conneted_nodes:
+		node.modulate = Color(1,1,1,0.1);
+		node.scale = Vector2.ONE;
+	conneted_nodes.clear();
 
 func draw_line_to_node(node:Control):
 	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
@@ -37,7 +44,7 @@ func _process(delta):
 		line.clear_points()
 		print("end drag");
 		cast_complete.emit(conneted_nodes);
-		conneted_nodes.clear()
+		reset_nodes();
 		visible = false;
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not active:
@@ -47,13 +54,12 @@ func _process(delta):
 		print("start drag. set mouse origin", mouse_origin);
 		line.clear_points()		
 		draw_line_to_node(first_node)
-		conneted_nodes.clear()
+		conneted_nodes.clear()		
 		active = true;
 	
 	if active:
 		#move last point to mouse
 		var d = get_viewport().get_mouse_position() - mouse_origin;
-		
 		var pos = line.points[0] + d;
 		
 		#print(get_viewport().get_mouse_position() - mouse_origin);
@@ -66,11 +72,11 @@ func _process(delta):
 			if (node.position + node.pivot_offset).distance_to(pos) < node_snap:
 				# Add node to connected nodes list
 				conneted_nodes.push_back(node)
+				node.modulate = Color(1,1,1,1);
+				node.scale = Vector2.ONE * 1.5;
 				# Move last point to the new node
 				line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
 				# Add a new point that will follow the mouse cursor
 				line.add_point(line.points[line.points.size() - 1]);
 				# Move the mouse origin to the new node
 				mouse_origin += pos - (node.position + node.pivot_offset)
-		
-		#print("mouseleft")

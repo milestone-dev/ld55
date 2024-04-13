@@ -6,6 +6,7 @@ class_name Player
 @export var camera : Camera2D;
 @export var sprite : Sprite2D;
 @export var casting_ui : CastingUI;
+@export var hud : HUD;
 
 @export var animation_tree : AnimationTree;
 
@@ -13,6 +14,8 @@ var available_spells: Array[Spell];
 
 var god_mode = false;
 var hp = 100;
+var exp = 0;
+var max_exp = 10000;
 
 var mouse_down = false;
 var summoning_mode = false;
@@ -23,6 +26,13 @@ func _ready() -> void:
 		available_spells.push_back(ResourceLoader.load("res://resources/spells/" + file_name));
 	
 func _physics_process(delta):
+	
+	hud.hp_bar.value = hp;
+	hud.hp_bar.max_value = max_hp;
+	
+	hud.exp_bar.value = exp;
+	hud.exp_bar.max_value = max_exp;
+	
 	velocity.x = Input.get_axis("move_left", "move_right")
 	velocity.y = Input.get_axis("move_up", "move_down")
 	velocity = velocity.normalized() *  max_speed * delta;
