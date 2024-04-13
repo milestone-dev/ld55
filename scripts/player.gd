@@ -37,11 +37,23 @@ func _ready() -> void:
 	for file_name : String in DirAccess.open("res://resources/spells").get_files():
 		print (file_name)
 		available_spells.push_back(ResourceLoader.load("res://resources/spells/" + file_name));
+	$CanvasLayer/ShopScreen.spells = available_spells
+	$CanvasLayer/ShopScreen.learn_spell.connect(learn_spell)
+	
+func learn_spell(spell: Spell):
+	print("Learned spell", spell)
+	
+	
+	
+func _process(delta):
+	if Input.is_action_just_pressed("dev_shop"):
+		print ("Opening shop")
+		$CanvasLayer/ShopScreen.visible = !$CanvasLayer/ShopScreen.visible
 	
 func _physics_process(delta):
 	
 	if attack_cooldown > 0: attack_cooldown -= delta
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if current_single_fire_projectile_spell != null:
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
@@ -49,8 +61,12 @@ func _physics_process(delta):
 			attack_cooldown = attack_cooldown_max
 			shoot_projectile();
 			
-	for spell_timer : SpellTimer in current_timed_projectile_spells:
-		spell_timer.update(delta)
+	# process timers
+	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
+		if projectile_spell_timer.update(delta): current_timed_projectile_spells.erase(projectile_spell_timer)
+	
+	for area_spell_timer : SpellTimer in current_aoe_effect_spells:
+		if area_spell_timer.update(delta): current_aoe_effect_spells.erase(area_spell_timer)
 	
 	hud.hp_bar.value = hp;
 	hud.hp_bar.max_value = max_hp;

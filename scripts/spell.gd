@@ -15,6 +15,7 @@ enum SpellEffectAreaBehavior {
 }
 
 @export var name : String = "Unnamed spell";
+@export var store_texture : Texture;
 @export var code : String;
 @export var damage : float = 10;
 @export var range : float = 32;

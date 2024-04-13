@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://hkkcjdvjfhw2"]
+[gd_scene load_steps=6 format=3 uid="uid://hkkcjdvjfhw2"]
+
+[ext_resource type="Script" path="res://scenes/Shop/shop_card.gd" id="1_cofe1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_81gbh"]
 
@@ -16,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cofe1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -25,13 +28,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="SpellPicture" type="TextureRect" parent="VBoxContainer"]
 material = SubResource("CanvasItemMaterial_81gbh")
 custom_minimum_size = Vector2(2.08165e-12, 350)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_byuf4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+[node name="SpellName" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme = SubResource("Theme_nkshy")
@@ -39,3 +42,7 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]Spell Name"
 fit_content = true
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Learn to play"

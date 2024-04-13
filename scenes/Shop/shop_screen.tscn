@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp65vrskbyisf"]
+[gd_scene load_steps=3 format=3 uid="uid://cp65vrskbyisf"]
 
 [ext_resource type="PackedScene" uid="uid://hkkcjdvjfhw2" path="res://scenes/Shop/shop_card.tscn" id="1_5d4on"]
+[ext_resource type="Script" path="res://scenes/Shop/shop_screen.gd" id="1_xh0ll"]
 
 [node name="ShopScreen" type="Panel"]
 offset_right = 1263.0
 offset_bottom = 802.0
+script = ExtResource("1_xh0ll")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Items" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,11 +22,11 @@ grow_vertical = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="ShopCard" parent="HBoxContainer" instance=ExtResource("1_5d4on")]
+[node name="ShopCard1" parent="Items" instance=ExtResource("1_5d4on")]
 layout_mode = 2
 
-[node name="ShopCard2" parent="HBoxContainer" instance=ExtResource("1_5d4on")]
+[node name="ShopCard2" parent="Items" instance=ExtResource("1_5d4on")]
 layout_mode = 2
 
-[node name="ShopCard3" parent="HBoxContainer" instance=ExtResource("1_5d4on")]
+[node name="ShopCard3" parent="Items" instance=ExtResource("1_5d4on")]
 layout_mode = 2

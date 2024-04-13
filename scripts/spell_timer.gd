@@ -13,15 +13,12 @@ func _init(player: Player, spell:Spell) -> void:
 	self.effect_timer = spell.effect_duration
 	prints(spell.name, "added")
 	
-func update(delta:float) -> void:
+func update(delta:float) -> bool:
 	match spell.projectile_behavior:
 		Spell.SpellProjectileBehavior.ADD_TIMED:
 			effect_timer -= delta
 			if effect_timer <= 0:
-				#stop processing
-				#free()
-				prints(spell.name, "expired")
-				pass
+				return true;
 			elif effect_cooldown <= 0:
 				effect_cooldown = spell.effect_cooldown_max;
 				# fire projectile using player
@@ -29,3 +26,4 @@ func update(delta:float) -> void:
 				print("timed projectile")
 			elif effect_cooldown > 0:
 				effect_cooldown -= delta
+	return false;
