@@ -34,7 +34,9 @@ func _physics_process(delta):
 	hud.exp_bar.value = exp;
 	hud.exp_bar.max_value = max_exp;
 	
-	hud.label.text = "Level %s" % level;
+	hud.label.text = "TrollDoom 0.1"
+	hud.label.text += "\nLevel %s" % level;
+	hud.label.text += "\n\n"
 	hud.label.text += "\nHP %s/%s" % [hp, max_hp]
 	hud.label.text += "\nEXP %s/%s" % [exp, max_exp]
 	if god_mode: hud.label.text += "\nGOD MODE"
