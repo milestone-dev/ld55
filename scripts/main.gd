@@ -19,7 +19,7 @@ func _process(delta):
 	
 
 func _on_mob_spawn_timer_timeout():
-	print("spawn mob");	
+	#print("spawn mob");	
 	if get_tree().get_nodes_in_group("mob").size() > max_mobs - 1: return;
 	if not mob_scene: return
 	var mob = mob_scene.instantiate();

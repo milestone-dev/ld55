@@ -117,6 +117,7 @@ sources/0 = SubResource("TileSetAtlasSource_hrpkl")
 script = ExtResource("1_ppxc1")
 player = NodePath("Player")
 mob_scene = ExtResource("4_qe38e")
+max_mobs = 0
 
 [node name="MobSpawnTimer" type="Timer" parent="."]
 wait_time = 0.5

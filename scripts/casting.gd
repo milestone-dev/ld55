@@ -1,0 +1,72 @@
+extends Node2D
+
+class_name CastingUI
+
+@export var node_container : Control;
+@export var line : Line2D;
+@export var first_node : Node;
+@export var panel : Panel;
+@export var node_snap = 32;
+
+var attached_nodes = [];
+
+var mouse_origin : Vector2
+var active = false;
+
+func _ready():
+	for panel : Panel in node_container.get_children():
+		panel.mouse_entered.connect(_on_node_mouse_entered.bind(panel))
+
+	visible = false;	
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func draw_line_to_node(node:Control):
+	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
+	#line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
+
+func _on_node_mouse_entered(panel:Panel):
+	#if active: draw_line_to_node(panel)
+	pass
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and active:
+		mouse_origin = Vector2.ZERO;
+		active = false;
+		line.clear_points()
+		print("end drag");
+		attached_nodes.clear()		
+		visible = false;
+		
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not active:
+		visible = true;
+		#Input.warp_mouse(panel.position + first_node.position + first_node.pivot_offset)
+		mouse_origin = get_viewport().get_mouse_position();
+		print("start drag. set mouse origin", mouse_origin);
+		line.clear_points()		
+		draw_line_to_node(first_node)
+		attached_nodes.clear()
+		active = true;
+	
+	if active:
+		#move last point to mouse
+		var d = get_viewport().get_mouse_position() - mouse_origin;
+		
+		var pos = line.points[0] + d;
+		
+		#print(get_viewport().get_mouse_position() - mouse_origin);
+		line.points[line.points.size() - 1] = pos;
+		
+		for node : Control in node_container.get_children():
+			if (node in attached_nodes): continue;
+			if (node.position + node.pivot_offset).distance_to(pos) < node_snap:
+				attached_nodes.push_back(node)
+				#draw_line_to_node(node);
+				line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
+				line.add_point(line.points[line.points.size() - 1]);
+				mouse_origin += pos - (node.position + node.pivot_offset)
+				continue
+				
+		
+		
+		#print("mouseleft")

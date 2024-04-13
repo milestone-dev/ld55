@@ -8,12 +8,13 @@ class_name Player
 var god_mode = false;
 var hp = 100;
 
-func _physics_process(delta):
+var mouse_down = false;
+var summoning_mode = false;
 
+func _physics_process(delta):
 	velocity.x = Input.get_axis("move_left", "move_right")
 	velocity.y = Input.get_axis("move_up", "move_down")
 	velocity = velocity.normalized() *  max_speed * delta;
-
 	move_and_slide()
 
 func _on_damage_area_body_entered(body):

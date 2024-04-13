@@ -1,0 +1,194 @@
+[gd_scene load_steps=3 format=3 uid="uid://blnvvm8f071dv"]
+
+[ext_resource type="Script" path="res://scripts/casting.gd" id="1_0enga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g2ym"]
+bg_color = Color(0.909804, 0.909804, 0.909804, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CastingUI" type="Node2D" node_paths=PackedStringArray("node_container", "line", "first_node", "panel")]
+script = ExtResource("1_0enga")
+node_container = NodePath("Panel/Control")
+line = NodePath("Panel/Line2D")
+first_node = NodePath("Panel/Control/Node")
+panel = NodePath("Panel")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 116.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node2" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -4.0
+offset_right = 116.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node3" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 164.0
+offset_top = 36.0
+offset_right = 180.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node4" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 212.0
+offset_top = 100.0
+offset_right = 228.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node5" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 164.0
+offset_top = 164.0
+offset_right = 180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node6" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 204.0
+offset_right = 116.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node7" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = 164.0
+offset_right = 52.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node8" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 100.0
+offset_right = 12.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Node9" type="Panel" parent="Panel/Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = 36.0
+offset_right = 52.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+
+[node name="Line2D" type="Line2D" parent="Panel"]
+position = Vector2(3, 3)
+width = 8.0
+default_color = Color(1, 0, 1, 1)
+joint_mode = 2
