@@ -5,8 +5,16 @@ class_name CastingUI
 @export var node_container : Control;
 @export var line : Line2D;
 @export var first_node : Node;
-@export var node_snap = 16;
 @export var debug_node: Panel;
+@export var valid: Array[Panel];
+
+@export_group("Spell drawing")
+@export var magnet_enabled = true;
+@export var magnet_strength = 16;
+@export var magnet_decay = -0.5;
+@export var magnet_radius = 24;
+@export var snap_distance = 8;
+
 
 signal cast_complete(nodes);
 
@@ -46,7 +54,7 @@ func _process(delta):
 		#Input.warp_mouse(panel.position + first_node.position + first_node.pivot_offset)
 		mouse_origin = get_viewport().get_mouse_position();
 		print("start drag. set mouse origin", mouse_origin);
-		line.clear_points()		
+		line.clear_points()
 		draw_line_to_node(first_node)
 		conneted_nodes.clear()
 		active = true;
@@ -58,20 +66,16 @@ func _process(delta):
 		var pos = line.points[0] + d;
 		debug_node.position = pos - debug_node.pivot_offset;
 		
-		for node : Control in node_container.get_children():
-			var target = node.position + node.pivot_offset
-			print("pos: ", pos)
-			pos = magnetic(pos, target, 10, 1);
-			print("pos + gravity: ", pos)
+		var spell_pos = gravitate_towards(pos);
 		
 		#print(get_viewport().get_mouse_position() - mouse_origin);
-		line.points[line.points.size() - 1] = pos;
+		line.points[line.points.size() - 1] = spell_pos;
 		
 		for node : Control in node_container.get_children():
 			if (node in conneted_nodes): continue;
 			
 			# Found node within snapping distance, create a new point
-			if (node.position + node.pivot_offset).distance_to(pos) < node_snap:
+			if (node.position + node.pivot_offset).distance_to(spell_pos) < snap_distance:
 				# Add node to connected nodes list
 				conneted_nodes.push_back(node)
 				# Move last point to the new node
@@ -83,7 +87,17 @@ func _process(delta):
 		
 		#print("mouseleft")
 	# Return pos gravitated towards target
-func magnetic(pos: Vector2, target: Vector2, gravity: float, range: float) -> Vector2:
-	var distance = pos.distance_to(target);
-	
-	return pos + (target - pos).normalized() * distance / 2;
+func gravitate_towards(pos: Vector2) -> Vector2:
+	if not magnet_enabled: return pos;
+	var force = Vector2();
+	var radius = magnet_radius
+	var gravity = magnet_strength
+	var alpha = magnet_decay
+	for node : Control in node_container.get_children():
+		if node in conneted_nodes: continue
+		var target = node.position + node.pivot_offset
+		var distance = pos.distance_to(target);
+		if distance < radius and distance > 0:
+			var magnitude = exp(alpha * distance/radius) * (1 - distance / radius)
+			force += (target - pos) * magnitude * gravity
+	return pos + force
