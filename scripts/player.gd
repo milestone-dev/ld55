@@ -86,6 +86,10 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			
 	if not spell: return
 	
+	if spell.effect:
+		var effect = spell.effect.instantiate()
+		add_child(effect)
+	
 	for mob : Mob in get_tree().get_nodes_in_group("mob"):
 		if position.distance_to(mob.position) < spell.range:
 			add_experience(mob.take_damage(spell.damage))

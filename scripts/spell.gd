@@ -6,6 +6,7 @@ class_name Spell
 @export var damage : float = 10;
 @export var range : float = 32;
 @export var heal : float = 0;
+@export var effect: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
