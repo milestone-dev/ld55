@@ -14,5 +14,5 @@ func _physics_process(delta):
 
 func _on_damage_area_body_entered(body):
 	if not body is Mob: return;
-	
+	get_tree().reload_current_scene()
 	print ("hit")
