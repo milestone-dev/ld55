@@ -37,11 +37,23 @@ func _ready() -> void:
 	for file_name : String in DirAccess.open("res://resources/spells").get_files():
 		print (file_name)
 		available_spells.push_back(ResourceLoader.load("res://resources/spells/" + file_name));
+	$CanvasLayer/ShopScreen.spells = available_spells
+	$CanvasLayer/ShopScreen.learn_spell.connect(learn_spell)
+	
+func learn_spell(spell: Spell):
+	print("Learned spell", spell)
+	
+	
+	
+func _process(delta):
+	if Input.is_action_just_pressed("dev_shop"):
+		print ("Opening shop")
+		$CanvasLayer/ShopScreen.visible = !$CanvasLayer/ShopScreen.visible
 	
 func _physics_process(delta):
 	
 	if attack_cooldown > 0: attack_cooldown -= delta
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if current_single_fire_projectile_spell != null:
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
