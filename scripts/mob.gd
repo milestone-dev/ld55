@@ -3,6 +3,7 @@ class_name Mob
 
 @export var max_hp = 100;
 @export var speed = 10000;
+@export var damage = 20;
 
 var hp = max_hp;
 
@@ -16,6 +17,5 @@ func _physics_process(delta):
 	move_and_slide()
 	look_at(player_target.position);
 	
-
 func die():
 	queue_free()

@@ -119,6 +119,7 @@ player = NodePath("Player")
 mob_scene = ExtResource("4_qe38e")
 
 [node name="MobSpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [node name="TileMap" type="TileMap" parent="."]

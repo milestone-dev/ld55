@@ -1,8 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
+@export var max_hp = 100;
 @export var max_speed = 30000;
 @export var camera : Camera2D;
+
+var god_mode = false;
+var hp = 100;
 
 func _physics_process(delta):
 
@@ -14,5 +18,16 @@ func _physics_process(delta):
 
 func _on_damage_area_body_entered(body):
 	if not body is Mob: return;
+	var mob = body as Mob;
+	take_damage(mob.damage);
+
+func take_damage(damage : float):
+	prints("take damage", damage);
+	if god_mode: return;
+	hp -= damage;
+	if hp <= 0:
+		die();
+
+func die():
+	prints("die");
 	get_tree().reload_current_scene()
-	print ("hit")

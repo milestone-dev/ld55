@@ -12,7 +12,6 @@ radius = 32.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 collision_mask = 0
-motion_mode = 1
 script = ExtResource("1_bb4be")
 
 [node name="Camera2D" type="Camera2D" parent="."]
