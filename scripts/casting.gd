@@ -7,6 +7,8 @@ class_name CastingUI
 @export var first_node : Node;
 @export var node_snap = 16;
 
+signal cast_complete(nodes);
+
 var conneted_nodes = [];
 
 var mouse_origin : Vector2
@@ -34,7 +36,8 @@ func _process(delta):
 		active = false;
 		line.clear_points()
 		print("end drag");
-		conneted_nodes.clear()		
+		cast_complete.emit(conneted_nodes);
+		conneted_nodes.clear()
 		visible = false;
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not active:
