@@ -37,7 +37,7 @@ jobs:
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
-          godot --headless --verbose --export-release "Mac OSX" build/mac/$EXPORT_NAME.zip
+          godot --headless --verbose --export-release "MacOS" build/mac/$EXPORT_NAME.zip
 
       - name: Windows Build
         run: |
