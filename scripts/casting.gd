@@ -5,10 +5,9 @@ class_name CastingUI
 @export var node_container : Control;
 @export var line : Line2D;
 @export var first_node : Node;
-@export var panel : Panel;
-@export var node_snap = 32;
+@export var node_snap = 16;
 
-var attached_nodes = [];
+var conneted_nodes = [];
 
 var mouse_origin : Vector2
 var active = false;
@@ -18,7 +17,7 @@ func _ready():
 		panel.mouse_entered.connect(_on_node_mouse_entered.bind(panel))
 
 	visible = false;	
-	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func draw_line_to_node(node:Control):
 	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
@@ -35,7 +34,7 @@ func _process(delta):
 		active = false;
 		line.clear_points()
 		print("end drag");
-		attached_nodes.clear()		
+		conneted_nodes.clear()		
 		visible = false;
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not active:
@@ -45,7 +44,7 @@ func _process(delta):
 		print("start drag. set mouse origin", mouse_origin);
 		line.clear_points()		
 		draw_line_to_node(first_node)
-		attached_nodes.clear()
+		conneted_nodes.clear()
 		active = true;
 	
 	if active:
@@ -58,15 +57,17 @@ func _process(delta):
 		line.points[line.points.size() - 1] = pos;
 		
 		for node : Control in node_container.get_children():
-			if (node in attached_nodes): continue;
+			if (node in conneted_nodes): continue;
+			
+			# Found node within snapping distance, create a new point
 			if (node.position + node.pivot_offset).distance_to(pos) < node_snap:
-				attached_nodes.push_back(node)
-				#draw_line_to_node(node);
+				# Add node to connected nodes list
+				conneted_nodes.push_back(node)
+				# Move last point to the new node
 				line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
+				# Add a new point that will follow the mouse cursor
 				line.add_point(line.points[line.points.size() - 1]);
+				# Move the mouse origin to the new node
 				mouse_origin += pos - (node.position + node.pivot_offset)
-				continue
-				
-		
 		
 		#print("mouseleft")

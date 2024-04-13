@@ -1,40 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://blnvvm8f071dv"]
+[gd_scene load_steps=4 format=3 uid="uid://blnvvm8f071dv"]
 
 [ext_resource type="Script" path="res://scripts/casting.gd" id="1_0enga"]
+[ext_resource type="Texture2D" uid="uid://cpd6rcpvwiurf" path="res://assets/sprites/Trolltrumma_PLACEHOLDER.png" id="2_cs1jy"]
+[ext_resource type="StyleBox" uid="uid://c3bri5dp3bohd" path="res://assets/styles/casting_node.tres" id="3_1q3rr"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g2ym"]
-bg_color = Color(0.909804, 0.909804, 0.909804, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[node name="CastingUI" type="Node2D" node_paths=PackedStringArray("node_container", "line", "first_node", "panel")]
+[node name="CastingUI" type="Node2D" node_paths=PackedStringArray("node_container", "line", "first_node")]
 script = ExtResource("1_0enga")
-node_container = NodePath("Panel/Control")
-line = NodePath("Panel/Line2D")
-first_node = NodePath("Panel/Control/Node")
-panel = NodePath("Panel")
+node_container = NodePath("NodeContainers")
+line = NodePath("Line2D")
+first_node = NodePath("NodeContainers/Node")
 
-[node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(256, 256)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 256.0
-offset_bottom = 256.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
+[node name="TrolltrummaPlaceholder" type="Sprite2D" parent="."]
+position = Vector2(128, 125)
+scale = Vector2(1.46996, 1.46996)
+texture = ExtResource("2_cs1jy")
 
-[node name="Control" type="Control" parent="Panel"]
+[node name="NodeContainers" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Node" type="Panel" parent="Panel/Control"]
+[node name="Node" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -49,9 +36,26 @@ offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node2" type="Panel" parent="Panel/Control"]
+[node name="Node2" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 132.0
+offset_top = 100.0
+offset_right = 148.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node3" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -60,15 +64,66 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 100.0
-offset_top = -4.0
+offset_top = 60.0
 offset_right = 116.0
-offset_bottom = 12.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node3" type="Panel" parent="Panel/Control"]
+[node name="Node4" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = 100.0
+offset_right = 76.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node5" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 140.0
+offset_right = 116.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node6" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 172.0
+offset_top = 92.0
+offset_right = 188.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node7" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -77,15 +132,49 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 164.0
-offset_top = 36.0
+offset_top = 28.0
 offset_right = 180.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node8" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 116.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node9" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = 36.0
+offset_right = 51.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node4" type="Panel" parent="Panel/Control"]
+[node name="Node10" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -93,16 +182,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 212.0
-offset_top = 100.0
-offset_right = 228.0
-offset_bottom = 116.0
+offset_left = 19.0
+offset_top = 109.0
+offset_right = 35.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node5" type="Panel" parent="Panel/Control"]
+[node name="Node11" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -110,16 +199,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 164.0
-offset_top = 164.0
-offset_right = 180.0
-offset_bottom = 180.0
+offset_left = 51.0
+offset_top = 165.0
+offset_right = 67.0
+offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node6" type="Panel" parent="Panel/Control"]
+[node name="Node12" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -127,16 +216,169 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 100.0
+offset_left = 107.0
+offset_top = 181.0
+offset_right = 123.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node13" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 171.0
+offset_top = 157.0
+offset_right = 187.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node14" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 203.0
+offset_top = 93.0
+offset_right = 219.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node15" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 187.0
+offset_top = -3.0
+offset_right = 203.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node16" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 99.0
+offset_top = -19.0
+offset_right = 115.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node17" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -11.0
+offset_right = 19.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node18" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = 109.0
+offset_right = 3.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node19" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 205.0
+offset_right = 43.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node20" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = 236.0
+offset_right = 132.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node21" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 204.0
 offset_top = 204.0
-offset_right = 116.0
+offset_right = 220.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node7" type="Panel" parent="Panel/Control"]
+[node name="Node22" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -144,16 +386,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 36.0
-offset_top = 164.0
-offset_right = 52.0
-offset_bottom = 180.0
+offset_left = 260.0
+offset_top = 196.0
+offset_right = 276.0
+offset_bottom = 212.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node8" type="Panel" parent="Panel/Control"]
+[node name="Node23" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -161,16 +403,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = 100.0
-offset_right = 12.0
-offset_bottom = 116.0
+offset_left = 268.0
+offset_top = 148.0
+offset_right = 284.0
+offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Node9" type="Panel" parent="Panel/Control"]
+[node name="Node24" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
@@ -178,16 +420,373 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 36.0
+offset_left = 268.0
+offset_top = 84.0
+offset_right = 284.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node25" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 268.0
 offset_top = 36.0
-offset_right = 52.0
+offset_right = 284.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(8, 8)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7g2ym")
+theme_override_styles/panel = ExtResource("3_1q3rr")
 
-[node name="Line2D" type="Line2D" parent="Panel"]
+[node name="Node26" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.0
+offset_top = -4.0
+offset_right = 260.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node27" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = -36.0
+offset_right = 236.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node28" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 188.0
+offset_top = -60.0
+offset_right = 204.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node29" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.0
+offset_top = -68.0
+offset_right = 172.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node30" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -76.0
+offset_right = 116.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node31" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node32" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -52.0
+offset_right = 20.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node33" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -28.0
+offset_right = -4.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node34" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -4.0
+offset_right = -28.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node35" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 52.0
+offset_right = -44.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node36" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 116.0
+offset_right = -44.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node37" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = 180.0
+offset_right = -28.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node38" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 220.0
+offset_right = -4.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node39" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 244.0
+offset_right = 28.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node42" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = 292.0
+offset_right = 132.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node43" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 172.0
+offset_top = 292.0
+offset_right = 188.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node44" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 204.0
+offset_top = 276.0
+offset_right = 220.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node45" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 236.0
+offset_top = 236.0
+offset_right = 252.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node40" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = 268.0
+offset_right = 60.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Node41" type="Panel" parent="NodeContainers"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = 284.0
+offset_right = 84.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+theme_override_styles/panel = ExtResource("3_1q3rr")
+
+[node name="Line2D" type="Line2D" parent="."]
 position = Vector2(3, 3)
 width = 8.0
 default_color = Color(1, 0, 1, 1)
