@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dfw4almdl75yt"]
+
+[ext_resource type="Resource" uid="uid://b0wv6xs81fyrt" path="res://resources/spells/create_2.tres" id="1_4fyb8"]
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_02405"]
+
+[resource]
+script = ExtResource("1_02405")
+name = "SUMMON ÄLVA"
+code = "A0,B6,B5,C5,C4,C3,B3,B2"
+description = "Summons a fairy that rotates around character - On death destroy fairy and respawn character."
+dependency = ExtResource("1_4fyb8")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

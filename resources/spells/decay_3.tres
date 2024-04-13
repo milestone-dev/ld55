@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dlx3ihn0x1ou4"]
+
+[ext_resource type="Resource" uid="uid://0bj58u5f68vm" path="res://resources/spells/decay_2.tres" id="1_pt6ra"]
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_r2xox"]
+
+[resource]
+script = ExtResource("1_r2xox")
+name = "DIMINISH"
+code = "A0,B2,B1,C1,C0,B0,B7,B6"
+description = "Shrinks all enemies (kill on collision) for N seconds."
+dependency = ExtResource("1_pt6ra")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://br1y4y1veyyl6"]
+
+[ext_resource type="Resource" uid="uid://cx8npx15nya73" path="res://resources/spells/moon_2.tres" id="1_60pf0"]
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_v6jyv"]
+
+[resource]
+script = ExtResource("1_v6jyv")
+name = "SUMMON GUARDIAN"
+code = "A0,B4,B5,B6,B7,C7,C0,C1"
+description = "Spawn a tree-guardian with X life that attacks enemies - takes damage until dead."
+dependency = ExtResource("1_60pf0")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

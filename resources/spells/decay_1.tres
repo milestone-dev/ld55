@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://c5fqhi30viqyi"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_jjdw6"]
+
+[resource]
+script = ExtResource("1_jjdw6")
+name = "QUICKFIRE"
+code = "A0,B2,B1"
+description = "Replace projectile with fast firing fire projectiles for N seconds"
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

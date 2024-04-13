@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://cbapa4do5jt2s"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_i8myd"]
+[ext_resource type="Resource" uid="uid://d0af2o00nrx7u" path="res://resources/spells/change_2.tres" id="1_u3pth"]
+
+[resource]
+script = ExtResource("1_i8myd")
+name = "LUNACY"
+code = "A0,B2,B3,B4,B5,B6,B7,B0"
+description = "Transform into WARG - High health attack replaced by quick close combat swipes"
+dependency = ExtResource("1_u3pth")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

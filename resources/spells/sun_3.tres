@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dkaenvqd42rtv"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_jym3g"]
+[ext_resource type="Resource" uid="uid://c65gqgq7ub3hd" path="res://resources/spells/sun_2.tres" id="1_w6wrn"]
+
+[resource]
+script = ExtResource("1_jym3g")
+name = "NORTHERN LIGHTS"
+code = "A0,B0,B7,B6,C6,C5,B5,B4"
+description = "Freeze/stun all enemies for N seconds."
+dependency = ExtResource("1_w6wrn")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

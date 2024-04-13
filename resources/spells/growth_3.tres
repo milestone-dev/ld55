@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dqf1xt1go2ul1"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_2bvge"]
+[ext_resource type="Resource" uid="uid://40bb3jssivp5" path="res://resources/spells/growth_2.tres" id="1_78vss"]
+
+[resource]
+script = ExtResource("1_2bvge")
+name = "THORN WALL"
+code = "A0,B6,B7,B0,C0,C7,C6,C5"
+description = "Spinning circle of thorns for N seconds spawn around character, but stays in place - Shield pushes enemies away and damages them. Player can pass through."
+dependency = ExtResource("1_78vss")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

@@ -15,8 +15,12 @@ enum SpellEffectAreaBehavior {
 }
 
 @export var name : String = "Unnamed spell";
-@export var store_texture : Texture;
 @export var code : String;
+@export var description : String = "";
+@export var dependency : Spell
+
+@export var weight : float = 1;
+
 @export var damage : float = 10;
 @export var range : float = 32;
 @export var heal : float = 0;
@@ -27,6 +31,7 @@ enum SpellEffectAreaBehavior {
 @export var effect_duration : float = 0;
 @export var effect_cooldown_max : float = 0;
 
+@export var store_texture : Texture;
 @export var projectile_behavior : SpellProjectileBehavior;
 @export var effect_area_behavior : SpellEffectAreaBehavior;
 

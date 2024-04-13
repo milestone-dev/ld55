@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://d1hpeibakmitc"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_8wbn6"]
+[ext_resource type="Resource" uid="uid://dt2q0hjoocd36" path="res://resources/spells/preserve_2.tres" id="1_yls48"]
+
+[resource]
+script = ExtResource("1_8wbn6")
+name = "FOG FORM"
+code = "A0,B4,B3,C3,C2,B2,B1,B0"
+description = "Turn into a living fog - Invincibility for N seconds."
+dependency = ExtResource("1_yls48")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

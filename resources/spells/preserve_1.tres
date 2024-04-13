@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://yffggirdq2uf"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_xc1mr"]
+
+[resource]
+script = ExtResource("1_xc1mr")
+name = "VENOM SPEW"
+code = "A0,B4,B3"
+description = "Wide cone of poison - give DoT to affected MOBS"
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

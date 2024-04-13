@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dt2q0hjoocd36"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_svg6y"]
+[ext_resource type="Resource" uid="uid://yffggirdq2uf" path="res://resources/spells/preserve_1.tres" id="1_txihh"]
+
+[resource]
+script = ExtResource("1_svg6y")
+name = "NOXIOUS FUMES"
+code = "A0,B4,B3,C3,C2"
+description = "Spawn clouds of poison gas on character for N sec - Clouds float super slow and DoT any enemies inside."
+dependency = ExtResource("1_txihh")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://bgq7h5f7iesjr"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_xwxar"]
+
+[resource]
+script = ExtResource("1_xwxar")
+name = "Unnamed spell"
+code = "A0,B0,B7"
+description = "1x small aoe burst on click around character"
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

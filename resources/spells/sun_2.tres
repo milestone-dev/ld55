@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://c65gqgq7ub3hd"]
+
+[ext_resource type="Resource" uid="uid://bgq7h5f7iesjr" path="res://resources/spells/sun_1.tres" id="1_dc1n3"]
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_ly2lv"]
+
+[resource]
+script = ExtResource("1_ly2lv")
+name = "SUNLIGHT AURA"
+code = "A0,B0,B7,B6,C6"
+description = "Damaging AoE around character for N seconds"
+dependency = ExtResource("1_dc1n3")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0

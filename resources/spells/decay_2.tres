@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://0bj58u5f68vm"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_3be6a"]
+[ext_resource type="Resource" uid="uid://c5fqhi30viqyi" path="res://resources/spells/decay_1.tres" id="1_hqesl"]
+
+[resource]
+script = ExtResource("1_3be6a")
+name = "THUNDERSTRIKE"
+code = "A0,B2,B1,C1,C0"
+description = "High damage AOE at cursor on click"
+dependency = ExtResource("1_hqesl")
+weight = 1.0
+damage = 10.0
+range = 32.0
+heal = 0.0
+effect_duration = 0.0
+effect_cooldown_max = 0.0
+projectile_behavior = 0
+effect_area_behavior = 0
