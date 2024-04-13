@@ -23,5 +23,5 @@ func _on_mob_spawn_timer_timeout():
 	if get_tree().get_nodes_in_group("mob").size() > max_mobs - 1: return;
 	if not mob_scene: return
 	var mob = mob_scene.instantiate();
-	mob.position = Vector2(125,125);
+	mob.position = Vector2(randf_range(-300, 300),randf_range(-300, 300));	
 	add_child(mob);
