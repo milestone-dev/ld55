@@ -6,12 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 32.0
 
-[node name="Mob" type="CharacterBody2D"]
+[node name="Mob" type="CharacterBody2D" groups=["mob"]]
 script = ExtResource("1_8hhfd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_so115")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.411765, 0.411765, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_e1bui")
