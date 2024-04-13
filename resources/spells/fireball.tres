@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://d4m0ma6w4qh5c"]
+
+[ext_resource type="Script" path="res://scripts/spell.gd" id="1_hwq5e"]
+
+[resource]
+script = ExtResource("1_hwq5e")
+name = "Rain of fire"
+code = "A0B0C0"
+damage = 50.0
+range = 3200.0
+heal = 2.08165e-12

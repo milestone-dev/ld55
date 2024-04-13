@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://03b0ht4uwre2" path="res://assets/icons/icon.svg" id="2_qy0r6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
-radius = 32.0
+radius = 16.0
 
 [node name="Mob" type="CharacterBody2D" groups=["mob"]]
 collision_mask = 0
@@ -16,5 +16,5 @@ shape = SubResource("CircleShape2D_so115")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.411765, 0.411765, 1)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_qy0r6")

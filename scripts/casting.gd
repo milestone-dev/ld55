@@ -9,7 +9,7 @@ class_name CastingUI
 
 signal cast_complete(nodes);
 
-var conneted_nodes = [];
+var conneted_nodes : Array[Control] = [];
 
 var mouse_origin : Vector2
 var active = false;
