@@ -19,6 +19,7 @@ enum SpellEffectAreaBehavior {
 @export var damage : float = 10;
 @export var range : float = 32;
 @export var heal : float = 0;
+@export var effect: PackedScene
 
 @export var projectile_texture : Texture2D
 

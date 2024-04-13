@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b2isolwqwqvb7"]
+
+[ext_resource type="Shader" path="res://shaders/fire2.gdshader" id="1_2ql7c"]
+
+[sub_resource type="Gradient" id="Gradient_nmx5g"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ahrl2"]
+gradient = SubResource("Gradient_nmx5g")
+fill_from = Vector2(0.494624, 0)
+fill_to = Vector2(0.489247, 0.456989)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a3b7m"]
+seed = 11
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s06c8"]
+seamless = true
+noise = SubResource("FastNoiseLite_a3b7m")
+
+[resource]
+shader = ExtResource("1_2ql7c")
+shader_parameter/brighter_color = Color(1, 0.8, 0, 1)
+shader_parameter/middle_color = Color(1, 0.56, 0, 1)
+shader_parameter/darker_color = Color(0.64, 0.2, 0.05, 1)
+shader_parameter/spread = 0.473
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_s06c8")
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_ahrl2")
