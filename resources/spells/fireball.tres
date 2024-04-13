@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("1_hwq5e")
 name = "Fireball Single-Fire Projectile"
+store_texture = ExtResource("1_eb5qf")
 code = "A0B0C0"
 damage = 100.0
 range = 3200.0
