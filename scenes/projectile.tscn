@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxxp6lhv44dw1"]
+
+[ext_resource type="Texture2D" uid="uid://dqhl11ois83nq" path="res://assets/sprites/projectile_basic.png" id="1_vvbgl"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="2_76x72"]
+
+[node name="Projectile" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_vvbgl")
+script = ExtResource("2_76x72")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
