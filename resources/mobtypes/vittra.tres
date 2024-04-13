@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_20pmk")
 max_hp = 100
-speed = 2000
+speed = 6000
 attack_damage = 5
 attack_cooldown_max = 0.3
 attack_range = 8
