@@ -23,7 +23,6 @@ shape = SubResource("CircleShape2D_so115")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
 texture = ExtResource("2_kmlfg")
 
 [node name="DamageArea" type="Area2D" parent="."]
@@ -32,10 +31,16 @@ texture = ExtResource("2_kmlfg")
 shape = SubResource("CircleShape2D_7me0p")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 25.0
 
 [node name="CastingUI" parent="Camera2D" instance=ExtResource("2_6xmc5")]
 visible = false
-position = Vector2(-128, -128)
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="cast_complete" from="Camera2D/CastingUI" to="." method="_on_casting_ui_cast_complete"]
