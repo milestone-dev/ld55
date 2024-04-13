@@ -10,10 +10,10 @@ class_name CastingUI
 
 @export_group("Spell drawing")
 @export var magnet_enabled = true;
-@export var magnet_strength = 16;
-@export var magnet_decay = -0.5;
-@export var magnet_radius = 24;
-@export var snap_distance = 8;
+@export var magnet_strength = 1;
+@export var magnet_decay = -0.1;
+@export var magnet_radius = 64;
+@export var snap_distance = 4;
 
 
 signal cast_complete(nodes);
@@ -31,6 +31,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func draw_line_to_node(node:Control):
+	conneted_nodes.push_back(node)
 	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 	#line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 
@@ -55,8 +56,10 @@ func _process(delta):
 		mouse_origin = get_viewport().get_mouse_position();
 		print("start drag. set mouse origin", mouse_origin);
 		line.clear_points()
-		draw_line_to_node(first_node)
 		conneted_nodes.clear()
+		draw_line_to_node(first_node)
+		draw_line_to_node(first_node) #and one for the mouse pointer
+		
 		active = true;
 	
 	if active:
@@ -64,8 +67,8 @@ func _process(delta):
 		var d = get_viewport().get_mouse_position() - mouse_origin;
 		
 		var pos = line.points[0] + d;
-		debug_node.position = pos - debug_node.pivot_offset;
-		
+		if debug_node:
+			debug_node.position = pos - debug_node.pivot_offset;
 		var spell_pos = gravitate_towards(pos);
 		
 		#print(get_viewport().get_mouse_position() - mouse_origin);
@@ -93,11 +96,19 @@ func gravitate_towards(pos: Vector2) -> Vector2:
 	var radius = magnet_radius
 	var gravity = magnet_strength
 	var alpha = magnet_decay
+	var closest: Control
+	var distance = 999999
 	for node : Control in node_container.get_children():
 		if node in conneted_nodes: continue
 		var target = node.position + node.pivot_offset
-		var distance = pos.distance_to(target);
+		if pos.distance_to(target) < distance: 
+			distance = pos.distance_to(target)
+			closest = node
+	if closest:
+		var target = closest.position + closest.pivot_offset
 		if distance < radius and distance > 0:
 			var magnitude = exp(alpha * distance/radius) * (1 - distance / radius)
-			force += (target - pos) * magnitude * gravity
+			print(magnitude)
+			force += (target - pos) * magnitude * 1/gravity
+	
 	return pos + force
