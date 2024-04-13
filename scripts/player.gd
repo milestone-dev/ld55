@@ -15,7 +15,8 @@ var available_spells: Array[Spell];
 var god_mode = false;
 var hp = 100;
 var exp = 0;
-var max_exp = 10000;
+var max_exp = 100;
+var level = 1;
 
 var mouse_down = false;
 var summoning_mode = false;
@@ -32,6 +33,8 @@ func _physics_process(delta):
 	
 	hud.exp_bar.value = exp;
 	hud.exp_bar.max_value = max_exp;
+	
+	hud.label.text = "Level %s\n" % level;
 	
 	velocity.x = Input.get_axis("move_left", "move_right")
 	velocity.y = Input.get_axis("move_up", "move_down")
@@ -61,9 +64,16 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	
 	for mob : Mob in get_tree().get_nodes_in_group("mob"):
 		if position.distance_to(mob.position) < spell.range:
-			mob.take_damage(spell.damage)
+			add_experience(mob.take_damage(spell.damage))
 	
 	prints("Casting spell", spell.name)
+
+func add_experience(experience : int):
+	exp += experience
+	if exp >= max_exp:
+		level += 1
+		exp -= max_exp
+		max_exp *= 1.5
 
 func take_damage(damage : float):
 	prints("take damage", damage);

@@ -8,9 +8,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 16.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7me0p"]
-radius = 16.0
-
 [sub_resource type="Animation" id="Animation_mhya6"]
 resource_name = "idle_left"
 length = 0.8
@@ -173,6 +170,9 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace1D_pkm0g")
 states/Walk/position = Vector2(522, 155)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_gwfm7"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_duwyr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fv57w")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me0p"]
+radius = 16.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "hud", "animation_tree") groups=["player"]]
 collision_layer = 0
 collision_mask = 0
@@ -181,7 +181,7 @@ camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
 casting_ui = NodePath("CanvasLayer/CastingUI")
 hud = NodePath("CanvasLayer/HUD")
-animation_tree = NodePath("AnimationTree")
+animation_tree = NodePath("BaseSprite/AnimationTree")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_so115")
@@ -194,16 +194,8 @@ flip_h = true
 hframes = 8
 vframes = 2
 
-[node name="DamageArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
-shape = SubResource("CircleShape2D_7me0p")
-debug_color = Color(0.929412, 0, 0.666667, 0.419608)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="BaseSprite"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_b7so1")
 }
@@ -212,10 +204,20 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = 0
 parameters/Walk/blend_position = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseSprite"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_b7so1")
 }
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("CircleShape2D_7me0p")
+debug_color = Color(0.929412, 0, 0.666667, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

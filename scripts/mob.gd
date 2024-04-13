@@ -7,6 +7,7 @@ class_name Mob
 @export var attack_cooldown_max = 0.3;
 @export var attack_range = 8;
 @export var animation_tree : AnimationTree;
+@export var exp : int = 5;
 
 var alive = true
 var hp = max_hp;
@@ -34,9 +35,12 @@ func _physics_process(delta):
 	animation_tree.set("parameters/Die/blend_position", velocity.x);
 	move_and_slide()
 
-func take_damage(damage : float):
+func take_damage(damage : float) -> int:
 	hp -= damage;
-	if hp <= 0: die();
+	if hp <= 0: 
+		die();
+		return exp;
+	return 0;
 
 func die():
 	animation_tree.get("parameters/playback").travel("Die")
