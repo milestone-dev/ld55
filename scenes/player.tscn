@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://de8jmpdoukjsq"]
+[gd_scene load_steps=38 format=3 uid="uid://de8jmpdoukjsq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bb4be"]
 [ext_resource type="PackedScene" uid="uid://blnvvm8f071dv" path="res://scenes/casting_ui.tscn" id="2_6xmc5"]
@@ -252,6 +252,17 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_7me0p"]
 radius = 16.0
 
+[sub_resource type="Gradient" id="Gradient_8k25q"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.819608)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gmqsp"]
+gradient = SubResource("Gradient_8k25q")
+width = 400
+height = 200
+fill = 1
+fill_from = Vector2(0.50641, 0.521368)
+fill_to = Vector2(0.980769, 0.307692)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "hud", "animation_tree") groups=["player"]]
 collision_layer = 0
 collision_mask = 0
@@ -315,6 +326,15 @@ debug_color = Color(0.929412, 0, 0.666667, 0.419608)
 zoom = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_gmqsp")
 
 [node name="CastingUI" parent="CanvasLayer" instance=ExtResource("2_6xmc5")]
 anchors_preset = 8
