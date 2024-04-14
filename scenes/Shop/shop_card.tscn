@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://hkkcjdvjfhw2"]
 
-[ext_resource type="Script" path="res://scripts/shop_card.gd" id="1_cofe1"]
+[ext_resource type="Script" path="res://scripts/shop_card.gd" id="1_am1xf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_81gbh"]
 
-[sub_resource type="Gradient" id="Gradient_so3hv"]
+[sub_resource type="Gradient" id="Gradient_1yrgr"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_byuf4"]
-gradient = SubResource("Gradient_so3hv")
+gradient = SubResource("Gradient_1yrgr")
 
 [sub_resource type="Theme" id="Theme_nkshy"]
 
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cofe1")
+script = ExtResource("1_am1xf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

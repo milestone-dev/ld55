@@ -1,14 +1,148 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp65vrskbyisf"]
+[gd_scene load_steps=9 format=3 uid="uid://cp65vrskbyisf"]
 
-[ext_resource type="PackedScene" uid="uid://hkkcjdvjfhw2" path="res://scenes/shop/shop_card.tscn" id="1_5d4on"]
-[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_xh0ll"]
+[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_me7ng"]
+[ext_resource type="Texture2D" uid="uid://di8fdpey0p4nb" path="res://assets/sprites/runestone-background.png" id="2_vl7mx"]
+[ext_resource type="PackedScene" uid="uid://hkkcjdvjfhw2" path="res://scenes/shop/shop_card.tscn" id="3_mxxjf"]
+[ext_resource type="Texture2D" uid="uid://djmewuglfoonj" path="res://assets/sprites/runestone-1.png" id="3_wcmj2"]
 
-[node name="ShopScreen" type="Panel"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7eooo"]
+
+[sub_resource type="Gradient" id="Gradient_so3hv"]
+colors = PackedColorArray(0, 0, 0, 1, 0.0613497, 0.0613497, 0.0613497, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8dp5x"]
+gradient = SubResource("Gradient_so3hv")
+width = 140
+height = 140
+
+[sub_resource type="Theme" id="Theme_npwjt"]
+
+[node name="ShopScreen" type="Panel" node_paths=PackedStringArray("spell_texture_1", "spell_texture_2", "spell_texture_3", "spell_button_1", "spell_button_2", "spell_button_3")]
 offset_right = 1263.0
 offset_bottom = 802.0
-script = ExtResource("1_xh0ll")
+script = ExtResource("1_me7ng")
+spell_texture_1 = NodePath("SpellRune1/SpellPicture1")
+spell_texture_2 = NodePath("SpellRune2/SpellPicture2")
+spell_texture_3 = NodePath("SpellRune3/SpellPicture3")
+spell_button_1 = NodePath("SpellRune1/SpellButton1")
+spell_button_2 = NodePath("SpellRune2/SpellButton2")
+spell_button_3 = NodePath("SpellRune3/SpellButton3")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -631.5
+offset_top = -401.0
+offset_right = 648.5
+offset_bottom = 399.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vl7mx")
+stretch_mode = 6
+
+[node name="SpellRune1" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 136.0
+offset_right = 424.0
+offset_bottom = 635.0
+texture = ExtResource("3_wcmj2")
+
+[node name="SpellPicture1" type="TextureRect" parent="SpellRune1"]
+material = SubResource("CanvasItemMaterial_7eooo")
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 0
+offset_left = 128.0
+offset_top = 200.0
+offset_right = 268.0
+offset_bottom = 340.0
+texture = SubResource("GradientTexture2D_8dp5x")
+
+[node name="SpellButton1" type="Button" parent="SpellRune1"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 528.0
+offset_right = 321.0
+offset_bottom = 592.0
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Spell Name"
+flat = true
+
+[node name="SpellRune2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 448.0
+offset_top = 136.0
+offset_right = 864.0
+offset_bottom = 635.0
+texture = ExtResource("3_wcmj2")
+
+[node name="SpellPicture2" type="TextureRect" parent="SpellRune2"]
+material = SubResource("CanvasItemMaterial_7eooo")
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 0
+offset_left = 128.0
+offset_top = 200.0
+offset_right = 268.0
+offset_bottom = 340.0
+texture = SubResource("GradientTexture2D_8dp5x")
+
+[node name="SpellButton2" type="Button" parent="SpellRune2"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 528.0
+offset_right = 321.0
+offset_bottom = 592.0
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Spell Name"
+flat = true
+
+[node name="SpellRune3" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 832.0
+offset_top = 136.0
+offset_right = 1248.0
+offset_bottom = 635.0
+texture = ExtResource("3_wcmj2")
+
+[node name="SpellPicture3" type="TextureRect" parent="SpellRune3"]
+material = SubResource("CanvasItemMaterial_7eooo")
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 0
+offset_left = 128.0
+offset_top = 200.0
+offset_right = 268.0
+offset_bottom = 340.0
+texture = SubResource("GradientTexture2D_8dp5x")
+
+[node name="SpellButton3" type="Button" parent="SpellRune3"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 528.0
+offset_right = 321.0
+offset_bottom = 592.0
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Spell Name"
+flat = true
 
 [node name="Items" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,11 +156,32 @@ grow_vertical = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="ShopCard1" parent="Items" instance=ExtResource("1_5d4on")]
+[node name="ShopCard1" parent="Items" instance=ExtResource("3_mxxjf")]
 layout_mode = 2
 
-[node name="ShopCard2" parent="Items" instance=ExtResource("1_5d4on")]
+[node name="ShopCard2" parent="Items" instance=ExtResource("3_mxxjf")]
 layout_mode = 2
 
-[node name="ShopCard3" parent="Items" instance=ExtResource("1_5d4on")]
+[node name="ShopCard3" parent="Items" instance=ExtResource("3_mxxjf")]
 layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.5
+offset_top = 48.0
+offset_right = 272.5
+offset_bottom = 90.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_npwjt")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Select your next spell"
+fit_content = true
+
+[connection signal="pressed" from="SpellRune1/SpellButton1" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="SpellRune2/SpellButton2" to="." method="_on_spell_button_2_pressed"]
+[connection signal="pressed" from="SpellRune3/SpellButton3" to="." method="_on_spell_button_3_pressed"]
