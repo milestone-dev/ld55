@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Level" load_steps=5 format=3 uid="uid://yl7awsh8mxmr"]
+
+[ext_resource type="Resource" uid="uid://civxbl4pyvcnd" path="res://resources/mobtypes/mob_1_vittra.tres" id="1_eetit"]
+[ext_resource type="Resource" uid="uid://vn0kr4krmowu" path="res://resources/mobtypes/mob_2_gradvarg.tres" id="2_2rbce"]
+[ext_resource type="Resource" uid="uid://ci08ip8pjeq2q" path="res://resources/mobtypes/mob_3_blodvittra.tres" id="3_pi7lo"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="3_tuekk"]
+
+[resource]
+script = ExtResource("3_tuekk")
+max_concurrent_mobs = 100
+mob_spawn_cooldown = 0.2
+mob_1_type = ExtResource("1_eetit")
+mob_1_probability = 3
+mob_2_type = ExtResource("2_2rbce")
+mob_2_probability = 2
+mob_3_type = ExtResource("3_pi7lo")
+mob_3_probability = 1
+mob_4_probability = 0
+mob_5_probability = 0

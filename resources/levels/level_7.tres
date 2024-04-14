@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Level" load_steps=5 format=3 uid="uid://b6injo45ggwsi"]
+
+[ext_resource type="Resource" uid="uid://chdyq4ngib1op" path="res://resources/mobtypes/mob_4_vättar.tres" id="1_ve1tp"]
+[ext_resource type="Resource" uid="uid://cgsjb2t86duys" path="res://resources/mobtypes/mob_5_svartdvarg.tres" id="4_mgokg"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="5_akerv"]
+[ext_resource type="Resource" uid="uid://cy5cc8c3j2ytg" path="res://resources/mobtypes/mob_6_troll.tres" id="5_cnjh3"]
+
+[resource]
+script = ExtResource("5_akerv")
+max_concurrent_mobs = 150
+mob_spawn_cooldown = 0.01
+mob_1_type = ExtResource("1_ve1tp")
+mob_1_probability = 4
+mob_2_type = ExtResource("4_mgokg")
+mob_2_probability = 2
+mob_3_type = ExtResource("5_cnjh3")
+mob_3_probability = 1
+mob_4_probability = 0
+mob_5_probability = 0

@@ -1073,3 +1073,4 @@ y_sort_enabled = true
 [node name="Player" parent="Objects" instance=ExtResource("3_ft68t")]
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
+[connection signal="level_change" from="Objects/Player" to="." method="_on_player_level_change"]

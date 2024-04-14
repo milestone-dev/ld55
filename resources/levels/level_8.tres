@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Level" load_steps=7 format=3 uid="uid://cp42hgnf1r8lf"]
+
+[ext_resource type="Resource" uid="uid://chdyq4ngib1op" path="res://resources/mobtypes/mob_4_vättar.tres" id="1_8i61s"]
+[ext_resource type="Resource" uid="uid://cy5cc8c3j2ytg" path="res://resources/mobtypes/mob_6_troll.tres" id="3_6yjrt"]
+[ext_resource type="Resource" uid="uid://ci08ip8pjeq2q" path="res://resources/mobtypes/mob_3_blodvittra.tres" id="3_r0u75"]
+[ext_resource type="Resource" uid="uid://cgsjb2t86duys" path="res://resources/mobtypes/mob_5_svartdvarg.tres" id="4_71wrf"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="5_8c5wl"]
+[ext_resource type="Resource" uid="uid://b51nfgtbrtvdt" path="res://resources/mobtypes/mob_7_bergatroll.tres" id="5_yb8af"]
+
+[resource]
+script = ExtResource("5_8c5wl")
+max_concurrent_mobs = 200
+mob_spawn_cooldown = 0.1
+mob_1_type = ExtResource("3_r0u75")
+mob_1_probability = 2
+mob_2_type = ExtResource("1_8i61s")
+mob_2_probability = 2
+mob_3_type = ExtResource("4_71wrf")
+mob_3_probability = 2
+mob_4_type = ExtResource("3_6yjrt")
+mob_4_probability = 2
+mob_5_type = ExtResource("5_yb8af")
+mob_5_probability = 1

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://cgsjb2t86duys"]
+
+[ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_lfydc"]
+[ext_resource type="Texture2D" uid="uid://dqxlbdf7d7n4w" path="res://assets/sprites/NMY-Gradvarg-Sheet.png" id="2_l5p1r"]
+
+[resource]
+script = ExtResource("1_lfydc")
+max_hp = 100
+speed = 500
+attack_damage = 100
+attack_cooldown_max = 0.3
+attack_range = 8
+experience = 100
+sprite = ExtResource("2_l5p1r")
+color = Color(0.54902, 0.521569, 0.427451, 1)
+scale = 2.0
+animation_speed = 1.0

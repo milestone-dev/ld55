@@ -1,6 +1,6 @@
 extends Panel
 
-signal learn_spell #Spell in arg1
+signal learn_spell
 
 @export var spell_texture_1 : TextureRect;
 @export var spell_texture_2 : TextureRect;

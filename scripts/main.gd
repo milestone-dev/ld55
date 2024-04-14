@@ -13,8 +13,7 @@ var current_level : Level;
 func _ready():
 	levels.assign(Resources.load_resources("res://resources/levels"))
 	mobtypes.assign(Resources.load_resources("res://resources/mobtypes"))
-	current_level = levels[0]
-	
+	current_level = levels[player.level]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("dev_restart"):
@@ -24,9 +23,13 @@ func _process(_delta):
 		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
 	if Input.is_action_just_pressed("dev_allspells"):
 		player.hud.add_message("Learned all spells (not yet implemented)");
+	if Input.is_action_just_pressed("dev_clearscreen"):
+		for mob :Mob in get_tree().get_nodes_in_group("mob"):
+			player.add_experience(mob.take_damage(100000))
+		player.hud.add_message("Killing all enemies");
 
 func _on_mob_spawn_timer_timeout():
-	if not mob_scene: return
+	if not mob_scene or not current_level: return
 	if get_tree().get_nodes_in_group("mob").size() > current_level.max_concurrent_mobs - 1: return;
 	mob_spawn_timer.wait_time = current_level.mob_spawn_cooldown
 	var mob = mob_scene.instantiate();
@@ -54,5 +57,12 @@ func _random_new_mob_position() -> Vector2:
 	if side == 3: pos.y = size.y;
 	pos += player.position
 	return pos
-	
-	
+
+func _on_player_level_change() -> void:
+	if player.level > levels.size() - 1:
+		current_level = null
+		win()	
+	else: current_level = levels[player.level]
+
+func win():
+	player.hud.add_message("You win!")

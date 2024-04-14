@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://chdyq4ngib1op"]
+
+[ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_mfcp2"]
+[ext_resource type="Texture2D" uid="uid://drihjdo3y8mih" path="res://assets/sprites/NMY-VATTAR-Sheet.png" id="2_wen8u"]
+
+[resource]
+script = ExtResource("1_mfcp2")
+max_hp = 100
+speed = 6000
+attack_damage = 5
+attack_cooldown_max = 0.3
+attack_range = 8
+experience = 50
+sprite = ExtResource("2_wen8u")
+color = Color(1, 1, 1, 1)
+scale = 1.0
+animation_speed = 1.0
