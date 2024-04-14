@@ -37,6 +37,7 @@ func _process(_delta):
 	if paused or not is_inside_tree(): return;
 	if Input.is_action_just_pressed("dev_restart"):
 		player.die()
+		return
 	if Input.is_action_just_pressed("dev_godmode"):
 		player.god_mode = !player.god_mode;
 		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));

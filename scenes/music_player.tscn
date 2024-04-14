@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvd07vrc8yr7i"]
+
+[ext_resource type="AudioStream" uid="uid://xxka5chvh1r0" path="res://assets/audio/music/Trolldoomdrone.ogg" id="1_2fe7x"]
+[ext_resource type="Script" path="res://scripts/music_player.gd" id="2_ixerj"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_2fe7x")
+volume_db = -0.655
+autoplay = true
+script = ExtResource("2_ixerj")
