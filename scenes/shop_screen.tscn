@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp65vrskbyisf"]
+[gd_scene load_steps=9 format=3 uid="uid://cp65vrskbyisf"]
 
 [ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_me7ng"]
 [ext_resource type="Texture2D" uid="uid://di8fdpey0p4nb" path="res://assets/sprites/runestone-background.png" id="2_vl7mx"]
 [ext_resource type="Texture2D" uid="uid://djmewuglfoonj" path="res://assets/sprites/runestone-1.png" id="3_wcmj2"]
+[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="4_ga4lh"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7eooo"]
 
@@ -73,7 +74,8 @@ offset_bottom = 592.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_ga4lh")
+theme_override_font_sizes/font_size = 40
 text = "Spell Name"
 flat = true
 
@@ -105,7 +107,8 @@ offset_bottom = 592.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_ga4lh")
+theme_override_font_sizes/font_size = 40
 text = "Spell Name"
 flat = true
 
@@ -137,7 +140,8 @@ offset_bottom = 592.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_ga4lh")
+theme_override_font_sizes/font_size = 40
 text = "Spell Name"
 flat = true
 
@@ -153,7 +157,8 @@ offset_bottom = 90.0
 grow_horizontal = 2
 size_flags_vertical = 8
 theme = SubResource("Theme_npwjt")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("4_ga4lh")
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center]Select your next spell"
 fit_content = true
