@@ -72,9 +72,10 @@ func _physics_process(delta):
 		if current_single_fire_projectile_spell != null:
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
-		elif attack_cooldown <= 0:
 			attack_cooldown = attack_cooldown_max
+		elif attack_cooldown <= 0:
 			shoot_projectile();
+			attack_cooldown = attack_cooldown_max
 			
 	# process timers
 	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
@@ -122,7 +123,6 @@ func shoot_projectile(projectile_spell : Spell = null, random_direction = false)
 	var proj = projectile_scene.instantiate() as Projectile
 	proj.player = self;
 	proj.position = position
-	proj.look_at(velocity)
 	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
 	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
 	if projectile_spell:
