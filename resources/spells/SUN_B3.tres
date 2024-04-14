@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("1_ivida")
-name = "INFERNO"
+name = "Inferno"
 code = "A0,B0,B1,C1,C2,B2,B3,B4"
 description = "Boardclearing AOE of FIRE"
 dependency = ExtResource("1_iukkp")
