@@ -1,34 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://bggn170n3w2tj"]
+[gd_scene load_steps=7 format=3 uid="uid://brkf73cguuqmr"]
 
-[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_uxvvf"]
-[ext_resource type="Texture2D" uid="uid://dvnljqtpw3nu3" path="res://assets/sprites/death.png" id="2_3y3ax"]
-[ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_efm23"]
-[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="4_eo6d7"]
+[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_wwd5f"]
+[ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_lyj2q"]
+[ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_a6xfu"]
+[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="4_enub8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
-[node name="Death" type="Panel" node_paths=PackedStringArray("spell_button_1")]
+[node name="Win" type="Panel" node_paths=PackedStringArray("spell_button_1")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
-script = ExtResource("1_uxvvf")
-spell_button_1 = NodePath("DeathBackground/Button/TryAgainButton")
+script = ExtResource("1_wwd5f")
+spell_button_1 = NodePath("WinBackground/Button/WinButton")
 
-[node name="DeathBackground" type="TextureRect" parent="."]
+[node name="WinBackground" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 800.0
-texture = ExtResource("2_3y3ax")
+texture = ExtResource("2_lyj2q")
 stretch_mode = 6
 
-[node name="Button" type="TextureRect" parent="DeathBackground"]
+[node name="Button" type="TextureRect" parent="WinBackground"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -39,10 +39,10 @@ offset_left = -160.0
 offset_top = -72.0
 offset_right = 163.0
 offset_bottom = 80.0
-texture = ExtResource("3_efm23")
+texture = ExtResource("3_a6xfu")
 stretch_mode = 5
 
-[node name="TryAgainButton" type="Button" parent="DeathBackground/Button"]
+[node name="WinButton" type="Button" parent="WinBackground/Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.494
@@ -54,9 +54,9 @@ offset_bottom = 104.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("4_eo6d7")
+theme_override_fonts/font = ExtResource("4_enub8")
 theme_override_font_sizes/font_size = 40
-text = "Try again"
+text = "Start again"
 flat = true
 
 [node name="Title" type="RichTextLabel" parent="."]
@@ -71,10 +71,10 @@ offset_bottom = 127.0
 grow_horizontal = 2
 size_flags_vertical = 8
 theme = SubResource("Theme_npwjt")
-theme_override_fonts/normal_font = ExtResource("4_eo6d7")
+theme_override_fonts/normal_font = ExtResource("4_enub8")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center]You died."
+text = "[center]You survived the night"
 fit_content = true
 
-[connection signal="pressed" from="DeathBackground/Button/TryAgainButton" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="WinBackground/Button/WinButton" to="." method="_on_spell_button_1_pressed"]
