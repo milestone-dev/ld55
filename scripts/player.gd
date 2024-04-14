@@ -81,6 +81,9 @@ func _physics_process(delta):
 	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
 		if projectile_spell_timer.update(delta): current_timed_projectile_spells.erase(projectile_spell_timer)
 	
+	for aoe_spell_timer : SpellTimer in current_aoe_effect_spells:
+		if aoe_spell_timer.update(delta): current_aoe_effect_spells.erase(aoe_spell_timer)
+	
 	for area_spell_timer : SpellTimer in current_aoe_effect_spells:
 		if area_spell_timer.update(delta): current_aoe_effect_spells.erase(area_spell_timer)
 	
@@ -140,7 +143,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in learned_spells:
+	for potential_spell : Spell in available_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
@@ -149,17 +152,25 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		hud.add_message("No spell or spell not known");
 		return
 	
-	if spell.effect_area_behavior == Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
-		if spell.effect:
-			var effect = spell.effect.instantiate()
-			add_child(effect)
-		for mob : Mob in get_tree().get_nodes_in_group("mob"):
-			if position.distance_to(mob.position) < spell.attack_range:
-				add_experience(mob.take_damage(spell.attack_damage))
-	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.SINGLE_FIRE:
-		current_single_fire_projectile_spell = spell
-	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.ADD_TIMED:
-		current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
+	match spell.effect_area_behavior:
+		Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
+			if spell.effect:
+				var effect = spell.effect.instantiate()
+				add_child(effect)
+			for mob : Mob in get_tree().get_nodes_in_group("mob"):
+				if position.distance_to(mob.position) < spell.attack_range:
+					add_experience(mob.take_damage(spell.attack_damage))
+		Spell.SpellEffectAreaBehavior.TIMED:
+			print ("hej")
+			current_aoe_effect_spells.push_back(SpellTimer.new(self, spell))
+	
+	match spell.projectile_behavior:
+		Spell.SpellProjectileBehavior.ADD_TIMED:
+			current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
+		Spell.SpellProjectileBehavior.REPLACE_TIMED:
+			pass
+		Spell.SpellProjectileBehavior.SINGLE_FIRE:
+			current_single_fire_projectile_spell = spell
 		
 	hud.add_message("Casting spell " + spell.name);
 

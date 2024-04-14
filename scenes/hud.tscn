@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c50c2o4r2knhr"]
+[gd_scene load_steps=5 format=3 uid="uid://c50c2o4r2knhr"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_w35my"]
-[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="2_807ht"]
+[ext_resource type="Texture2D" uid="uid://drc50ew1hy6p1" path="res://assets/sprites/hud.png" id="2_si200"]
+[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="3_t7ut6"]
+
+[sub_resource type="Theme" id="Theme_ea0ub"]
 
 [node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label", "log_container")]
 layout_mode = 3
@@ -16,6 +19,122 @@ exp_bar = NodePath("EXPProgressBar")
 label = NodePath("Label")
 log_container = NodePath("VBoxContainer")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 800.0
+texture = ExtResource("2_si200")
+stretch_mode = 5
+
+[node name="Title" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 288.0
+offset_top = 744.0
+offset_right = 473.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ea0ub")
+theme_override_fonts/normal_font = ExtResource("3_t7ut6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Spellbox (space)"
+fit_content = true
+
+[node name="Title2" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 80.0
+offset_top = 744.0
+offset_right = 120.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ea0ub")
+theme_override_fonts/normal_font = ExtResource("3_t7ut6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]W"
+fit_content = true
+
+[node name="Title3" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 128.0
+offset_top = 744.0
+offset_right = 168.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ea0ub")
+theme_override_fonts/normal_font = ExtResource("3_t7ut6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]A"
+fit_content = true
+
+[node name="Title4" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 176.0
+offset_top = 744.0
+offset_right = 216.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ea0ub")
+theme_override_fonts/normal_font = ExtResource("3_t7ut6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]S"
+fit_content = true
+
+[node name="Title5" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 232.0
+offset_top = 744.0
+offset_right = 272.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ea0ub")
+theme_override_fonts/normal_font = ExtResource("3_t7ut6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]D"
+fit_content = true
+
+[node name="Title6" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = 744.0
+offset_right = -271.0
+offset_bottom = 776.0
+grow_horizontal = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ea0ub")
+theme_override_fonts/normal_font = ExtResource("3_t7ut6")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Fire (left click)"
+fit_content = true
+
 [node name="HPProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(128, 16)
 layout_mode = 1
@@ -24,25 +143,22 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -40.0
-offset_right = 64.0
-offset_bottom = -24.0
+offset_left = -96.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_807ht")
-theme_override_font_sizes/font_size = 20
-value = 100.0
+value = 20.0
 
 [node name="EXPProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(300, 12)
 layout_mode = 0
-offset_left = 440.0
-offset_top = 16.0
-offset_right = 888.0
-offset_bottom = 28.0
-theme_override_fonts/font = ExtResource("2_807ht")
-theme_override_font_sizes/font_size = 20
+offset_left = 400.0
+offset_top = 32.0
+offset_right = 848.0
+offset_bottom = 59.0
+value = 20.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -50,9 +166,8 @@ offset_left = 24.0
 offset_top = 16.0
 offset_right = 280.0
 offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("2_807ht")
-theme_override_font_sizes/font_size = 20
-text = "Level 1"
+text = "TrollDoom 0.1
+Level 1"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(250, 2.08165e-12)
