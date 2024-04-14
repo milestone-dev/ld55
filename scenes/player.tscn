@@ -1,10 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://de8jmpdoukjsq"]
+[gd_scene load_steps=40 format=3 uid="uid://de8jmpdoukjsq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bb4be"]
 [ext_resource type="PackedScene" uid="uid://blnvvm8f071dv" path="res://scenes/casting_ui.tscn" id="2_6xmc5"]
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
-[ext_resource type="PackedScene" uid="uid://cylxgd1if3n0t" path="res://scenes/death.tscn" id="3_2ceeo"]
 [ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectiles/template.tscn" id="2_r1x5o"]
+[ext_resource type="PackedScene" uid="uid://cylxgd1if3n0t" path="res://scenes/death.tscn" id="3_2ceeo"]
 [ext_resource type="Resource" uid="uid://c65bmbitkb7e0" path="res://resources/spells/SUN_B1.tres" id="3_sq18q"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
 [ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop_screen.tscn" id="6_3tdcy"]
@@ -269,16 +269,11 @@ fill_to = Vector2(0.980769, 0.307692)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bb4be")
-max_hp = null
-max_speed = null
-attack_cooldown_max = null
-default_attack_damage = null
 camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
 casting_ui = NodePath("CanvasLayer/CastingUI")
 hud = NodePath("CanvasLayer/HUD")
 shop = NodePath("CanvasLayer/ShopScreen")
-level_experience_requirements = []
 lose_scene = ExtResource("3_2ceeo")
 default_projectile_scene = ExtResource("2_r1x5o")
 animation_tree = NodePath("BaseSprite/AnimationTree")
