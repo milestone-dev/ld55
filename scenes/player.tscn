@@ -211,6 +211,21 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace1D_pkm0g")
 states/Walk/position = Vector2(517, 116)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_gwfm7"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_duwyr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fv57w"), "Start", "AttackIdle", SubResource("AnimationNodeStateMachineTransition_4x5n6"), "AttackIdle", "Attack", SubResource("AnimationNodeStateMachineTransition_lsvsu"), "Attack", "AttackIdle", SubResource("AnimationNodeStateMachineTransition_a8cl0")]
 
+[sub_resource type="Animation" id="Animation_pwd3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10]
+}
+
 [sub_resource type="Animation" id="Animation_s5bwp"]
 resource_name = "attack"
 length = 0.3
@@ -226,21 +241,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [11, 12, 13, 12, 13, 14]
-}
-
-[sub_resource type="Animation" id="Animation_pwd3i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [10]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u5e66"]
