@@ -3,12 +3,26 @@ class_name Player
 
 @export var max_hp : float = 100;
 @export var max_speed : float = 8000;
-@export var attack_cooldown_max : float= 0.85;
+@export var attack_cooldown_max : float = 0.85;
+@export var default_attack_damage : float = 50;
 
 @export var camera : Camera2D;
 @export var sprite : Sprite2D;
 @export var casting_ui : CastingUI;
 @export var hud : HUD;
+
+@export var level_experience_requirements = [
+	0,
+	300,
+	800,
+	1800,
+	3000,
+	7500,
+	17000,
+	40000,
+	100000,
+	500000
+];
 
 @export var projectile_scene : PackedScene;
 
@@ -108,7 +122,7 @@ func shoot_projectile(projectile_spell : Spell = null, random_direction = false)
 		proj.damage = projectile_spell.attack_damage
 		proj.texture = projectile_spell.projectile_texture
 	else:
-		proj.damage = 50
+		proj.damage = default_attack_damage
 		
 	get_parent().add_child(proj)
 	
@@ -144,9 +158,12 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 func add_experience(input_experience : int):
 	experience += input_experience
 	if experience >= max_experience:
-		level += 1
 		experience -= max_experience
-		max_experience = int(float(max_experience) * 1.5)
+		level_up()
+
+func level_up():
+	level += 1
+	max_experience = level_experience_requirements[level]
 
 func take_damage(damage : float):
 	# prints("take damage", damage);
