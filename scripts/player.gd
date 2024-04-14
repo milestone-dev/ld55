@@ -152,7 +152,13 @@ func take_damage(damage : float):
 	# prints("take damage", damage);
 	if god_mode: return;
 	hp -= damage;
+	call_deferred("flash_damage")
 	if hp <= 0: die();
+	
+func flash_damage():
+	modulate = Color.RED
+	await get_tree().create_timer(0.15).timeout
+	modulate = Color.WHITE
 
 func die():
 	hud.add_message("You died and lost everything.");

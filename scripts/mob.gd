@@ -41,7 +41,13 @@ func take_damage(damage : float) -> int:
 	if hp <= 0: 
 		die();
 		return type.experience;
+	call_deferred("flash_damage")
 	return 0;
+
+func flash_damage():
+	modulate = Color.RED
+	await get_tree().create_timer(0.15).timeout
+	modulate = type.color
 
 func die():
 	animation_tree.get("parameters/playback").travel("Die")
