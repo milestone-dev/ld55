@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://0uw608v3woka"]
+
+[ext_resource type="Script" path="res://scripts/area_of_effect.gd" id="1_p686q"]
+
+[sub_resource type="Curve" id="Curve_2cpgc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.225191, 0.917722), 0.0, 0.0, 0, 0, Vector2(0.438931, 0.434335), -0.0320789, -0.0320789, 0, 0, Vector2(0.667939, 0.732595), 0.0, 0.0, 0, 0, Vector2(0.973282, 0.0229431), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_ddb2y"]
+curve = SubResource("Curve_2cpgc")
+
+[sub_resource type="Curve" id="Curve_qyv48"]
+_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_p5omi"]
+curve = SubResource("Curve_qyv48")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cvt44"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+direction = Vector3(2.08165e-12, -1, 2.08165e-12)
+spread = 20.172
+initial_velocity_max = 20.0
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+color = Color(0.145098, 1, 0, 1)
+alpha_curve = SubResource("CurveTexture_ddb2y")
+emission_curve = SubResource("CurveTexture_p5omi")
+hue_variation_min = -0.18
+hue_variation_max = 0.37
+
+[sub_resource type="Gradient" id="Gradient_u1xus"]
+colors = PackedColorArray(0, 0.917647, 0, 1, 1, 1, 0.196078, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d12ah"]
+gradient = SubResource("Gradient_u1xus")
+fill = 1
+fill_from = Vector2(0.5, 0.466)
+fill_to = Vector2(0.491453, 0.431624)
+
+[node name="AreaOfEffect" type="Node2D" node_paths=PackedStringArray("particle_system")]
+script = ExtResource("1_p686q")
+particle_system = NodePath("GPUParticles2D")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -6)
+emitting = false
+amount = 21
+process_material = SubResource("ParticleProcessMaterial_cvt44")
+texture = SubResource("GradientTexture2D_d12ah")
+one_shot = true
