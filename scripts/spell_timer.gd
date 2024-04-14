@@ -13,7 +13,7 @@ func _init(input_player: Player, input_spell:Spell) -> void:
 	self.player = input_player
 	self.spell = input_spell
 	self.effect_timer = spell.effect_duration
-	prints(spell.name, "added")
+	#prints(spell.name, "added")
 	
 	match spell.effect_area_behavior:
 		Spell.SpellEffectAreaBehavior.TIMED:
@@ -26,7 +26,7 @@ func _init(input_player: Player, input_spell:Spell) -> void:
 func update(delta:float) -> bool:
 	match spell.projectile_behavior:
 		Spell.SpellProjectileBehavior.ADD_TIMED:
-			prints(spell.name, "processing aoe timed")
+			#prints(spell.name, "processing aoe timed")
 			effect_timer -= delta
 			if effect_timer <= 0:
 				if area_of_effect_node: area_of_effect_node.queue_free()
@@ -35,7 +35,7 @@ func update(delta:float) -> bool:
 				effect_cooldown = spell.effect_cooldown_max;
 				# fire projectile using player
 				player.shoot_projectile(spell, true)
-				print("timed projectile")
+				#print("timed projectile")
 			elif effect_cooldown > 0:
 				effect_cooldown -= delta
 	match spell.effect_area_behavior:
