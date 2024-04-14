@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://cy5cc8c3j2ytg"]
+[gd_resource type="Resource" script_class="Mobtype" load_steps=6 format=3 uid="uid://cy5cc8c3j2ytg"]
 
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_lfbag"]
+[ext_resource type="AudioStream" uid="uid://d2srn51qrm8jr" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLL1.ogg" id="1_w7bdg"]
 [ext_resource type="Texture2D" uid="uid://brr25pyed7l4d" path="res://assets/sprites/troll.png" id="2_o6nka"]
+[ext_resource type="AudioStream" uid="uid://bknrbddhtiks" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLL2.ogg" id="2_s2lao"]
+[ext_resource type="AudioStream" uid="uid://on8036puphl3" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLL3.ogg" id="3_acm70"]
 
 [resource]
 script = ExtResource("1_lfbag")
@@ -15,3 +18,4 @@ sprite = ExtResource("2_o6nka")
 color = Color(1, 1, 1, 1)
 scale = 2.0
 animation_speed = 0.2
+mob_sfx = Array[AudioStream]([ExtResource("1_w7bdg"), ExtResource("2_s2lao"), ExtResource("3_acm70")])
