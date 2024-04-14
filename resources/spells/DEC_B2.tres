@@ -1,19 +1,23 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://d0af2o00nrx7u"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://d0af2o00nrx7u"]
 
 [ext_resource type="Resource" uid="uid://cll4pjggnt5q5" path="res://resources/spells/DEC_B1.tres" id="1_b6hl2"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_htv34"]
+[ext_resource type="Texture2D" uid="uid://c3hohm0rnhfwt" path="res://assets/sprites/DEC-SYMBOL.png" id="3_0da8m"]
+[ext_resource type="Texture2D" uid="uid://cjtpq3qqbhg2" path="res://assets/sprites/DECB2-SNARINGVINES.png" id="4_cvxd4"]
 
 [resource]
 script = ExtResource("1_htv34")
-name = "SNARING VINES"
+name = "Snaring Vines"
 code = "A0,B2,B3,B4,B5"
 description = "Spawn trail of vines for N seconds that snare enemies and decays after N sec."
 dependency = ExtResource("1_b6hl2")
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("4_cvxd4")
+store_icon = ExtResource("3_0da8m")
 projectile_behavior = 0
 effect_area_behavior = 0

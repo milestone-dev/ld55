@@ -1,19 +1,23 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dqf1xt1go2ul1"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://dqf1xt1go2ul1"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_2bvge"]
 [ext_resource type="Resource" uid="uid://40bb3jssivp5" path="res://resources/spells/GRW_A2.tres" id="1_78vss"]
+[ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="3_iecgb"]
+[ext_resource type="Texture2D" uid="uid://gpw26ekhgt1y" path="res://assets/sprites/GRWA3-THORNWALL.png" id="4_lc441"]
 
 [resource]
 script = ExtResource("1_2bvge")
-name = "THORN WALL"
+name = "Thorn Wall"
 code = "A0,B6,B7,B0,C0,C7,C6,C5"
 description = "Spinning circle of thorns for N seconds spawn around character, but stays in place - Shield pushes enemies away and damages them. Player can pass through."
 dependency = ExtResource("1_78vss")
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("4_lc441")
+store_icon = ExtResource("3_iecgb")
 projectile_behavior = 0
 effect_area_behavior = 0
