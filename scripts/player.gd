@@ -64,7 +64,7 @@ func learn_spell(spell: Spell):
 func _physics_process(delta):
 	if Global.paused: return;
 	if attack_cooldown > 0: attack_cooldown -= delta
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Global.speed_factor == 1:
 		if current_single_fire_projectile_spell != null:
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
@@ -111,6 +111,7 @@ func _physics_process(delta):
 		animation_tree.set("parameters/Idle/blend_position", velocity.x);
 		animation_tree.set("parameters/Walk/blend_position", velocity.x);
 		$DrumSprite.flip_h = velocity.x < 0
+		velocity *= Global.speed_factor
 		move_and_slide()
 
 func shoot_projectile(projectile_spell : Spell = null, random_direction = false):

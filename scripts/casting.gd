@@ -52,6 +52,7 @@ func _process(_delta):
 		cast_complete.emit(conneted_nodes);
 		reset_nodes();
 		visible = false;
+		Global.speed_factor = 1
 		
 	if is_holding_activation_key and not active:
 		visible = true;
@@ -63,8 +64,10 @@ func _process(_delta):
 		draw_line_to_node(first_node, true)
 		draw_line_to_node(first_node, false) #and one for the mouse pointer		
 		active = true;
+		Global.speed_factor = 0.2
 	
 	if active:
+		Global.speed_factor = 0.2
 		#move last point to mouse
 		var d = get_viewport().get_mouse_position() - mouse_origin;
 		var pos = line.points[0] + d;

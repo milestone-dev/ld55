@@ -13,7 +13,7 @@ func _ready() -> void:
 	look_at(position + velocity)
 
 func _process(delta: float) -> void:
-	position += velocity * speed * delta
+	position += velocity * (speed * Global.speed_factor) * delta
 	age += delta;
 	if age > 10:
 		queue_free()
