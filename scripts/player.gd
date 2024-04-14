@@ -14,13 +14,13 @@ signal level_change
 @export var hud : HUD;
 @export var shop : Shop
 
-@export var level_experience_requirements = [
+var level_experience_requirements = [
 	0,
-	300,
-	800,
-	1800,
-	3000,
-	7500,
+	1600,
+	3200,
+	6000,
+	8000,
+	12000,
 	17000,
 	40000,
 	100000,
@@ -59,6 +59,7 @@ func _ready() -> void:
 	available_spells.assign(Resources.load_resources("res://resources/spells/"))
 	shop.learn_spell.connect(learn_spell)
 	casting_ui.player = self
+	max_experience = level_experience_requirements[level+1]
 	
 func learn_spell(spell: Spell):
 	learned_spells.push_back(spell)
@@ -96,7 +97,7 @@ func _physics_process(delta):
 	hud.label.text = "\nLevel %d" % (level + 1);
 	hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 	
-	if false:
+	if true:
 		hud.label.text += "\n\n"
 		hud.label.text += "\nHP %s/%s" % [hp, max_hp]
 		hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
@@ -183,7 +184,7 @@ func add_experience(input_experience : int):
 func level_up():
 	hp = max_hp
 	level += 1
-	max_experience = level_experience_requirements[level]
+	max_experience = level_experience_requirements[level+1]
 	level_change.emit()
 	shop.present_spell_choice(available_spells, learned_spells)
 	Global.paused = true
