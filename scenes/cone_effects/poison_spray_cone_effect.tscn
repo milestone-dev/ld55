@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://blc7ouwk26mgc"]
+
+[ext_resource type="Script" path="res://scenes/cone_effects/cone_effect.gd" id="1_fok3f"]
+[ext_resource type="Texture2D" uid="uid://d3xman2mje3s0" path="res://assets/sprites/fireball-Sheet.png" id="2_nuqys"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u4n3h"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_or875"]
+_data = [Vector2(0.0305343, 0.835443), 0.0, 0.0, 0, 0, Vector2(0.835878, 0.732595), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_srdvf"]
+curve = SubResource("Curve_or875")
+
+[sub_resource type="Curve" id="Curve_e7p52"]
+_data = [Vector2(0.00381679, 0.0229431), 0.0, 0.0, 0, 0, Vector2(0.221374, 0.660601), 2.33534, 2.33534, 0, 0, Vector2(0.603053, 0.835443), 0.0, 0.0, 0, 0, Vector2(0.862595, 0.598892), 0.0, 0.0, 0, 0, Vector2(1, 0.0126582), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_q2dro"]
+curve = SubResource("Curve_e7p52")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r7w48"]
+particle_flag_disable_z = true
+spread = 22.5
+initial_velocity_min = 124.14
+initial_velocity_max = 124.14
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+scale_min = 0.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_q2dro")
+alpha_curve = SubResource("CurveTexture_srdvf")
+anim_speed_min = 2.0
+anim_speed_max = 2.0
+
+[node name="ConeEffect" type="Node2D" node_paths=PackedStringArray("collider")]
+script = ExtResource("1_fok3f")
+collider = NodePath("Area2D")
+look_at_pointer = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(2, 4, 92.388, 38.2683, 92.388, -38.2683, 2, -3)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_u4n3h")
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_r7w48")
+texture = ExtResource("2_nuqys")
+randomness = 0.6
+local_coords = true

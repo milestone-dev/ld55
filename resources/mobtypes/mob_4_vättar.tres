@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://chdyq4ngib1op"]
+[gd_resource type="Resource" script_class="Mobtype" load_steps=6 format=3 uid="uid://chdyq4ngib1op"]
 
+[ext_resource type="AudioStream" uid="uid://yrx54svxfgyb" path="res://assets/audio/sfx/mob/SFX_NMNY_VATTE1.ogg" id="1_f08k8"]
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_mfcp2"]
+[ext_resource type="AudioStream" uid="uid://bsfn7g7pt6x1y" path="res://assets/audio/sfx/mob/SFX_NMNY_VATTE2.ogg" id="2_n4b04"]
 [ext_resource type="Texture2D" uid="uid://drihjdo3y8mih" path="res://assets/sprites/NMY-VATTAR-Sheet.png" id="2_wen8u"]
+[ext_resource type="AudioStream" uid="uid://cbtlpk7kfadw1" path="res://assets/audio/sfx/mob/SFX_NMNY_VATTE3.ogg" id="3_tl87i"]
 
 [resource]
 script = ExtResource("1_mfcp2")
@@ -15,3 +18,4 @@ sprite = ExtResource("2_wen8u")
 color = Color(1, 1, 1, 1)
 scale = 1.0
 animation_speed = 1.0
+mob_sfx = Array[AudioStream]([ExtResource("1_f08k8"), ExtResource("2_n4b04"), ExtResource("3_tl87i")])
