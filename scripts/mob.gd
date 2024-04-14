@@ -69,6 +69,8 @@ func take_damage(damage : float) -> int:
 	return 0;
 
 func flash_damage():
+	$MobImpactSfx.pitch_scale = randf_range(0.9, 1.1);
+	$MobImpactSfx.play();
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = type.color

@@ -208,6 +208,8 @@ func take_damage(damage : float):
 	
 func flash_damage():
 	if not is_inside_tree(): return
+	$DamageStreamPlayer.pitch_scale = randf_range(0.9, 1.1);
+	$DamageStreamPlayer.play();
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE
