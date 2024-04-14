@@ -41,7 +41,8 @@ func _process(_delta):
 		player.god_mode = !player.god_mode;
 		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
 	if Input.is_action_just_pressed("dev_allspells"):
-		player.hud.add_message("Learned all spells (not yet implemented)");
+		player.learned_spells = player.available_spells
+		player.hud.add_message("Learned all spells");
 	if Input.is_action_just_pressed("dev_clearscreen"):
 		for mob :Mob in get_tree().get_nodes_in_group("mob"):
 			player.add_experience(mob.take_damage(100000))
