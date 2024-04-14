@@ -1,23 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://8igsjconudkf"]
+[gd_scene load_steps=3 format=3 uid="uid://c0mb7wslof056"]
 
-[ext_resource type="Texture2D" uid="uid://dnwn3hf12nt7" path="res://assets/tilemap/ground-tilemap.png" id="1_24l1b"]
+[ext_resource type="Texture2D" uid="uid://dnwn3hf12nt7" path="res://assets/tilemap/ground-tilemap.png" id="1_fw2e4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7xw75"]
+radius = 11.0
 
-[node name="TreeSmall" type="Node2D"]
+[node name="Trunk" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_24l1b")
-offset = Vector2(2.08165e-12, -20)
+texture = ExtResource("1_fw2e4")
+offset = Vector2(2.08165e-12, -11)
 region_enabled = true
-region_rect = Rect2(176, 320, 32, 32)
+region_rect = Rect2(0, 288, 32, 32)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0, -16)
+position = Vector2(0, -4)
 scale = Vector2(1, 0.24)
 shape = SubResource("CircleShape2D_7xw75")
