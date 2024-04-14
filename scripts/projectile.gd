@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if not alive: return
 	if not body is Mob or not player: return
 	var mob : Mob = body as Mob
 	player.add_experience(mob.take_damage(damage));
