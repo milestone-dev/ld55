@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://7gmy857wkjq1"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://7gmy857wkjq1"]
 
 [ext_resource type="Resource" uid="uid://c65bmbitkb7e0" path="res://resources/spells/SUN_B1.tres" id="1_34wse"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_r10lt"]
 [ext_resource type="Texture2D" uid="uid://duj1nlyxrcax6" path="res://assets/sprites/projectile_fireball.png" id="2_8yd0c"]
+[ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="4_bq2g6"]
+[ext_resource type="Texture2D" uid="uid://smthwbtv8xki" path="res://assets/sprites/SUNB2-FLAMEBREATH.png" id="5_w665g"]
 
 [resource]
 script = ExtResource("1_r10lt")
@@ -17,5 +19,7 @@ heal = 0.0
 projectile_texture = ExtResource("2_8yd0c")
 effect_duration = 5.0
 effect_cooldown_max = 0.1
+store_texture = ExtResource("5_w665g")
+store_icon = ExtResource("4_bq2g6")
 projectile_behavior = 1
 effect_area_behavior = 0

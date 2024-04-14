@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://dv0yil1myifhw"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://dv0yil1myifhw"]
 
 [ext_resource type="PackedScene" uid="uid://dv8tsyngxdtoc" path="res://resources/spell_effects/fire ring.tscn" id="1_ewyqh"]
 [ext_resource type="Resource" uid="uid://7gmy857wkjq1" path="res://resources/spells/SUN_B2.tres" id="1_iukkp"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_ivida"]
+[ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="4_om6k0"]
+[ext_resource type="Texture2D" uid="uid://dc4c2o6bxm3rr" path="res://assets/sprites/SUNB3-INFERNO.png" id="5_8e43w"]
 
 [resource]
 script = ExtResource("1_ivida")
@@ -17,5 +19,7 @@ heal = 0.0
 effect = ExtResource("1_ewyqh")
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("5_8e43w")
+store_icon = ExtResource("4_om6k0")
 projectile_behavior = 0
 effect_area_behavior = 2

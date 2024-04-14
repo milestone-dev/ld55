@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://ce0sjfauxjoj2"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://ce0sjfauxjoj2"]
 
 [ext_resource type="Resource" uid="uid://0bj58u5f68vm" path="res://resources/spells/DEC_A2.tres" id="1_cdc4l"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="2_echv7"]
+[ext_resource type="Texture2D" uid="uid://c3hohm0rnhfwt" path="res://assets/sprites/DEC-SYMBOL.png" id="3_axmcf"]
+[ext_resource type="Texture2D" uid="uid://c5h0l6v1gn7y6" path="res://assets/sprites/DECA3-DIMINISH.png" id="4_4cr5k"]
 
 [resource]
 script = ExtResource("2_echv7")
-name = "DIMINISH"
+name = "Diminish"
 code = "A0,B2,B1,C1,C0,B0,B7,B6"
 description = "Shrinks all enemies (kill on collision) for N seconds."
 dependency = ExtResource("1_cdc4l")
@@ -15,5 +17,7 @@ attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("4_4cr5k")
+store_icon = ExtResource("3_axmcf")
 projectile_behavior = 0
 effect_area_behavior = 0

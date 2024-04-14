@@ -1,19 +1,23 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://b0wv6xs81fyrt"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://b0wv6xs81fyrt"]
 
 [ext_resource type="Resource" uid="uid://ulf0sqaoq02m" path="res://resources/spells/GRW_B1.tres" id="1_afwi2"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_fnm7g"]
+[ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="3_xa3b5"]
+[ext_resource type="Texture2D" uid="uid://cen76ewboxbhl" path="res://assets/sprites/GRWB2-HEALTOTEM.png" id="4_76nli"]
 
 [resource]
 script = ExtResource("1_fnm7g")
-name = "HEALING RUNE"
+name = "Life Rune"
 code = "A0,B6,B5,C5,C4"
 description = "Spawns a runsestone with a healing aura around it that persist until XHP has been healed."
 dependency = ExtResource("1_afwi2")
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("4_76nli")
+store_icon = ExtResource("3_xa3b5")
 projectile_behavior = 0
 effect_area_behavior = 0

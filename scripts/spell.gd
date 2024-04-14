@@ -32,6 +32,7 @@ enum SpellEffectAreaBehavior {
 @export var effect_cooldown_max : float = 0.3;
 
 @export var store_texture : Texture;
+@export var store_icon : Texture;
 @export var projectile_behavior : SpellProjectileBehavior;
 @export var effect_area_behavior : SpellEffectAreaBehavior;
 
