@@ -41,6 +41,7 @@ func _ready() -> void:
 	
 func learn_spell(spell: Spell):
 	print("Learned spell", spell)
+	hud.add_message("You learned " + spell.name + "!");
 
 func _process(_delta):
 	if Input.is_action_just_pressed("dev_shop"):
@@ -151,5 +152,5 @@ func take_damage(damage : float):
 	if hp <= 0: die();
 
 func die():
-	prints("die");
+	hud.add_message("You died and lost everything.");
 	get_tree().reload_current_scene()

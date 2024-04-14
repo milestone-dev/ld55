@@ -8,9 +8,7 @@ var mobtypes: Array[Mobtype]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Hello TrollDoom!")
 	for file_name : String in DirAccess.open("res://resources/mobtypes").get_files():
-		print ("Found Mobtype", file_name)
 		mobtypes.push_back(ResourceLoader.load("res://resources/mobtypes/" + file_name));	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,8 +17,10 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("dev_godmode"):
 		player.god_mode = !player.god_mode;
+		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
 	if Input.is_action_just_pressed("dev_allspells"):
-		player.god_mode = !player.god_mode;
+		player.hud.add_message("Learned all spells (not yet implemented)");
+		
 	
 
 func _on_mob_spawn_timer_timeout():

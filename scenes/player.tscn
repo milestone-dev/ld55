@@ -193,7 +193,6 @@ shape = SubResource("CircleShape2D_so115")
 texture_filter = 1
 texture = ExtResource("2_56rh0")
 offset = Vector2(2.08165e-12, 2.08165e-12)
-flip_h = true
 hframes = 8
 vframes = 2
 
