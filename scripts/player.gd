@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 signal level_change
+signal request_pause
+signal request_unpause
 
 @export var max_hp : float = 100;
 @export var max_speed : float = 8000;
@@ -12,6 +14,7 @@ signal level_change
 @export var sprite : Sprite2D;
 @export var casting_ui : CastingUI;
 @export var hud : HUD;
+@export var shop : Shop
 
 @export var level_experience_requirements = [
 	0,
@@ -31,8 +34,11 @@ signal level_change
 @export var animation_tree : AnimationTree;
 
 var available_spells: Array[Spell];
+var learned_spells: Array[Spell];
 
-var level : int = 3;
+var paused = false;
+
+var level : int = 0; # 0 = Level 1
 var god_mode = false;
 var hp : float = 100;
 var experience : int = 0;
@@ -51,19 +57,16 @@ var current_aoe_effect_spells : Array[SpellTimer]
 
 func _ready() -> void:
 	available_spells.assign(Resources.load_resources("res://resources/spells/"))
-	$CanvasLayer/ShopScreen.spells = available_spells
-	$CanvasLayer/ShopScreen.learn_spell.connect(learn_spell)
+	shop.learn_spell.connect(learn_spell)
+	casting_ui.player = self
 	
 func learn_spell(spell: Spell):
-	print("Learned spell", spell)
+	learned_spells.push_back(spell)
 	hud.add_message("You learned " + spell.name + "!");
-
-func _process(_delta):
-	if Input.is_action_just_pressed("dev_shop"):
-		print ("Opening shop")
-		$CanvasLayer/ShopScreen.visible = !$CanvasLayer/ShopScreen.visible
+	request_unpause.emit()
 	
 func _physics_process(delta):
+	if paused: return;
 	if attack_cooldown > 0: attack_cooldown -= delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if current_single_fire_projectile_spell != null:
@@ -136,7 +139,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in available_spells:
+	for potential_spell : Spell in learned_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
@@ -169,6 +172,8 @@ func level_up():
 	level += 1
 	max_experience = level_experience_requirements[level]
 	level_change.emit()
+	shop.present_spell_choice(available_spells, learned_spells)
+	request_pause.emit()
 
 func take_damage(damage : float):
 	# prints("take damage", damage);

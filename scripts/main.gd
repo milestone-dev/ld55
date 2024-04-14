@@ -1,21 +1,33 @@
 extends Node2D
 
+class_name Main
+
 @export var player : Player
 @export var mob_scene : PackedScene
 @export var max_mobs : int = 25;
 @export var mob_spawn_timer : Timer
+@export var world_entities : Node2D
 
 var mobtypes: Array[Mobtype]
 var levels : Array[Level]
 var current_level : Level;
+
+var paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	levels.assign(Resources.load_resources("res://resources/levels"))
 	mobtypes.assign(Resources.load_resources("res://resources/mobtypes"))
 	current_level = levels[player.level]
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	start_level()
+
+func start_level():
+	player.hud.add_message("Welcome to your TrollDoom!")
+	player.shop.present_spell_choice(player.available_spells, player.learned_spells)
+	toggle_pause(true)
+	
 func _process(_delta):
+	if paused: return;
 	if Input.is_action_just_pressed("dev_restart"):
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("dev_godmode"):
@@ -29,15 +41,17 @@ func _process(_delta):
 		player.hud.add_message("Killing all enemies");
 
 func _on_mob_spawn_timer_timeout():
+	if paused: return;
 	if not mob_scene or not current_level: return
 	if get_tree().get_nodes_in_group("mob").size() > current_level.max_concurrent_mobs - 1: return;
 	mob_spawn_timer.wait_time = current_level.mob_spawn_cooldown
 	var mob = mob_scene.instantiate();
+	mob.main = self;
 	mob.type = current_level.get_mob_type()
 	if not mob.type:
 		push_warning("No valid mob")
 		return;
-	$Objects.add_child(mob);
+	world_entities.add_child(mob);
 	mob.position = _random_new_mob_position()
 	
 func _screen_to_world(pos: Vector2) -> Vector2:
@@ -66,3 +80,13 @@ func _on_player_level_change() -> void:
 
 func win():
 	player.hud.add_message("You win!")
+
+func toggle_pause(pause : bool):
+	paused = pause
+	player.paused = pause
+
+func _on_player_request_pause() -> void:
+	toggle_pause(true)
+
+func _on_player_request_unpause() -> void:
+	toggle_pause(false)

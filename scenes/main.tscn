@@ -1047,11 +1047,12 @@ texture = ExtResource("3_arkel")
 [sub_resource type="TileSet" id="TileSet_2pob0"]
 sources/0 = SubResource("TileSetAtlasSource_ky1vt")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "mob_spawn_timer")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "mob_spawn_timer", "world_entities")]
 script = ExtResource("1_ppxc1")
-player = NodePath("Objects/Player")
+player = NodePath("WorldEntities/Player")
 mob_scene = ExtResource("4_qe38e")
 mob_spawn_timer = NodePath("MobSpawnTimer")
+world_entities = NodePath("WorldEntities")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -1064,10 +1065,10 @@ layer_0/tile_data = PackedInt32Array(1114126, 262144, 7, 1114127, 196608, 10, 11
 wait_time = 0.1
 autostart = true
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="WorldEntities" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Objects" instance=ExtResource("3_ft68t")]
+[node name="Player" parent="WorldEntities" instance=ExtResource("3_ft68t")]
 
 [node name="WorldObjects" type="Node2D" parent="."]
 
@@ -1081,4 +1082,6 @@ position = Vector2(-153, 50)
 position = Vector2(-156, 7)
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
-[connection signal="level_change" from="Objects/Player" to="." method="_on_player_level_change"]
+[connection signal="level_change" from="WorldEntities/Player" to="." method="_on_player_level_change"]
+[connection signal="request_pause" from="WorldEntities/Player" to="." method="_on_player_request_pause"]
+[connection signal="request_unpause" from="WorldEntities/Player" to="." method="_on_player_request_unpause"]

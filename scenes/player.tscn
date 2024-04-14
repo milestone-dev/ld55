@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
 [ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectile.tscn" id="2_oojk5"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
-[ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop/shop_screen.tscn" id="6_qtx7u"]
+[ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop_screen.tscn" id="6_3tdcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 16.0
@@ -263,7 +263,7 @@ fill = 1
 fill_from = Vector2(0.50641, 0.521368)
 fill_to = Vector2(0.980769, 0.307692)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "hud", "animation_tree") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "hud", "shop", "animation_tree") groups=["player"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bb4be")
@@ -271,6 +271,7 @@ camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
 casting_ui = NodePath("CanvasLayer/CastingUI")
 hud = NodePath("CanvasLayer/HUD")
+shop = NodePath("CanvasLayer/ShopScreen")
 projectile_scene = ExtResource("2_oojk5")
 animation_tree = NodePath("BaseSprite/AnimationTree")
 
@@ -336,7 +337,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_gmqsp")
 
-[node name="CastingUI" parent="CanvasLayer" instance=ExtResource("2_6xmc5")]
+[node name="CastingUI" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("2_6xmc5")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -348,10 +349,11 @@ offset_right = -128.0
 offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
+player = NodePath("../..")
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("4_n0tr4")]
 
-[node name="ShopScreen" parent="CanvasLayer" instance=ExtResource("6_qtx7u")]
+[node name="ShopScreen" parent="CanvasLayer" instance=ExtResource("6_3tdcy")]
 visible = false
 
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

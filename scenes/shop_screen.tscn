@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp65vrskbyisf"]
+[gd_scene load_steps=8 format=3 uid="uid://cp65vrskbyisf"]
 
 [ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_me7ng"]
 [ext_resource type="Texture2D" uid="uid://di8fdpey0p4nb" path="res://assets/sprites/runestone-background.png" id="2_vl7mx"]
-[ext_resource type="PackedScene" uid="uid://hkkcjdvjfhw2" path="res://scenes/shop/shop_card.tscn" id="3_mxxjf"]
 [ext_resource type="Texture2D" uid="uid://djmewuglfoonj" path="res://assets/sprites/runestone-1.png" id="3_wcmj2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7eooo"]
@@ -29,6 +28,7 @@ spell_button_2 = NodePath("SpellRune2/SpellButton2")
 spell_button_3 = NodePath("SpellRune3/SpellButton3")
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -140,30 +140,6 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 32
 text = "Spell Name"
 flat = true
-
-[node name="Items" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 138.0
-offset_right = -2.0
-offset_bottom = -165.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 100
-alignment = 1
-
-[node name="ShopCard1" parent="Items" instance=ExtResource("3_mxxjf")]
-layout_mode = 2
-
-[node name="ShopCard2" parent="Items" instance=ExtResource("3_mxxjf")]
-layout_mode = 2
-
-[node name="ShopCard3" parent="Items" instance=ExtResource("3_mxxjf")]
-layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 1

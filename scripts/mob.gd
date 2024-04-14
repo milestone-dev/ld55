@@ -10,6 +10,8 @@ var hp = 0;
 var attack_cooldown = 0;
 
 var player_target : Player;
+var main : Main;
+
 func _ready():
 	if not type or not get_tree(): return
 	$Sprite2D.texture = type.sprite
@@ -20,6 +22,7 @@ func _ready():
 	scale = Vector2(type.scale,type.scale)
 
 func _physics_process(delta):
+	if main.paused: return;
 	if not is_inside_tree(): return
 	if not type: return
 	if not player_target:
