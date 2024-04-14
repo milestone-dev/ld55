@@ -26,6 +26,7 @@ func _init(input_player: Player, input_spell:Spell) -> void:
 func update(delta:float) -> bool:
 	match spell.projectile_behavior:
 		Spell.SpellProjectileBehavior.ADD_TIMED:
+			prints(spell.name, "processing aoe timed")
 			effect_timer -= delta
 			if effect_timer <= 0:
 				if area_of_effect_node: area_of_effect_node.queue_free()
@@ -44,7 +45,10 @@ func update(delta:float) -> bool:
 				if area_of_effect_node: area_of_effect_node.queue_free()
 				return true;
 			elif effect_cooldown <= 0:
-				print("aoe hit")
+				effect_cooldown = spell.effect_cooldown_max;
+				for mob : Mob in player.get_tree().get_nodes_in_group("mob"):
+					if area_of_effect_node.global_position.distance_to(mob.global_position) < spell.attack_range:
+						player.add_experience(mob.take_damage(spell.attack_damage))
 			elif effect_cooldown > 0:
 				effect_cooldown -= delta
 	return false;

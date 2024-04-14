@@ -81,6 +81,9 @@ func _physics_process(delta):
 	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
 		if projectile_spell_timer.update(delta): current_timed_projectile_spells.erase(projectile_spell_timer)
 	
+	for aoe_spell_timer : SpellTimer in current_aoe_effect_spells:
+		if aoe_spell_timer.update(delta): current_aoe_effect_spells.erase(aoe_spell_timer)
+	
 	for area_spell_timer : SpellTimer in current_aoe_effect_spells:
 		if area_spell_timer.update(delta): current_aoe_effect_spells.erase(area_spell_timer)
 	
@@ -140,7 +143,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in learned_spells:
+	for potential_spell : Spell in available_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
@@ -158,6 +161,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 				if position.distance_to(mob.position) < spell.attack_range:
 					add_experience(mob.take_damage(spell.attack_damage))
 		Spell.SpellEffectAreaBehavior.TIMED:
+			print ("hej")
 			current_aoe_effect_spells.push_back(SpellTimer.new(self, spell))
 	
 	match spell.projectile_behavior:
