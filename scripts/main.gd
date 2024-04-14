@@ -34,7 +34,7 @@ func _on_mob_spawn_timer_timeout():
 	if not mob.type:
 		push_warning("No valid mob")
 		return;
-	add_child(mob);
+	$Objects.add_child(mob);
 	mob.position = _random_new_mob_position()
 	
 func _screen_to_world(pos: Vector2) -> Vector2:

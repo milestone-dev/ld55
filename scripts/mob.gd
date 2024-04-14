@@ -41,7 +41,6 @@ func _physics_process(delta):
 	animation_tree.set("parameters/Walk/blend_position", velocity.x);
 	animation_tree.set("parameters/Die/blend_position", velocity.x);
 	move_and_slide()
-	z_index = position.y
 
 func take_damage(damage : float) -> int:
 	hp -= damage;
