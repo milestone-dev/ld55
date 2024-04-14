@@ -24,7 +24,11 @@ enum SpellEffectAreaBehavior {
 @export var attack_damage : float = 10;
 @export var attack_range : float = 32;
 @export var heal : float = 0;
-@export var effect: PackedScene
+
+# Effect to spawn at cast location
+@export var hit_effect: PackedScene
+
+
 
 @export var projectile_texture : Texture2D
 
