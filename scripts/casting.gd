@@ -53,6 +53,7 @@ func _process(_delta):
 		reset_nodes();
 		visible = false;
 		Global.speed_factor = 1
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
 	if is_holding_activation_key and not active:
 		visible = true;
@@ -65,6 +66,7 @@ func _process(_delta):
 		draw_line_to_node(first_node, false) #and one for the mouse pointer		
 		active = true;
 		Global.speed_factor = 0.2
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	if active:
 		Global.speed_factor = 0.2
