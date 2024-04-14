@@ -74,10 +74,12 @@ func _physics_process(delta):
 	Global.time_survived += delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Global.speed_factor == 1:
 		if current_single_fire_projectile_spell != null:
+			$AttackStreamPlayer.play()
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
 			attack_cooldown = attack_cooldown_max
 		elif base_attack_spell and attack_cooldown <= 0:
+			$AttackStreamPlayer.play()
 			shoot_projectile(base_attack_spell);
 			attack_cooldown = attack_cooldown_max
 			
