@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsuajf7jgeb52"]
+[gd_scene load_steps=8 format=3 uid="uid://bsuajf7jgeb52"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ppxc1"]
 [ext_resource type="Texture2D" uid="uid://dnwn3hf12nt7" path="res://assets/tilemap/ground-tilemap.png" id="3_arkel"]
 [ext_resource type="PackedScene" uid="uid://de8jmpdoukjsq" path="res://scenes/player.tscn" id="3_ft68t"]
 [ext_resource type="PackedScene" uid="uid://fx4257b48mvr" path="res://scenes/mob.tscn" id="4_qe38e"]
+[ext_resource type="PackedScene" uid="uid://8igsjconudkf" path="res://scenes/doodads/tree_1.tscn" id="5_uofs7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ky1vt"]
 texture = ExtResource("3_arkel")
@@ -1068,5 +1069,10 @@ wait_time = 0.1
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_ft68t")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Doodad" parent="." instance=ExtResource("5_uofs7")]
+position = Vector2(-14, -74)
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
