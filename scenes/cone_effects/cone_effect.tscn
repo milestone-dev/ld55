@@ -22,6 +22,7 @@ scale_curve = SubResource("CurveTexture_q2dro")
 [node name="ConeEffect" type="Node2D" node_paths=PackedStringArray("collider")]
 script = ExtResource("1_bsa2r")
 collider = NodePath("Area2D")
+look_at_pointer = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -33,3 +34,4 @@ material = ExtResource("2_novee")
 amount = 35
 process_material = SubResource("ParticleProcessMaterial_816vh")
 randomness = 0.6
+local_coords = true
