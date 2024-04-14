@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://blnvvm8f071dv"]
+[gd_scene load_steps=22 format=3 uid="uid://blnvvm8f071dv"]
 
 [ext_resource type="Script" path="res://scripts/casting.gd" id="1_0enga"]
 [ext_resource type="Texture2D" uid="uid://vg6sdt34jcyw" path="res://assets/sprites/Trolltrumma-blank.png" id="2_u3fis"]
@@ -21,10 +21,6 @@
 [ext_resource type="AudioStream" uid="uid://cqbvw5sg3egca" path="res://assets/audio/sfx/DRUM15.ogg" id="19_ogir0"]
 [ext_resource type="AudioStream" uid="uid://uo3xnqrmj4wr" path="res://assets/audio/sfx/DRUM16.ogg" id="20_pyrhe"]
 [ext_resource type="Texture2D" uid="uid://bdtkat6fvtmf1" path="res://assets/sprites/GUIDE_DECA1.png" id="21_ralcp"]
-
-[sub_resource type="Curve" id="Curve_l25wa"]
-_data = [Vector2(0, 1), 0.0, -0.14947, 0, 0, Vector2(1, 0.3962), -1.03478, 0.0, 0, 0]
-point_count = 2
 
 [node name="CastingUI" type="Control" node_paths=PackedStringArray("node_container", "line", "first_node", "hint_runes")]
 layout_mode = 3
@@ -403,7 +399,6 @@ stream = ExtResource("20_pyrhe")
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(3, 3)
 width = 9.0
-width_curve = SubResource("Curve_l25wa")
 joint_mode = 1
 begin_cap_mode = 2
 end_cap_mode = 2
