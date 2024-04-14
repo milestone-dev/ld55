@@ -2,25 +2,48 @@ extends Sprite2D
 class_name Projectile
 
 @export var area : Area2D
+@export var align_rotation = true
+@export_category("Particle Effect")
+@export var particle_effect : GPUParticles2D
+@export var align_particles_rotation: bool = false
+
 var damage : float
 var player : Player
 var velocity : Vector2
 var speed : float = 400;
-var hits : int = 3;
+var hits : int = 1;
 var age: float;
+var alive = true
 
 func _ready() -> void:
-	look_at(position + velocity)
+	if align_rotation:
+		look_at(position + velocity)
+	if particle_effect:
+		particle_effect.emitting = true
+		if align_particles_rotation:
+			var mat = particle_effect.process_material as ParticleProcessMaterial
+			mat.angle_max = 360 - rotation_degrees
+			mat.angle_min = 360 - rotation_degrees
 
 func _process(delta: float) -> void:
-	position += velocity * (speed * Global.speed_factor) * delta
+	if alive:
+		position += velocity * (speed * Global.speed_factor) * delta
+		
 	age += delta;
 	if age > 10:
 		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if not alive: return
 	if not body is Mob or not player: return
 	var mob : Mob = body as Mob
 	player.add_experience(mob.take_damage(damage));
 	hits-=1
-	if hits <= 0: queue_free()
+	if hits <= 0: stop()
+	
+func stop():
+	alive = false
+	if particle_effect:
+		particle_effect.emitting = false
+	texture = null
+	
