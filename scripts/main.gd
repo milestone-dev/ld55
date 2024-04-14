@@ -10,10 +10,8 @@ var current_level : Level;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for file_name : String in DirAccess.open("res://resources/levels").get_files():
-		levels.push_back(ResourceLoader.load("res://resources/levels/" + file_name));
-	for file_name : String in DirAccess.open("res://resources/mobtypes").get_files():
-		mobtypes.push_back(ResourceLoader.load("res://resources/mobtypes/" + file_name));
+	levels.assign(Resources.load_resources("res://resources/levels"))
+	mobtypes.assign(Resources.load_resources("res://resources/mobtypes"))
 	current_level = levels[0]
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,13 +25,12 @@ func _process(_delta):
 		player.hud.add_message("Learned all spells (not yet implemented)");
 
 func _on_mob_spawn_timer_timeout():
-	#print("spawn mob");	
 	if get_tree().get_nodes_in_group("mob").size() > max_mobs - 1: return;
 	if not mob_scene: return
 	var mob = mob_scene.instantiate();
 	mob.type = mobtypes.pick_random()
-	mob.position = _random_new_mob_position()
 	add_child(mob);
+	mob.position = _random_new_mob_position()
 	
 func _screen_to_world(pos: Vector2) -> Vector2:
 	return player.camera.get_global_transform_with_canvas().affine_inverse().basis_xform(pos)

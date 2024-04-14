@@ -10,8 +10,8 @@ var hp = 0;
 var attack_cooldown = 0;
 
 var player_target : Player;
-
 func _ready():
+	if not type or not get_tree(): return
 	$Sprite2D.texture = type.sprite
 	player_target = get_tree().get_nodes_in_group("player")[0];
 	hp = type.max_hp
@@ -21,6 +21,11 @@ func _ready():
 
 func _physics_process(delta):
 	if not get_tree(): return
+	if not type: return
+	if not player_target:
+		player_target = get_tree().get_nodes_in_group("player")[0];
+		if not player_target: return
+
 	if !alive: return
 	if position.distance_to(player_target.position) < type.attack_range:
 		if attack_cooldown <= 0:

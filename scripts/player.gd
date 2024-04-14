@@ -34,8 +34,7 @@ var current_aoe_effect_spells : Array[SpellTimer]
 # single-fire AOE happens immediately and don't need tracking
 
 func _ready() -> void:
-	for file_name : String in DirAccess.open("res://resources/spells").get_files():
-		available_spells.push_back(ResourceLoader.load("res://resources/spells/" + file_name));
+	available_spells.assign(Resources.load_resources("res://resources/spells/"))
 	$CanvasLayer/ShopScreen.spells = available_spells
 	$CanvasLayer/ShopScreen.learn_spell.connect(learn_spell)
 	
