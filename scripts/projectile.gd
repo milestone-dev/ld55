@@ -7,7 +7,7 @@ class_name Projectile
 @export var particle_effect : GPUParticles2D
 @export var align_particles_rotation: bool = false
 
-var damage : float
+var spell: Spell
 var player : Player
 var velocity : Vector2
 var speed : float = 400;
@@ -37,7 +37,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not alive: return
 	if not body is Mob or not player: return
 	var mob : Mob = body as Mob
-	player.add_experience(mob.take_damage(damage));
+	player.add_experience(mob.take_damage(spell.attack_damage));
 	hits-=1
 	if hits <= 0: stop()
 	
