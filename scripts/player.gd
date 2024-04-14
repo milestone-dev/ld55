@@ -27,9 +27,13 @@ signal level_change
 	500000
 ];
 
+@export_category("TrollDOOM")
 @export var projectile_scene : PackedScene;
-
+@export var lose_scene : PackedScene;
+# Fallback if a spell does not define one.
+@export var default_projectile_scene : PackedScene;
 @export var animation_tree : AnimationTree;
+@export var base_attack_spell: Spell;
 
 var available_spells: Array[Spell];
 var learned_spells: Array[Spell];
@@ -69,13 +73,16 @@ func _physics_process(delta):
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
 			attack_cooldown = attack_cooldown_max
-		elif attack_cooldown <= 0:
-			shoot_projectile();
+		elif base_attack_spell and attack_cooldown <= 0:
+			shoot_projectile(base_attack_spell);
 			attack_cooldown = attack_cooldown_max
 			
 	# process timers
 	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
 		if projectile_spell_timer.update(delta): current_timed_projectile_spells.erase(projectile_spell_timer)
+	
+	for aoe_spell_timer : SpellTimer in current_aoe_effect_spells:
+		if aoe_spell_timer.update(delta): current_aoe_effect_spells.erase(aoe_spell_timer)
 	
 	for area_spell_timer : SpellTimer in current_aoe_effect_spells:
 		if area_spell_timer.update(delta): current_aoe_effect_spells.erase(area_spell_timer)
@@ -114,19 +121,19 @@ func _physics_process(delta):
 		velocity *= Global.speed_factor
 		move_and_slide()
 
-func shoot_projectile(projectile_spell : Spell = null, random_direction = false):
+func shoot_projectile(projectile_spell : Spell, random_direction = false):
+	assert(projectile_spell, "You forgot to supply the spell")
 	$DrumSprite/AnimationPlayer.play("attack")
 	
-	var proj = projectile_scene.instantiate() as Projectile
+	var proj_prefab = default_projectile_scene
+	if projectile_spell.projectile_scene:
+		proj_prefab = projectile_spell.projectile_scene
+	var proj = proj_prefab.instantiate() as Projectile
 	proj.player = self;
+	proj.spell = projectile_spell
 	proj.position = position
 	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
 	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
-	if projectile_spell:
-		proj.damage = projectile_spell.attack_damage
-		proj.texture = projectile_spell.projectile_texture
-	else:
-		proj.damage = default_attack_damage
 		
 	get_parent().add_child(proj)
 	
@@ -136,7 +143,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in learned_spells:
+	for potential_spell : Spell in available_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
@@ -145,17 +152,25 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		hud.add_message("No spell or spell not known");
 		return
 	
-	if spell.effect_area_behavior == Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
-		if spell.effect:
-			var effect = spell.effect.instantiate()
-			add_child(effect)
-		for mob : Mob in get_tree().get_nodes_in_group("mob"):
-			if position.distance_to(mob.position) < spell.attack_range:
-				add_experience(mob.take_damage(spell.attack_damage))
-	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.SINGLE_FIRE:
-		current_single_fire_projectile_spell = spell
-	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.ADD_TIMED:
-		current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
+	match spell.effect_area_behavior:
+		Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
+			if spell.effect:
+				var effect = spell.effect.instantiate()
+				add_child(effect)
+			for mob : Mob in get_tree().get_nodes_in_group("mob"):
+				if position.distance_to(mob.position) < spell.attack_range:
+					add_experience(mob.take_damage(spell.attack_damage))
+		Spell.SpellEffectAreaBehavior.TIMED:
+			print ("hej")
+			current_aoe_effect_spells.push_back(SpellTimer.new(self, spell))
+	
+	match spell.projectile_behavior:
+		Spell.SpellProjectileBehavior.ADD_TIMED:
+			current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
+		Spell.SpellProjectileBehavior.REPLACE_TIMED:
+			pass
+		Spell.SpellProjectileBehavior.SINGLE_FIRE:
+			current_single_fire_projectile_spell = spell
 		
 	hud.add_message("Casting spell " + spell.name);
 
@@ -186,5 +201,4 @@ func flash_damage():
 	modulate = Color.WHITE
 
 func die():
-	hud.add_message("You died and lost everything.");
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_packed(lose_scene)

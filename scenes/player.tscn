@@ -1,11 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://de8jmpdoukjsq"]
+[gd_scene load_steps=40 format=3 uid="uid://de8jmpdoukjsq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bb4be"]
 [ext_resource type="PackedScene" uid="uid://blnvvm8f071dv" path="res://scenes/casting_ui.tscn" id="2_6xmc5"]
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
-[ext_resource type="PackedScene" uid="uid://dwstw7delvn03" path="res://scenes/projectiles/base_drum_shot.tscn" id="2_h1l85"]
+[ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectiles/template.tscn" id="2_r1x5o"]
+[ext_resource type="PackedScene" uid="uid://cylxgd1if3n0t" path="res://scenes/death.tscn" id="3_2ceeo"]
+[ext_resource type="Resource" uid="uid://c65bmbitkb7e0" path="res://resources/spells/SUN_B1.tres" id="3_sq18q"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
-[ext_resource type="PackedScene" path="res://scenes/shop_screen.tscn" id="6_3tdcy"]
+[ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop_screen.tscn" id="6_3tdcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 16.0
@@ -272,8 +274,10 @@ sprite = NodePath("BaseSprite")
 casting_ui = NodePath("CanvasLayer/CastingUI")
 hud = NodePath("CanvasLayer/HUD")
 shop = NodePath("CanvasLayer/ShopScreen")
-projectile_scene = ExtResource("2_h1l85")
+lose_scene = ExtResource("3_2ceeo")
+default_projectile_scene = ExtResource("2_r1x5o")
 animation_tree = NodePath("BaseSprite/AnimationTree")
+base_attack_spell = ExtResource("3_sq18q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_so115")

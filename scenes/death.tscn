@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bggn170n3w2tj"]
+[gd_scene load_steps=7 format=3 uid="uid://cylxgd1if3n0t"]
 
-[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_uxvvf"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6iubc"]
 [ext_resource type="Texture2D" uid="uid://dvnljqtpw3nu3" path="res://assets/sprites/death.png" id="2_3y3ax"]
 [ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_efm23"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="4_eo6d7"]
@@ -10,15 +10,14 @@ bg_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
-[node name="Death" type="Panel" node_paths=PackedStringArray("spell_button_1")]
+[node name="Death" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
-script = ExtResource("1_uxvvf")
-spell_button_1 = NodePath("DeathBackground/Button/TryAgainButton")
+script = ExtResource("1_6iubc")
 
 [node name="DeathBackground" type="TextureRect" parent="."]
 texture_filter = 1
@@ -77,4 +76,4 @@ bbcode_enabled = true
 text = "[center]You died."
 fit_content = true
 
-[connection signal="pressed" from="DeathBackground/Button/TryAgainButton" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="DeathBackground/Button/TryAgainButton" to="." method="_on_try_again_button_pressed"]

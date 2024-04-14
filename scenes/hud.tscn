@@ -6,7 +6,7 @@
 
 [sub_resource type="Theme" id="Theme_ea0ub"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label", "log_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ script = ExtResource("1_w35my")
 hp_bar = NodePath("HPProgressBar")
 exp_bar = NodePath("EXPProgressBar")
 label = NodePath("Label")
+log_container = NodePath("VBoxContainer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

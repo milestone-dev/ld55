@@ -29,8 +29,9 @@ enum SpellEffectAreaBehavior {
 @export var hit_effect: PackedScene
 
 
-
-@export var projectile_texture : Texture2D
+@export var projectile_scene: PackedScene
+@export var area_of_effect_scene: PackedScene
+@export var area_of_effect_on_player : = true;
 
 @export var effect_duration : float = 1;
 @export var effect_cooldown_max : float = 0.3;
