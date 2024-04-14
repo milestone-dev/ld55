@@ -46,6 +46,11 @@ func _process(_delta):
 		for mob :Mob in get_tree().get_nodes_in_group("mob"):
 			player.add_experience(mob.take_damage(100000))
 		player.hud.add_message("Killing all enemies");
+		
+	for mob : Mob in get_tree().get_nodes_in_group("mob"):
+		if mob.global_position.distance_to(player.global_position) > 640:
+			var pos = mob.position
+			mob.position = _random_new_mob_position()
 
 func _on_mob_spawn_timer_timeout():
 	if paused: return;
