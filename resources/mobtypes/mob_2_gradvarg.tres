@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_0kfam")
-max_hp = 100
-speed = 1000
-attack_damage = 5
-attack_cooldown_max = 0.3
+max_hp = 50
+speed = 2000
+attack_damage = 15
+attack_cooldown_max = 0.5
 attack_range = 8
 experience = 16
 sprite = ExtResource("2_rxray")

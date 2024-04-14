@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_cweo1")
-max_hp = 100
-speed = 6000
-attack_damage = 5
+max_hp = 75
+speed = 3500
+attack_damage = 10
 attack_cooldown_max = 0.3
 attack_range = 8
 experience = 15
