@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://ulf0sqaoq02m"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://ulf0sqaoq02m"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_s6nbc"]
 [ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="2_ilini"]
+[ext_resource type="Texture2D" uid="uid://bmo0ubs7s0sy3" path="res://assets/sprites/GUIDE_GRWB1.png" id="2_v2mni"]
 [ext_resource type="Texture2D" uid="uid://d2lmfodow7tyg" path="res://assets/sprites/GRWB1-HEAL.png" id="3_l54ye"]
 
 [resource]
@@ -13,9 +14,11 @@ weight = 1.0
 attack_damage = 10.0
 attack_range = 32.0
 heal = 0.0
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("3_l54ye")
 store_icon = ExtResource("2_ilini")
+spell_guide = ExtResource("2_v2mni")
 projectile_behavior = 0
 effect_area_behavior = 0

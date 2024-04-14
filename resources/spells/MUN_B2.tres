@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://dt2q0hjoocd36"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://dt2q0hjoocd36"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_svg6y"]
 [ext_resource type="Resource" uid="uid://yffggirdq2uf" path="res://resources/spells/MUN_B1.tres" id="1_txihh"]
 [ext_resource type="Texture2D" uid="uid://dpdoip06ob4gx" path="res://assets/sprites/MUN-SYMBOL.png" id="3_m5nhh"]
+[ext_resource type="Texture2D" uid="uid://bxkfa145l7w2r" path="res://assets/sprites/GUIDE_MUNB2.png" id="3_wvc0l"]
 [ext_resource type="Texture2D" uid="uid://bqah8sdmu03yt" path="res://assets/sprites/MUNB2-NOXIOUSFUMES.png" id="4_isbmh"]
 
 [resource]
@@ -15,9 +16,11 @@ weight = 1.0
 attack_damage = 10.0
 attack_range = 32.0
 heal = 0.0
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("4_isbmh")
 store_icon = ExtResource("3_m5nhh")
+spell_guide = ExtResource("3_wvc0l")
 projectile_behavior = 0
 effect_area_behavior = 0

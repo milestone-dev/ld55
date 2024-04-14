@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://b51nfgtbrtvdt"]
 
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_wsw6w"]
-[ext_resource type="Texture2D" uid="uid://brr25pyed7l4d" path="res://assets/sprites/troll.png" id="2_it75q"]
+[ext_resource type="Texture2D" uid="uid://b0dtpoo67dll8" path="res://assets/sprites/NMY-TROLLKING-Sheet.png" id="2_cksbt"]
 
 [resource]
 script = ExtResource("1_wsw6w")
-max_hp = 5000
-speed = 2000
-attack_damage = 500
-attack_cooldown_max = 1.0
+max_hp = 600
+speed = 600
+attack_damage = 150
+attack_cooldown_max = 0.5
 attack_range = 8
 experience = 200
-sprite = ExtResource("2_it75q")
-color = Color(1, 1, 0.0862745, 1)
+sprite = ExtResource("2_cksbt")
+color = Color(1, 1, 1, 1)
 scale = 3.0
 animation_speed = 0.2

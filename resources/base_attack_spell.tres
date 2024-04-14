@@ -7,14 +7,15 @@
 
 [resource]
 script = ExtResource("1_828gq")
-name = "Quickfire"
-code = "A0,B2,B1"
-description = "Replace projectile with fast firing fire projectiles for N seconds"
+name = "Base attack"
+code = ""
+description = "Default"
 weight = 1.0
-attack_damage = 1000.0
+attack_damage = 30.0
 attack_range = 32.0
 heal = 0.0
 projectile_scene = ExtResource("1_ijnos")
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("3_ukdst")

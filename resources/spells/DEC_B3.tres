@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://cbapa4do5jt2s"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://cbapa4do5jt2s"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_i8myd"]
 [ext_resource type="Resource" uid="uid://d0af2o00nrx7u" path="res://resources/spells/DEC_B2.tres" id="1_u3pth"]
+[ext_resource type="Texture2D" uid="uid://dw8b2w1i415jk" path="res://assets/sprites/GUIDE_DECB3.png" id="3_ta21c"]
 [ext_resource type="Texture2D" uid="uid://c3hohm0rnhfwt" path="res://assets/sprites/DEC-SYMBOL.png" id="3_tahpo"]
 [ext_resource type="Texture2D" uid="uid://bysrf0xfwcnqu" path="res://assets/sprites/DECB3-LUNACY.png" id="4_pldou"]
 
@@ -15,9 +16,11 @@ weight = 1.0
 attack_damage = 10.0
 attack_range = 32.0
 heal = 0.0
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("4_pldou")
 store_icon = ExtResource("3_tahpo")
+spell_guide = ExtResource("3_ta21c")
 projectile_behavior = 0
 effect_area_behavior = 0

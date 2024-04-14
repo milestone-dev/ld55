@@ -38,6 +38,7 @@ enum SpellEffectAreaBehavior {
 
 @export var store_texture : Texture;
 @export var store_icon : Texture;
+@export var spell_guide : Texture;
 @export var projectile_behavior : SpellProjectileBehavior;
 @export var effect_area_behavior : SpellEffectAreaBehavior;
 

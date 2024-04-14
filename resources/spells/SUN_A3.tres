@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://dkaenvqd42rtv"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://dkaenvqd42rtv"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_jym3g"]
 [ext_resource type="Resource" uid="uid://c65gqgq7ub3hd" path="res://resources/spells/SUN_A2.tres" id="1_w6wrn"]
+[ext_resource type="Texture2D" uid="uid://vbq2cx2ehx2v" path="res://assets/sprites/GUIDE_SUNA3.png" id="3_0pj0v"]
 [ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="3_8jbh7"]
 [ext_resource type="Texture2D" uid="uid://5c6gagym4dip" path="res://assets/sprites/SUNA3-NORTHERNLIGHTS.png" id="4_xa4yr"]
 
@@ -15,9 +16,11 @@ weight = 1.0
 attack_damage = 10.0
 attack_range = 32.0
 heal = 0.0
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("4_xa4yr")
 store_icon = ExtResource("3_8jbh7")
+spell_guide = ExtResource("3_0pj0v")
 projectile_behavior = 0
 effect_area_behavior = 0
