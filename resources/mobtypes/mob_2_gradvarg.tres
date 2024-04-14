@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://vn0kr4krmowu"]
+[gd_resource type="Resource" script_class="Mobtype" load_steps=6 format=3 uid="uid://vn0kr4krmowu"]
 
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_0kfam"]
+[ext_resource type="AudioStream" uid="uid://dqqvl8cofqbp2" path="res://assets/audio/sfx/mob/SFX_NMNY_GRADVARG1.ogg" id="1_dbd8e"]
+[ext_resource type="AudioStream" uid="uid://c2x4c0el4gtsj" path="res://assets/audio/sfx/mob/SFX_NMNY_GRADVARG2.ogg" id="2_go3dd"]
 [ext_resource type="Texture2D" uid="uid://dqxlbdf7d7n4w" path="res://assets/sprites/NMY-Gradvarg-Sheet.png" id="2_rxray"]
+[ext_resource type="AudioStream" uid="uid://dg3dp14lapl5p" path="res://assets/audio/sfx/mob/SFX_NMNY_GRADVARG3.ogg" id="3_ieeee"]
 
 [resource]
 script = ExtResource("1_0kfam")
@@ -15,3 +18,4 @@ sprite = ExtResource("2_rxray")
 color = Color(1, 1, 1, 1)
 scale = 1.0
 animation_speed = 1.0
+mob_sfx = Array[AudioStream]([ExtResource("1_dbd8e"), ExtResource("2_go3dd"), ExtResource("3_ieeee")])
