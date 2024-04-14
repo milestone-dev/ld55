@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx5qrddc02qh6"]
+
+[ext_resource type="Script" path="res://scenes/cone_effects/cone_effect.gd" id="1_bsa2r"]
+[ext_resource type="Material" uid="uid://b2isolwqwqvb7" path="res://shaders/fire_ball.tres" id="2_novee"]
+
+[sub_resource type="Curve" id="Curve_e7p52"]
+_data = [Vector2(0.00381679, 0.0229431), 0.0, 0.0, 0, 0, Vector2(0.221374, 0.660601), 2.33534, 2.33534, 0, 0, Vector2(0.603053, 0.835443), 0.0, 0.0, 0, 0, Vector2(0.977099, 0.547468), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_q2dro"]
+curve = SubResource("Curve_e7p52")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_816vh"]
+particle_flag_disable_z = true
+spread = 24.6555
+initial_velocity_min = 124.14
+initial_velocity_max = 124.14
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+scale_max = 76.86
+scale_curve = SubResource("CurveTexture_q2dro")
+
+[node name="ConeEffect" type="Node2D"]
+script = ExtResource("1_bsa2r")
+angle = 49.311
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(2, 4, 90.8832, 41.7161, 90.8832, -41.7161, 2, -3)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = ExtResource("2_novee")
+amount = 35
+process_material = SubResource("ParticleProcessMaterial_816vh")
+randomness = 0.6
