@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Mobtype" load_steps=4 format=3 uid="uid://civxbl4pyvcnd"]
+[gd_resource type="Resource" script_class="Mobtype" load_steps=6 format=3 uid="uid://civxbl4pyvcnd"]
 
 [ext_resource type="AudioStream" uid="uid://5nabagq1rumx" path="res://assets/audio/sfx/mob/SFX_NMY_VITTRA1.ogg" id="1_1xjg8"]
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_20pmk"]
 [ext_resource type="Texture2D" uid="uid://bd1dveiihl6g0" path="res://assets/sprites/NMY-VITTRA-Sheet.png" id="2_es0np"]
+[ext_resource type="AudioStream" uid="uid://bmlebuk7e2yjo" path="res://assets/audio/sfx/mob/SFX_NMY_VITTRA2.ogg" id="2_ymimq"]
+[ext_resource type="AudioStream" uid="uid://bm7nqlt4834ru" path="res://assets/audio/sfx/mob/SFX_NMY_VITTRA3.ogg" id="3_ahitv"]
 
 [resource]
 script = ExtResource("1_20pmk")
@@ -16,4 +18,4 @@ sprite = ExtResource("2_es0np")
 color = Color(1, 1, 1, 1)
 scale = 1.0
 animation_speed = 1.0
-mob_sfx = Array[AudioStream]([ExtResource("1_1xjg8")])
+mob_sfx = Array[AudioStream]([ExtResource("1_1xjg8"), ExtResource("2_ymimq"), ExtResource("3_ahitv")])

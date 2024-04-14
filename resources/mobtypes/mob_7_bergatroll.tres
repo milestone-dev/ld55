@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Mobtype" load_steps=3 format=3 uid="uid://b51nfgtbrtvdt"]
+[gd_resource type="Resource" script_class="Mobtype" load_steps=6 format=3 uid="uid://b51nfgtbrtvdt"]
 
+[ext_resource type="AudioStream" uid="uid://b03rkclhymi6o" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLLKING1.ogg" id="1_qrnw6"]
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_wsw6w"]
 [ext_resource type="Texture2D" uid="uid://b0dtpoo67dll8" path="res://assets/sprites/NMY-TROLLKING-Sheet.png" id="2_cksbt"]
+[ext_resource type="AudioStream" uid="uid://20nkhki6uern" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLLKING2.ogg" id="2_ql2ic"]
+[ext_resource type="AudioStream" uid="uid://5h5mk6qftuq2" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLLKING3.ogg" id="3_5rdfa"]
 
 [resource]
 script = ExtResource("1_wsw6w")
@@ -15,3 +18,4 @@ sprite = ExtResource("2_cksbt")
 color = Color(1, 1, 1, 1)
 scale = 3.0
 animation_speed = 0.2
+mob_sfx = Array[AudioStream]([ExtResource("1_qrnw6"), ExtResource("2_ql2ic"), ExtResource("3_5rdfa")])
