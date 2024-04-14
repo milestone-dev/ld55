@@ -46,9 +46,15 @@ func update(delta:float) -> bool:
 				return true;
 			elif effect_cooldown <= 0:
 				effect_cooldown = spell.effect_cooldown_max;
-				for mob : Mob in player.get_tree().get_nodes_in_group("mob"):
-					if area_of_effect_node.global_position.distance_to(mob.global_position) < spell.attack_range:
-						player.add_experience(mob.take_damage(spell.attack_damage))
+				if area_of_effect_node.collider:
+					var bodies = area_of_effect_node.collider.get_overlapping_bodies()
+					for mob : Mob in player.get_tree().get_nodes_in_group("mob"):
+						if bodies.has(mob):
+							player.add_experience(mob.take_damage(spell.attack_damage))
+				else:
+					for mob : Mob in player.get_tree().get_nodes_in_group("mob"):
+						if area_of_effect_node.global_position.distance_to(mob.global_position) < spell.attack_range:
+							player.add_experience(mob.take_damage(spell.attack_damage))
 			elif effect_cooldown > 0:
 				effect_cooldown -= delta
 	return false;
