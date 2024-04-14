@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://7gmy857wkjq1"]
+[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://7gmy857wkjq1"]
 
 [ext_resource type="Resource" uid="uid://c65bmbitkb7e0" path="res://resources/spells/destroy_1.tres" id="1_34wse"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_r10lt"]
+[ext_resource type="Texture2D" uid="uid://duj1nlyxrcax6" path="res://assets/sprites/projectile_fireball.png" id="2_8yd0c"]
 
 [resource]
 script = ExtResource("1_r10lt")
@@ -10,10 +11,11 @@ code = "A0,B0,B1,C1,C2"
 description = "Rotating flamethrower for N seconds"
 dependency = ExtResource("1_34wse")
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 50.0
+attack_range = 32.0
 heal = 0.0
-effect_duration = 0.0
-effect_cooldown_max = 0.0
-projectile_behavior = 0
+projectile_texture = ExtResource("2_8yd0c")
+effect_duration = 5.0
+effect_cooldown_max = 0.1
+projectile_behavior = 1
 effect_area_behavior = 0

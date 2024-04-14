@@ -28,8 +28,8 @@ enum SpellEffectAreaBehavior {
 
 @export var projectile_texture : Texture2D
 
-@export var effect_duration : float = 0;
-@export var effect_cooldown_max : float = 0;
+@export var effect_duration : float = 1;
+@export var effect_cooldown_max : float = 0.3;
 
 @export var store_texture : Texture;
 @export var projectile_behavior : SpellProjectileBehavior;

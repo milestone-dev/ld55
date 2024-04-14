@@ -92,9 +92,12 @@ func _physics_process(delta):
 		animation_tree.get("parameters/playback").travel("Walk")
 		animation_tree.set("parameters/Idle/blend_position", velocity.x);
 		animation_tree.set("parameters/Walk/blend_position", velocity.x);
+		$DrumSprite.flip_h = velocity.x < 0
 		move_and_slide()
 
 func shoot_projectile(projectile_spell : Spell = null, random_direction = false):
+	$DrumSprite/AnimationPlayer.play("attack")
+	
 	var proj = projectile_scene.instantiate() as Projectile
 	proj.player = self;
 	proj.position = position
@@ -102,7 +105,7 @@ func shoot_projectile(projectile_spell : Spell = null, random_direction = false)
 	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
 	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
 	if projectile_spell:
-		proj.damage = projectile_spell.damage
+		proj.damage = projectile_spell.attack_damage
 		proj.texture = projectile_spell.projectile_texture
 	else:
 		proj.damage = 50
