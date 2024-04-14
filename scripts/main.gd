@@ -3,6 +3,7 @@ extends Node2D
 @export var player : Player
 @export var mob_scene : PackedScene
 @export var max_mobs : int = 25;
+@export var mob_spawn_timer : Timer
 
 var mobtypes: Array[Mobtype]
 var levels : Array[Level]
@@ -25,10 +26,14 @@ func _process(_delta):
 		player.hud.add_message("Learned all spells (not yet implemented)");
 
 func _on_mob_spawn_timer_timeout():
-	if get_tree().get_nodes_in_group("mob").size() > max_mobs - 1: return;
 	if not mob_scene: return
+	if get_tree().get_nodes_in_group("mob").size() > current_level.max_concurrent_mobs - 1: return;
+	mob_spawn_timer.wait_time = current_level.mob_spawn_cooldown
 	var mob = mob_scene.instantiate();
-	mob.type = mobtypes.pick_random()
+	mob.type = current_level.get_mob_type()
+	if not mob.type:
+		push_warning("No valid mob")
+		return;
 	add_child(mob);
 	mob.position = _random_new_mob_position()
 	
