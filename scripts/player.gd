@@ -120,7 +120,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			break
 			
 	if not spell:
-		prints("No spell for", code)
+		hud.add_message("No spell or spell not known");
 		return
 	
 	if spell.effect_area_behavior == Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
@@ -135,8 +135,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.ADD_TIMED:
 		current_timed_projectile_spells.push_back(SpellTimer.new(self, spell))
 		
-	
-	prints("Casting spell", spell.name)
+	hud.add_message("Casting spell " + spell.name);
 
 func add_experience(input_experience : int):
 	experience += input_experience

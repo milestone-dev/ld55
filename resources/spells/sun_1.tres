@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource("1_xwxar")
-name = "Unnamed spell"
+name = "LIGHT BURST"
 code = "A0,B0,B7"
 description = "1x small aoe burst on click around character"
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
