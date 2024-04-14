@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp65vrskbyisf"]
+[gd_scene load_steps=11 format=3 uid="uid://cp65vrskbyisf"]
 
 [ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_me7ng"]
 [ext_resource type="Texture2D" uid="uid://djmewuglfoonj" path="res://assets/sprites/runestone-1.png" id="3_wcmj2"]
+[ext_resource type="Texture2D" uid="uid://xo0ticspmyxi" path="res://assets/sprites/runestone-2.png" id="4_ffppd"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="4_ga4lh"]
+[ext_resource type="Texture2D" uid="uid://co80aboigjuvs" path="res://assets/sprites/runestone-3.png" id="5_7puqm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
@@ -14,12 +16,10 @@ colors = PackedColorArray(0, 0, 0, 1, 0.0613497, 0.0613497, 0.0613497, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8dp5x"]
 gradient = SubResource("Gradient_so3hv")
-width = 140
-height = 140
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
-[node name="ShopScreen" type="Panel" node_paths=PackedStringArray("spell_texture_1", "spell_texture_2", "spell_texture_3", "spell_button_1", "spell_button_2", "spell_button_3")]
+[node name="ShopScreen" type="Panel" node_paths=PackedStringArray("spell_texture_1", "spell_texture_2", "spell_texture_3", "spell_icon_1", "spell_icon_2", "spell_icon_3", "spell_button_1", "spell_button_2", "spell_button_3", "spell_label_1", "spell_label_2", "spell_label_3")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,9 +30,15 @@ script = ExtResource("1_me7ng")
 spell_texture_1 = NodePath("SpellRune1/SpellPicture1")
 spell_texture_2 = NodePath("SpellRune2/SpellPicture2")
 spell_texture_3 = NodePath("SpellRune3/SpellPicture3")
+spell_icon_1 = NodePath("SpellRune1/SpellIcon1")
+spell_icon_2 = NodePath("SpellRune2/SpellIcon2")
+spell_icon_3 = NodePath("SpellRune3/SpellIcon3")
 spell_button_1 = NodePath("SpellRune1/SpellButton1")
 spell_button_2 = NodePath("SpellRune2/SpellButton2")
 spell_button_3 = NodePath("SpellRune3/SpellButton3")
+spell_label_1 = NodePath("SpellRune1/SpellButton1/SpellLabel1")
+spell_label_2 = NodePath("SpellRune2/SpellButton2/SpellLabel2")
+spell_label_3 = NodePath("SpellRune3/SpellButton3/SpellLabel3")
 
 [node name="SpellRune1" type="TextureRect" parent="."]
 texture_filter = 1
@@ -53,19 +59,43 @@ offset_right = 268.0
 offset_bottom = 340.0
 texture = SubResource("GradientTexture2D_8dp5x")
 
+[node name="SpellIcon1" type="TextureRect" parent="SpellRune1"]
+material = SubResource("CanvasItemMaterial_7eooo")
+layout_mode = 0
+offset_left = 144.0
+offset_top = 72.0
+offset_right = 214.0
+offset_bottom = 142.0
+texture = SubResource("GradientTexture2D_8dp5x")
+expand_mode = 1
+
 [node name="SpellButton1" type="Button" parent="SpellRune1"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 528.0
+offset_top = 16.0
 offset_right = 399.0
-offset_bottom = 592.0
+offset_bottom = 616.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_ga4lh")
 theme_override_font_sizes/font_size = 40
-text = "Spell Name"
 flat = true
+
+[node name="SpellLabel1" type="Label" parent="SpellRune1/SpellButton1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4lh")
+theme_override_font_sizes/font_size = 40
+text = "Spell Name"
+horizontal_alignment = 1
 
 [node name="SpellRune2" type="TextureRect" parent="."]
 texture_filter = 1
@@ -74,7 +104,7 @@ offset_left = 448.0
 offset_top = 120.0
 offset_right = 864.0
 offset_bottom = 619.0
-texture = ExtResource("3_wcmj2")
+texture = ExtResource("4_ffppd")
 
 [node name="SpellPicture2" type="TextureRect" parent="SpellRune2"]
 material = SubResource("CanvasItemMaterial_7eooo")
@@ -86,19 +116,41 @@ offset_right = 268.0
 offset_bottom = 340.0
 texture = SubResource("GradientTexture2D_8dp5x")
 
+[node name="SpellIcon2" type="TextureRect" parent="SpellRune2"]
+material = SubResource("CanvasItemMaterial_7eooo")
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 262.0
+offset_bottom = 134.0
+texture = SubResource("GradientTexture2D_8dp5x")
+expand_mode = 1
+
 [node name="SpellButton2" type="Button" parent="SpellRune2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 528.0
-offset_right = 408.0
-offset_bottom = 592.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 399.0
+offset_bottom = 616.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_ga4lh")
 theme_override_font_sizes/font_size = 40
-text = "Spell Name"
 flat = true
+
+[node name="SpellLabel2" type="Label" parent="SpellRune2/SpellButton2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4lh")
+theme_override_font_sizes/font_size = 40
+text = "Spell Name"
+horizontal_alignment = 1
 
 [node name="SpellRune3" type="TextureRect" parent="."]
 texture_filter = 1
@@ -107,7 +159,7 @@ offset_left = 832.0
 offset_top = 120.0
 offset_right = 1248.0
 offset_bottom = 619.0
-texture = ExtResource("3_wcmj2")
+texture = ExtResource("5_7puqm")
 
 [node name="SpellPicture3" type="TextureRect" parent="SpellRune3"]
 material = SubResource("CanvasItemMaterial_7eooo")
@@ -119,19 +171,41 @@ offset_right = 268.0
 offset_bottom = 340.0
 texture = SubResource("GradientTexture2D_8dp5x")
 
+[node name="SpellIcon3" type="TextureRect" parent="SpellRune3"]
+material = SubResource("CanvasItemMaterial_7eooo")
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 222.0
+offset_bottom = 150.0
+texture = SubResource("GradientTexture2D_8dp5x")
+expand_mode = 1
+
 [node name="SpellButton3" type="Button" parent="SpellRune3"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 528.0
-offset_right = 393.0
-offset_bottom = 592.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 399.0
+offset_bottom = 616.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_ga4lh")
 theme_override_font_sizes/font_size = 40
-text = "Spell Name"
 flat = true
+
+[node name="SpellLabel3" type="Label" parent="SpellRune3/SpellButton3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4lh")
+theme_override_font_sizes/font_size = 40
+text = "Spell Name"
+horizontal_alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -152,5 +226,5 @@ text = "[center]Select your next spell"
 fit_content = true
 
 [connection signal="pressed" from="SpellRune1/SpellButton1" to="." method="_on_spell_button_1_pressed"]
-[connection signal="pressed" from="SpellRune2/SpellButton2" to="." method="_on_spell_button_2_pressed"]
-[connection signal="pressed" from="SpellRune3/SpellButton3" to="." method="_on_spell_button_3_pressed"]
+[connection signal="pressed" from="SpellRune2/SpellButton2" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="SpellRune3/SpellButton3" to="." method="_on_spell_button_1_pressed"]

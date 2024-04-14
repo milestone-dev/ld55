@@ -1,19 +1,23 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://dkaenvqd42rtv"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://dkaenvqd42rtv"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_jym3g"]
 [ext_resource type="Resource" uid="uid://c65gqgq7ub3hd" path="res://resources/spells/SUN_A2.tres" id="1_w6wrn"]
+[ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="3_8jbh7"]
+[ext_resource type="Texture2D" uid="uid://5c6gagym4dip" path="res://assets/sprites/SUNA3-NORTHERNLIGHTS.png" id="4_xa4yr"]
 
 [resource]
 script = ExtResource("1_jym3g")
-name = "NORTHERN LIGHTS"
+name = "Northern Lights"
 code = "A0,B0,B7,B6,C6,C5,B5,B4"
 description = "Freeze/stun all enemies for N seconds."
 dependency = ExtResource("1_w6wrn")
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("4_xa4yr")
+store_icon = ExtResource("3_8jbh7")
 projectile_behavior = 0
 effect_area_behavior = 0

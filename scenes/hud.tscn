@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c50c2o4r2knhr"]
+[gd_scene load_steps=3 format=3 uid="uid://c50c2o4r2knhr"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_w35my"]
+[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="2_807ht"]
 
 [node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label")]
 layout_mode = 3
@@ -28,7 +29,9 @@ offset_right = 64.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
-value = 20.0
+theme_override_fonts/font = ExtResource("2_807ht")
+theme_override_font_sizes/font_size = 20
+value = 100.0
 
 [node name="EXPProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(300, 12)
@@ -37,7 +40,8 @@ offset_left = 440.0
 offset_top = 16.0
 offset_right = 888.0
 offset_bottom = 28.0
-value = 20.0
+theme_override_fonts/font = ExtResource("2_807ht")
+theme_override_font_sizes/font_size = 20
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -45,8 +49,9 @@ offset_left = 24.0
 offset_top = 16.0
 offset_right = 280.0
 offset_bottom = 88.0
-text = "TrollDoom 0.1
-Level 1"
+theme_override_fonts/font = ExtResource("2_807ht")
+theme_override_font_sizes/font_size = 20
+text = "Level 1"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(250, 2.08165e-12)

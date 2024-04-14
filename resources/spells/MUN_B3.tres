@@ -1,19 +1,23 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://d1hpeibakmitc"]
+[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://d1hpeibakmitc"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_8wbn6"]
 [ext_resource type="Resource" uid="uid://dt2q0hjoocd36" path="res://resources/spells/MUN_B2.tres" id="1_yls48"]
+[ext_resource type="Texture2D" uid="uid://dpdoip06ob4gx" path="res://assets/sprites/MUN-SYMBOL.png" id="3_bcnnb"]
+[ext_resource type="Texture2D" uid="uid://dcvbss3hu50pq" path="res://assets/sprites/MUNB3-FOGFORM.png" id="4_0rcw3"]
 
 [resource]
 script = ExtResource("1_8wbn6")
-name = "FOG FORM"
+name = "Mist Form"
 code = "A0,B4,B3,C3,C2,B2,B1,B0"
 description = "Turn into a living fog - Invincibility for N seconds."
 dependency = ExtResource("1_yls48")
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("4_0rcw3")
+store_icon = ExtResource("3_bcnnb")
 projectile_behavior = 0
 effect_area_behavior = 0

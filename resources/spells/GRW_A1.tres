@@ -1,17 +1,21 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://ckwghlbfjy7nl"]
+[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://ckwghlbfjy7nl"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_mue5s"]
+[ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="2_1cbgj"]
+[ext_resource type="Texture2D" uid="uid://d15l66jqhk1cu" path="res://assets/sprites/GRWA1-LEAFGRENADE.png" id="3_pi1pr"]
 
 [resource]
 script = ExtResource("1_mue5s")
-name = "LEAF GRENADE"
+name = "Leaf Grenade"
 code = "A0,B6,B7"
 description = "Shoot a single projectile that explodes in small AoE on hit."
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 10.0
+attack_range = 32.0
 heal = 0.0
 effect_duration = 0.0
 effect_cooldown_max = 0.0
+store_texture = ExtResource("3_pi1pr")
+store_icon = ExtResource("2_1cbgj")
 projectile_behavior = 0
 effect_area_behavior = 0

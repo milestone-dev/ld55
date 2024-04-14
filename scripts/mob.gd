@@ -41,6 +41,9 @@ func _physics_process(delta):
 		velocity = (player_target.position - position).normalized() * type.speed * delta;
 	else:
 		velocity = Vector2.ZERO
+	
+	velocity *= Global.speed_factor
+	
 	animation_tree.set("parameters/Walk/blend_position", velocity.x);
 	animation_tree.set("parameters/Die/blend_position", velocity.x);
 	move_and_slide()
