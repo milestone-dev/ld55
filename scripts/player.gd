@@ -20,7 +20,7 @@ var god_mode = false;
 var hp : float = 100;
 var experience : int = 0;
 var max_experience : int = 100;
-var level : int = 1;
+var level : int = 0;
 var attack_cooldown : float = 0;
 
 var mouse_down = false;
@@ -71,8 +71,8 @@ func _physics_process(delta):
 	hud.exp_bar.value = experience;
 	hud.exp_bar.max_value = max_experience;
 	
-	hud.label.text = "TrollDoom 0.1"
-	hud.label.text += "\nLevel %s" % level;
+	hud.label.text = "TrollDoom v0.5 Alpha - \"Jävligt jagad\""
+	hud.label.text += "\nLevel %d" % (level + 1);
 	hud.label.text += "\n\n"
 	hud.label.text += "\nHP %s/%s" % [hp, max_hp]
 	hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
@@ -156,6 +156,7 @@ func take_damage(damage : float):
 	if hp <= 0: die();
 	
 func flash_damage():
+	if not get_tree(): return
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE

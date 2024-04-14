@@ -20,6 +20,7 @@ func _ready():
 	scale = Vector2(type.scale,type.scale)
 
 func _physics_process(delta):
+	if not get_tree(): return
 	if !alive: return
 	if position.distance_to(player_target.position) < type.attack_range:
 		if attack_cooldown <= 0:
