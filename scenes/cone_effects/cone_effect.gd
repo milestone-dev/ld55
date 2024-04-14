@@ -1,6 +1,6 @@
 @tool
-extends Node2D
-@export var collider: CollisionObject2D
+extends AreaOfEffect
+
 @export_range(0, 180) var angle: float = 45
 @export_range(10, 200) var range: float = 100
 

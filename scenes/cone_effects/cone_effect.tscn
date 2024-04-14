@@ -12,21 +12,21 @@ curve = SubResource("Curve_e7p52")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_816vh"]
 particle_flag_disable_z = true
-spread = 24.6555
+spread = 22.5
 initial_velocity_min = 124.14
 initial_velocity_max = 124.14
 gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 scale_max = 76.86
 scale_curve = SubResource("CurveTexture_q2dro")
 
-[node name="ConeEffect" type="Node2D"]
+[node name="ConeEffect" type="Node2D" node_paths=PackedStringArray("collider")]
 script = ExtResource("1_bsa2r")
-angle = 49.311
+collider = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(2, 4, 90.8832, 41.7161, 90.8832, -41.7161, 2, -3)
+polygon = PackedVector2Array(2, 4, 92.388, 38.2683, 92.388, -38.2683, 2, -3)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = ExtResource("2_novee")
