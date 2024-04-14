@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://bm55vta6jcad1"]
+
+[ext_resource type="Resource" uid="uid://civxbl4pyvcnd" path="res://resources/mobtypes/vittra.tres" id="1_ak52t"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_xqjof"]
+
+[resource]
+script = ExtResource("1_xqjof")
+max_concurrent_mobs = 100
+mob_1_type = ExtResource("1_ak52t")
+mob_1_probability = 1
+mob_2_probability = 0
+mob_3_probability = 0
+mob_4_probability = 0
+mob_5_probability = 0

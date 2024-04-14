@@ -5,11 +5,16 @@ extends Node2D
 @export var max_mobs : int = 25;
 
 var mobtypes: Array[Mobtype]
+var levels : Array[Level]
+var current_level : Level;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for file_name : String in DirAccess.open("res://resources/levels").get_files():
+		levels.push_back(ResourceLoader.load("res://resources/levels/" + file_name));
 	for file_name : String in DirAccess.open("res://resources/mobtypes").get_files():
-		mobtypes.push_back(ResourceLoader.load("res://resources/mobtypes/" + file_name));	
+		mobtypes.push_back(ResourceLoader.load("res://resources/mobtypes/" + file_name));
+	current_level = levels[0]
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -20,8 +25,6 @@ func _process(_delta):
 		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
 	if Input.is_action_just_pressed("dev_allspells"):
 		player.hud.add_message("Learned all spells (not yet implemented)");
-		
-	
 
 func _on_mob_spawn_timer_timeout():
 	#print("spawn mob");	
