@@ -30,6 +30,7 @@ node_container = NodePath("NodeContainers")
 line = NodePath("Line2D")
 first_node = NodePath("NodeContainers/A0")
 hint_runes = [NodePath("Hints/0"), NodePath("Hints/1"), NodePath("Hints/2"), NodePath("Hints/3"), NodePath("Hints/4"), NodePath("Hints/5"), NodePath("Hints/6"), NodePath("Hints/7")]
+snap_distance = 8
 
 [node name="DrumBase" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.235294)
