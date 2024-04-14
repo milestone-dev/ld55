@@ -119,7 +119,6 @@ func shoot_projectile(projectile_spell : Spell = null, random_direction = false)
 	var proj = projectile_scene.instantiate() as Projectile
 	proj.player = self;
 	proj.position = position
-	proj.look_at(velocity)
 	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
 	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
 	if projectile_spell:
