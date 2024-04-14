@@ -1044,10 +1044,11 @@ texture = ExtResource("3_arkel")
 [sub_resource type="TileSet" id="TileSet_2pob0"]
 sources/0 = SubResource("TileSetAtlasSource_ky1vt")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "mob_spawn_timer")]
 script = ExtResource("1_ppxc1")
 player = NodePath("Player")
 mob_scene = ExtResource("4_qe38e")
+mob_spawn_timer = NodePath("MobSpawnTimer")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
