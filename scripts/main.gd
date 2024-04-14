@@ -19,6 +19,8 @@ const DEFAULT_SPAWN_COOLDOWN = 0.5
 var current_spawn_cooldown : float = DEFAULT_SPAWN_COOLDOWN;
 var current_spawn_cooldown_target : float = 0;
 
+var has_spawned_bergatroll = false
+
 var paused = false
 
 # Called when the node enters the scene tree for the first time.
@@ -69,6 +71,10 @@ func _on_mob_spawn_timer_timeout():
 	if not mob.type:
 		push_warning("No valid mob")
 		return;
+		
+	if mob.type.experience > 100000:
+		if has_spawned_bergatroll: return
+		has_spawned_bergatroll = true
 	world_entities.add_child(mob);
 	mob.position = _random_new_mob_position()
 	

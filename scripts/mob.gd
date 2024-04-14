@@ -34,9 +34,10 @@ func _physics_process(delta):
 
 	if !alive: return
 
-	if position.distance_to(player_target.position) < 64:
+	if position.distance_to(player_target.position) < 96:
 		if mob_sfx_cooldown <= 0:
 			$MobSfx.stream = type.mob_sfx.pick_random()
+			$MobSfx.pitch_scale = randf_range(0.9, 1.1);
 			$MobSfx.play()
 			mob_sfx_cooldown = randf_range(mob_sfx_cooldown_max, mob_sfx_cooldown_max * 3);
 		else: mob_sfx_cooldown -= delta;

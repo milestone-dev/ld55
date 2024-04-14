@@ -8,7 +8,7 @@ class_name HUD
 @export var log_container : VBoxContainer
 
 func add_message(message : String):
-	print(message);
+	#print(message);
 	var label = Label.new()
 	label.text = message;
 	log_container.add_child(label);
