@@ -16,6 +16,7 @@ func _ready():
 	player_target = get_tree().get_nodes_in_group("player")[0];
 	hp = type.max_hp
 	modulate = type.color
+	$AnimationPlayer.speed_scale = type.animation_speed
 	scale = Vector2(type.scale,type.scale)
 
 func _physics_process(delta):

@@ -10,6 +10,7 @@ class_name Mobtype
 @export var sprite: Texture2D
 @export var color : Color = Color.WHITE;
 @export var scale : float = 1;
+@export var animation_speed : float = 1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
