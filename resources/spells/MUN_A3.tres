@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://br1y4y1veyyl6"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://br1y4y1veyyl6"]
 
 [ext_resource type="Resource" uid="uid://cx8npx15nya73" path="res://resources/spells/MUN_A2.tres" id="1_60pf0"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_v6jyv"]
 [ext_resource type="Texture2D" uid="uid://dpdoip06ob4gx" path="res://assets/sprites/MUN-SYMBOL.png" id="3_f1rfn"]
+[ext_resource type="Texture2D" uid="uid://c5f1mjp2dtffa" path="res://assets/sprites/GUIDE_MUNA3.png" id="3_q8kbl"]
 [ext_resource type="Texture2D" uid="uid://ckvipxyrtev24" path="res://assets/sprites/MUNA3-SUMMONGUARDIAN.png" id="4_mxcrx"]
 
 [resource]
@@ -15,9 +16,11 @@ weight = 1.0
 attack_damage = 10.0
 attack_range = 32.0
 heal = 0.0
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("4_mxcrx")
 store_icon = ExtResource("3_f1rfn")
+spell_guide = ExtResource("3_q8kbl")
 projectile_behavior = 0
 effect_area_behavior = 0

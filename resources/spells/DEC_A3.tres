@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=5 format=3 uid="uid://ce0sjfauxjoj2"]
+[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://ce0sjfauxjoj2"]
 
 [ext_resource type="Resource" uid="uid://0bj58u5f68vm" path="res://resources/spells/DEC_A2.tres" id="1_cdc4l"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="2_echv7"]
 [ext_resource type="Texture2D" uid="uid://c3hohm0rnhfwt" path="res://assets/sprites/DEC-SYMBOL.png" id="3_axmcf"]
+[ext_resource type="Texture2D" uid="uid://dcltc3hj2j6hh" path="res://assets/sprites/GUIDE_DECA3.png" id="3_on3ju"]
 [ext_resource type="Texture2D" uid="uid://c5h0l6v1gn7y6" path="res://assets/sprites/DECA3-DIMINISH.png" id="4_4cr5k"]
 
 [resource]
@@ -15,9 +16,11 @@ weight = 1.0
 attack_damage = 10.0
 attack_range = 32.0
 heal = 0.0
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("4_4cr5k")
 store_icon = ExtResource("3_axmcf")
+spell_guide = ExtResource("3_on3ju")
 projectile_behavior = 0
 effect_area_behavior = 0
