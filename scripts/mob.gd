@@ -62,6 +62,7 @@ func flash_damage():
 	modulate = type.color
 
 func die():
+	Global.mobs_killed += 1
 	animation_tree.get("parameters/playback").travel("Die")
 	alive = false
 	await get_tree().create_timer(1).timeout

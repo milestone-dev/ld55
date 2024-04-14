@@ -60,6 +60,8 @@ func _ready() -> void:
 	shop.learn_spell.connect(learn_spell)
 	casting_ui.player = self
 	max_experience = level_experience_requirements[level+1]
+	Global.time_survived = 0;
+	Global.mobs_killed = 0;
 	
 func learn_spell(spell: Spell):
 	learned_spells.push_back(spell)
@@ -69,6 +71,7 @@ func learn_spell(spell: Spell):
 func _physics_process(delta):
 	if Global.paused: return;
 	if attack_cooldown > 0: attack_cooldown -= delta
+	Global.time_survived += delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Global.speed_factor == 1:
 		if current_single_fire_projectile_spell != null:
 			shoot_projectile(current_single_fire_projectile_spell);
@@ -144,7 +147,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in available_spells:
+	for potential_spell : Spell in learned_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
