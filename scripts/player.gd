@@ -86,18 +86,18 @@ func _physics_process(delta):
 	hud.exp_bar.value = experience;
 	hud.exp_bar.max_value = max_experience;
 	
-	hud.label.text = "TrollDoom v0.5 Alpha - \"Jävligt jagad\""
-	hud.label.text += "\nLevel %d" % (level + 1);
+	hud.label.text = "\nLevel %d" % (level + 1);
 	hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 	
-	hud.label.text += "\n\n"
-	hud.label.text += "\nHP %s/%s" % [hp, max_hp]
-	hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
-	hud.label.text += "\nP: Test Shop"
-	hud.label.text += "\nM: God Mode"
-	hud.label.text += "\nL: All Spells"
-	hud.label.text += "\nK: Restart Run"
-	hud.label.text += "\nO: Kill all enemies"
+	if false:
+		hud.label.text += "\n\n"
+		hud.label.text += "\nHP %s/%s" % [hp, max_hp]
+		hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
+		hud.label.text += "\nP: Test Shop"
+		hud.label.text += "\nM: God Mode"
+		hud.label.text += "\nL: All Spells"
+		hud.label.text += "\nK: Restart Run"
+		hud.label.text += "\nO: Kill all enemies"
 	if god_mode: hud.label.text += "\nGOD MODE"
 	
 	velocity.x = Input.get_axis("move_left", "move_right")
