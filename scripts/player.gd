@@ -147,7 +147,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in available_spells:
+	for potential_spell : Spell in learned_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
