@@ -92,9 +92,12 @@ func _physics_process(delta):
 		animation_tree.get("parameters/playback").travel("Walk")
 		animation_tree.set("parameters/Idle/blend_position", velocity.x);
 		animation_tree.set("parameters/Walk/blend_position", velocity.x);
+		$DrumSprite.flip_h = velocity.x < 0
 		move_and_slide()
 
 func shoot_projectile(projectile_spell : Spell = null, random_direction = false):
+	$DrumSprite/AnimationPlayer.play("attack")
+	
 	var proj = projectile_scene.instantiate() as Projectile
 	proj.player = self;
 	proj.position = position
