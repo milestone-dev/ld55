@@ -7,6 +7,8 @@ class_name CastingUI
 @export var first_node : Node;
 @export var debug_node: Panel;
 @export var valid: Array[Panel];
+@export var player: Player;
+
 
 @export_group("Spell drawing")
 @export var magnet_enabled = true;
@@ -40,6 +42,7 @@ func draw_line_to_node(node:Control, add_node : bool):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if player.paused: return;
 	var is_holding_activation_key = Input.is_key_pressed(KEY_SPACE)
 	if not is_holding_activation_key and active:
 		mouse_origin = Vector2.ZERO;
