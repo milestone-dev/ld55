@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://c65bmbitkb7e0"]
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://c65bmbitkb7e0"]
 
+[ext_resource type="Texture2D" uid="uid://duj1nlyxrcax6" path="res://assets/sprites/projectile_fireball.png" id="1_iytxa"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_rrb4r"]
 
 [resource]
@@ -8,10 +9,11 @@ name = "FIRE BALL"
 code = "A0,B0,B1"
 description = "1x Growing fire projectile (tight cone) in click in direction"
 weight = 1.0
-damage = 10.0
-range = 32.0
+attack_damage = 100.0
+attack_range = 32.0
 heal = 0.0
+projectile_texture = ExtResource("1_iytxa")
 effect_duration = 0.0
 effect_cooldown_max = 0.0
-projectile_behavior = 0
+projectile_behavior = 3
 effect_area_behavior = 0

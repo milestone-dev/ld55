@@ -105,7 +105,7 @@ func shoot_projectile(projectile_spell : Spell = null, random_direction = false)
 	if random_direction: proj.velocity = Vector2(randf_range(-1,1),randf_range(-1,1));
 	else: proj.velocity = (get_global_mouse_position() - global_position).normalized()
 	if projectile_spell:
-		proj.damage = projectile_spell.damage
+		proj.damage = projectile_spell.attack_damage
 		proj.texture = projectile_spell.projectile_texture
 	else:
 		proj.damage = 50
