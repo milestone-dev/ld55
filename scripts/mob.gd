@@ -39,7 +39,7 @@ func take_damage(damage : float) -> int:
 	hp -= damage;
 	if hp <= 0: 
 		die();
-		return type.exp;
+		return type.experience;
 	return 0;
 
 func die():

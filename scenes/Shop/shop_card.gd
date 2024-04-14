@@ -11,8 +11,3 @@ func _ready():
 		$VBoxContainer/SpellName.text = spell.name
 		if spell.store_texture:
 			$VBoxContainer/SpellPicture.texture = spell.store_texture
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

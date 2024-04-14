@@ -18,8 +18,8 @@ var available_spells: Array[Spell];
 
 var god_mode = false;
 var hp : float = 100;
-var exp : int = 0;
-var max_exp : int = 100;
+var experience : int = 0;
+var max_experience : int = 100;
 var level : int = 1;
 var attack_cooldown : float = 0;
 
@@ -35,23 +35,19 @@ var current_aoe_effect_spells : Array[SpellTimer]
 
 func _ready() -> void:
 	for file_name : String in DirAccess.open("res://resources/spells").get_files():
-		print (file_name)
 		available_spells.push_back(ResourceLoader.load("res://resources/spells/" + file_name));
 	$CanvasLayer/ShopScreen.spells = available_spells
 	$CanvasLayer/ShopScreen.learn_spell.connect(learn_spell)
 	
 func learn_spell(spell: Spell):
 	print("Learned spell", spell)
-	
-	
-	
-func _process(delta):
+
+func _process(_delta):
 	if Input.is_action_just_pressed("dev_shop"):
 		print ("Opening shop")
 		$CanvasLayer/ShopScreen.visible = !$CanvasLayer/ShopScreen.visible
 	
 func _physics_process(delta):
-	
 	if attack_cooldown > 0: attack_cooldown -= delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if current_single_fire_projectile_spell != null:
@@ -71,14 +67,18 @@ func _physics_process(delta):
 	hud.hp_bar.value = hp;
 	hud.hp_bar.max_value = max_hp;
 	
-	hud.exp_bar.value = exp;
-	hud.exp_bar.max_value = max_exp;
+	hud.exp_bar.value = experience;
+	hud.exp_bar.max_value = max_experience;
 	
 	hud.label.text = "TrollDoom 0.1"
 	hud.label.text += "\nLevel %s" % level;
 	hud.label.text += "\n\n"
 	hud.label.text += "\nHP %s/%s" % [hp, max_hp]
-	hud.label.text += "\nEXP %s/%s" % [exp, max_exp]
+	hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
+	hud.label.text += "\nP: Test Shop"
+	hud.label.text += "\nM: God Mode"
+	hud.label.text += "\nL: All Spells"
+	hud.label.text += "\nK: Restart Run"
 	if god_mode: hud.label.text += "\nGOD MODE"
 	
 	velocity.x = Input.get_axis("move_left", "move_right")
@@ -109,8 +109,7 @@ func shoot_projectile(projectile_spell : Spell = null, random_direction = false)
 	get_parent().add_child(proj)
 	
 func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
-	print(available_spells)
-	var code : String;
+	var code : String = "";
 	for node : Control in nodes:
 		code += node.name
 	
@@ -129,8 +128,8 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			var effect = spell.effect.instantiate()
 			add_child(effect)
 		for mob : Mob in get_tree().get_nodes_in_group("mob"):
-			if position.distance_to(mob.position) < spell.range:
-				add_experience(mob.take_damage(spell.damage))
+			if position.distance_to(mob.position) < spell.attack_range:
+				add_experience(mob.take_damage(spell.attack_damage))
 	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.SINGLE_FIRE:
 		current_single_fire_projectile_spell = spell
 	elif spell.projectile_behavior == Spell.SpellProjectileBehavior.ADD_TIMED:
@@ -139,12 +138,12 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	
 	prints("Casting spell", spell.name)
 
-func add_experience(experience : int):
-	exp += experience
-	if exp >= max_exp:
+func add_experience(input_experience : int):
+	experience += input_experience
+	if experience >= max_experience:
 		level += 1
-		exp -= max_exp
-		max_exp *= 1.5
+		experience -= max_experience
+		max_experience = int(float(max_experience) * 1.5)
 
 func take_damage(damage : float):
 	# prints("take damage", damage);

@@ -21,8 +21,8 @@ enum SpellEffectAreaBehavior {
 
 @export var weight : float = 1;
 
-@export var damage : float = 10;
-@export var range : float = 32;
+@export var attack_damage : float = 10;
+@export var attack_range : float = 32;
 @export var heal : float = 0;
 @export var effect: PackedScene
 

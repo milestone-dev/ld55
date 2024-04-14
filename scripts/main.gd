@@ -14,12 +14,12 @@ func _ready():
 		mobtypes.push_back(ResourceLoader.load("res://resources/mobtypes/" + file_name));	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("dev_restart"):
-		print ("RESTARTING SCENE")
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("dev_godmode"):
-		print ("TOGGLING GOD MODE")
+		player.god_mode = !player.god_mode;
+	if Input.is_action_just_pressed("dev_allspells"):
 		player.god_mode = !player.god_mode;
 	
 
@@ -42,12 +42,12 @@ func _random_new_mob_position() -> Vector2:
 	# Use above to find the size to put here, checking veiwport seem to bug on web?
 	var size = Vector2(640, 400) / 2 + margin
 	var side = randi_range(0, 3)
-	var position = Vector2(randf() * size.x, randf() * size.y)*2 - size
-	if side == 0: position.x = -size.x;
-	if side == 1: position.x = size.x;
-	if side == 2: position.y = -size.y;
-	if side == 3: position.y = size.y;
-	position += player.position
-	return position
+	var pos = Vector2(randf() * size.x, randf() * size.y)*2 - size
+	if side == 0: pos.x = -size.x;
+	if side == 1: pos.x = size.x;
+	if side == 2: pos.y = -size.y;
+	if side == 3: pos.y = size.y;
+	pos += player.position
+	return pos
 	
 	

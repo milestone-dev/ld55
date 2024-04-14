@@ -23,7 +23,3 @@ func _ready():
 		
 func learn(id):
 	learn_spell.emit(spells[id])
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

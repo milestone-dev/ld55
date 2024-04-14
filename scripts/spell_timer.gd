@@ -7,9 +7,9 @@ var spell : Spell;
 
 var effect_cooldown : float = 0;
 
-func _init(player: Player, spell:Spell) -> void:
-	self.player = player
-	self.spell = spell
+func _init(input_player: Player, input_spell:Spell) -> void:
+	self.player = input_player
+	self.spell = input_spell
 	self.effect_timer = spell.effect_duration
 	prints(spell.name, "added")
 	

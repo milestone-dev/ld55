@@ -24,9 +24,6 @@ var mouse_origin : Vector2
 var active = false;
 
 func _ready():
-	for panel : Panel in node_container.get_children():
-		panel.mouse_entered.connect(_on_node_mouse_entered.bind(panel))
-
 	visible = false;
 	reset_nodes();
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN);
@@ -41,12 +38,8 @@ func draw_line_to_node(node:Control, add_node : bool):
 	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 	#line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 
-func _on_node_mouse_entered(panel:Panel):
-	#if active: draw_line_to_node(panel)
-	pass
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var is_holding_activation_key = Input.is_key_pressed(KEY_SPACE)
 	if not is_holding_activation_key and active:
 		mouse_origin = Vector2.ZERO;

@@ -179,6 +179,9 @@ radius = 16.0
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_bb4be")
+max_hp = null
+max_speed = null
+attack_cooldown_max = null
 camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
 casting_ui = NodePath("CanvasLayer/CastingUI")
@@ -193,6 +196,7 @@ shape = SubResource("CircleShape2D_so115")
 texture_filter = 1
 texture = ExtResource("2_56rh0")
 offset = Vector2(2.08165e-12, 2.08165e-12)
+flip_h = true
 hframes = 8
 vframes = 2
 

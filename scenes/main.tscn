@@ -1064,5 +1064,8 @@ wait_time = 0.1
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_ft68t")]
+max_hp = null
+max_speed = null
+attack_cooldown_max = null
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
