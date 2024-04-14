@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://dv0yil1myifhw"]
+[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://dv0yil1myifhw"]
 
+[ext_resource type="PackedScene" uid="uid://xpukq7c4o5ru" path="res://scenes/area_of_effect/inferno_aoe_effect.tscn" id="1_82ekx"]
 [ext_resource type="Resource" uid="uid://7gmy857wkjq1" path="res://resources/spells/SUN_B2.tres" id="1_iukkp"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_ivida"]
 [ext_resource type="Texture2D" uid="uid://bu1opumyuh8b2" path="res://assets/sprites/GUIDE_SUNB3.png" id="3_kp57e"]
@@ -16,6 +17,7 @@ weight = 1.0
 attack_damage = 1000.0
 attack_range = 10000.0
 heal = 0.0
+area_of_effect_scene = ExtResource("1_82ekx")
 area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
