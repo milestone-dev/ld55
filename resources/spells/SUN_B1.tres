@@ -15,6 +15,7 @@ attack_damage = 100.0
 attack_range = 32.0
 heal = 0.0
 projectile_scene = ExtResource("1_jwiyd")
+area_of_effect_on_player = true
 effect_duration = 0.0
 effect_cooldown_max = 0.0
 store_texture = ExtResource("4_tp4xq")
