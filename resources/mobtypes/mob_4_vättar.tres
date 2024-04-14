@@ -5,12 +5,12 @@
 
 [resource]
 script = ExtResource("1_mfcp2")
-max_hp = 100
+max_hp = 25
 speed = 6000
-attack_damage = 5
-attack_cooldown_max = 0.3
-attack_range = 8
-experience = 50
+attack_damage = 3
+attack_cooldown_max = 0.1
+attack_range = 3
+experience = 55
 sprite = ExtResource("2_wen8u")
 color = Color(1, 1, 1, 1)
 scale = 1.0

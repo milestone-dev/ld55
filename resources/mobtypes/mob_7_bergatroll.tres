@@ -5,12 +5,12 @@
 
 [resource]
 script = ExtResource("1_wsw6w")
-max_hp = 5000
-speed = 2000
-attack_damage = 500
-attack_cooldown_max = 1.0
-attack_range = 8
-experience = 200
+max_hp = 1000
+speed = 600
+attack_damage = 150
+attack_cooldown_max = 0.5
+attack_range = 48
+experience = 100000
 sprite = ExtResource("2_cksbt")
 color = Color(1, 1, 1, 1)
 scale = 3.0

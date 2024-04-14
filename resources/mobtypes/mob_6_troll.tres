@@ -5,12 +5,12 @@
 
 [resource]
 script = ExtResource("1_lfbag")
-max_hp = 1200
-speed = 2000
-attack_damage = 500
-attack_cooldown_max = 1.0
-attack_range = 8
-experience = 200
+max_hp = 300
+speed = 500
+attack_damage = 30
+attack_cooldown_max = 0.3
+attack_range = 32
+experience = 390
 sprite = ExtResource("2_o6nka")
 color = Color(1, 1, 1, 1)
 scale = 2.0

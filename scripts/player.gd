@@ -14,13 +14,13 @@ signal level_change
 @export var hud : HUD;
 @export var shop : Shop
 
-@export var level_experience_requirements = [
+var level_experience_requirements = [
 	0,
-	300,
-	800,
-	1800,
-	3000,
-	7500,
+	1600,
+	3200,
+	6000,
+	8000,
+	12000,
 	17000,
 	40000,
 	100000,
@@ -59,6 +59,9 @@ func _ready() -> void:
 	available_spells.assign(Resources.load_resources("res://resources/spells/"))
 	shop.learn_spell.connect(learn_spell)
 	casting_ui.player = self
+	max_experience = level_experience_requirements[level+1]
+	Global.time_survived = 0;
+	Global.mobs_killed = 0;
 	
 func learn_spell(spell: Spell):
 	learned_spells.push_back(spell)
@@ -68,12 +71,15 @@ func learn_spell(spell: Spell):
 func _physics_process(delta):
 	if Global.paused: return;
 	if attack_cooldown > 0: attack_cooldown -= delta
+	Global.time_survived += delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Global.speed_factor == 1:
 		if current_single_fire_projectile_spell != null:
+			$AttackStreamPlayer.play()
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
 			attack_cooldown = attack_cooldown_max
 		elif base_attack_spell and attack_cooldown <= 0:
+			$AttackStreamPlayer.play()
 			shoot_projectile(base_attack_spell);
 			attack_cooldown = attack_cooldown_max
 			
@@ -96,7 +102,7 @@ func _physics_process(delta):
 	hud.label.text = "\nLevel %d" % (level + 1);
 	hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 	
-	if false:
+	if true:
 		hud.label.text += "\n\n"
 		hud.label.text += "\nHP %s/%s" % [hp, max_hp]
 		hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
@@ -143,7 +149,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		code += node.name
 	
 	var spell : Spell = null
-	for potential_spell : Spell in available_spells:
+	for potential_spell : Spell in learned_spells:
 		if potential_spell.validate_code(code):
 			spell = potential_spell
 			break
@@ -154,8 +160,8 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	
 	match spell.effect_area_behavior:
 		Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
-			if spell.effect:
-				var effect = spell.effect.instantiate()
+			if spell.area_of_effect_scene:
+				var effect = spell.area_of_effect_scene.instantiate()
 				add_child(effect)
 			for mob : Mob in get_tree().get_nodes_in_group("mob"):
 				if position.distance_to(mob.position) < spell.attack_range:
@@ -181,8 +187,9 @@ func add_experience(input_experience : int):
 		level_up()
 
 func level_up():
+	hp = max_hp
 	level += 1
-	max_experience = level_experience_requirements[level]
+	max_experience = level_experience_requirements[level+1]
 	level_change.emit()
 	shop.present_spell_choice(available_spells, learned_spells)
 	Global.paused = true

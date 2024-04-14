@@ -15,7 +15,7 @@ var mobtypes: Array[Mobtype]
 var levels : Array[Level]
 var current_level : Level;
 
-const DEFAULT_SPAWN_COOLDOWN = 1
+const DEFAULT_SPAWN_COOLDOWN = 0.5
 var current_spawn_cooldown : float = DEFAULT_SPAWN_COOLDOWN;
 var current_spawn_cooldown_target : float = 0;
 
@@ -34,7 +34,7 @@ func start_level():
 	Global.paused = true
 	
 func _process(_delta):
-	if paused: return;
+	if paused or not is_inside_tree(): return;
 	if Input.is_action_just_pressed("dev_restart"):
 		player.die()
 	if Input.is_action_just_pressed("dev_godmode"):
@@ -46,6 +46,11 @@ func _process(_delta):
 		for mob :Mob in get_tree().get_nodes_in_group("mob"):
 			player.add_experience(mob.take_damage(100000))
 		player.hud.add_message("Killing all enemies");
+		
+	for mob : Mob in get_tree().get_nodes_in_group("mob"):
+		if mob.global_position.distance_to(player.global_position) > 640:
+			var pos = mob.position
+			mob.position = _random_new_mob_position()
 
 func _on_mob_spawn_timer_timeout():
 	if paused: return;
@@ -86,7 +91,8 @@ func _random_new_mob_position() -> Vector2:
 func _on_player_level_change() -> void:
 	if player.level > levels.size() - 1:
 		current_level = null
-		win()	
+		win()
+		return
 	else: current_level = levels[player.level]
 	current_spawn_cooldown = DEFAULT_SPAWN_COOLDOWN
 	current_spawn_cooldown_target = current_level.mob_spawn_cooldown

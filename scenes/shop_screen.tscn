@@ -230,5 +230,5 @@ text = "[center]Select your next spell"
 fit_content = true
 
 [connection signal="pressed" from="SpellRune1/SpellButton1" to="." method="_on_spell_button_1_pressed"]
-[connection signal="pressed" from="SpellRune2/SpellButton2" to="." method="_on_spell_button_1_pressed"]
-[connection signal="pressed" from="SpellRune3/SpellButton3" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="SpellRune2/SpellButton2" to="." method="_on_spell_button_2_pressed"]
+[connection signal="pressed" from="SpellRune3/SpellButton3" to="." method="_on_spell_button_3_pressed"]

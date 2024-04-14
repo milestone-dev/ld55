@@ -23,10 +23,13 @@ signal learn_spell
 func present_spell_choice(available_spells : Array[Spell], learned_spells : Array[Spell]):
 	spells.clear();
 	for spell : Spell in available_spells:
-		if not spell.dependency or learned_spells.has(spell.dependency):
+		if !learned_spells.has(spell) and (not spell.dependency or learned_spells.has(spell.dependency)):
 			spells.push_back(spell)
 	update_spells()
 	visible = true
+	print (spells[0].name)
+	print (spells[1].name)
+	print (spells[2].name)
 			
 func update_spells():
 	if spells.size() == 0: return
@@ -43,17 +46,14 @@ func update_spells():
 	spell_icon_2.texture = spells[1].store_icon
 	spell_icon_3.texture = spells[2].store_icon
 
-func learn(id):
-	learn_spell.emit(spells[id])
-
 func _on_spell_button_1_pressed() -> void:
-	learn(0)
+	learn_spell.emit(spells[0])
 	visible = false
 
 func _on_spell_button_2_pressed() -> void:
-	learn(1)
+	learn_spell.emit(spells[1])
 	visible = false
 
 func _on_spell_button_3_pressed() -> void:
-	learn(2)
+	learn_spell.emit(spells[2])
 	visible = false
