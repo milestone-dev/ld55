@@ -103,10 +103,9 @@ func _physics_process(delta):
 	hud.exp_bar.max_value = max_experience;
 	
 	hud.label.text = "\nLevel %d" % (level + 1);
-	hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 	
-	if true:
-		hud.label.text += "\n\n"
+	if false:
+		hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 		hud.label.text += "\nHP %s/%s" % [hp, max_hp]
 		hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
 		hud.label.text += "\nP: Test Shop"
