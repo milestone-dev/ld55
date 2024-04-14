@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp65vrskbyisf"]
 
-[ext_resource type="PackedScene" uid="uid://hkkcjdvjfhw2" path="res://scenes/Shop/shop_card.tscn" id="1_5d4on"]
-[ext_resource type="Script" path="res://scenes/Shop/shop_screen.gd" id="1_xh0ll"]
+[ext_resource type="PackedScene" uid="uid://hkkcjdvjfhw2" path="res://scenes/shop/shop_card.tscn" id="1_5d4on"]
+[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_xh0ll"]
 
 [node name="ShopScreen" type="Panel"]
 offset_right = 1263.0

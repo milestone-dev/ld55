@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
 [ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectile.tscn" id="2_oojk5"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
-[ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/Shop/shop_screen.tscn" id="6_qtx7u"]
+[ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop/shop_screen.tscn" id="6_qtx7u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 16.0
