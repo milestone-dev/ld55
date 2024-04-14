@@ -22,7 +22,7 @@ func _ready():
 	scale = Vector2(type.scale,type.scale)
 
 func _physics_process(delta):
-	if main.paused: return;
+	if Global.paused: return;
 	if not is_inside_tree(): return
 	if not type: return
 	if not player_target:

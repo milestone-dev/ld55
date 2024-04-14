@@ -2,8 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 signal level_change
-signal request_pause
-signal request_unpause
 
 @export var max_hp : float = 100;
 @export var max_speed : float = 8000;
@@ -36,8 +34,6 @@ signal request_unpause
 var available_spells: Array[Spell];
 var learned_spells: Array[Spell];
 
-var paused = false;
-
 var level : int = 0; # 0 = Level 1
 var god_mode = false;
 var hp : float = 100;
@@ -63,10 +59,10 @@ func _ready() -> void:
 func learn_spell(spell: Spell):
 	learned_spells.push_back(spell)
 	hud.add_message("You learned " + spell.name + "!");
-	request_unpause.emit()
+	Global.paused = false
 	
 func _physics_process(delta):
-	if paused: return;
+	if Global.paused: return;
 	if attack_cooldown > 0: attack_cooldown -= delta
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if current_single_fire_projectile_spell != null:
@@ -173,7 +169,7 @@ func level_up():
 	max_experience = level_experience_requirements[level]
 	level_change.emit()
 	shop.present_spell_choice(available_spells, learned_spells)
-	request_pause.emit()
+	Global.paused = true
 
 func take_damage(damage : float):
 	# prints("take damage", damage);
