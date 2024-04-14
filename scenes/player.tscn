@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
 [ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop_screen.tscn" id="6_3tdcy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xs1x"]
+size = Vector2(12, 11.3636)
 
 [sub_resource type="Animation" id="Animation_mhya6"]
 resource_name = "idle_left"
@@ -266,8 +266,9 @@ fill_from = Vector2(0.50641, 0.521368)
 fill_to = Vector2(0.980769, 0.307692)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "sprite", "casting_ui", "hud", "shop", "animation_tree") groups=["player"]]
-collision_layer = 0
-collision_mask = 0
+position = Vector2(2.08165e-12, 2.08165e-12)
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("1_bb4be")
 camera = NodePath("Camera2D")
 sprite = NodePath("BaseSprite")
@@ -280,12 +281,14 @@ animation_tree = NodePath("BaseSprite/AnimationTree")
 base_attack_spell = ExtResource("4_4kooh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_so115")
+position = Vector2(1, -2)
+scale = Vector2(1, 0.44)
+shape = SubResource("RectangleShape2D_8xs1x")
 
 [node name="BaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_56rh0")
-offset = Vector2(2.08165e-12, 2.08165e-12)
+offset = Vector2(2.08165e-12, -11)
 flip_h = true
 hframes = 8
 vframes = 2
@@ -322,6 +325,7 @@ libraries = {
 }
 
 [node name="DamageArea" type="Area2D" parent="."]
+position = Vector2(-2.08165e-12, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
 shape = SubResource("CircleShape2D_7me0p")
