@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtq5l1ul652um"]
+[gd_scene load_steps=7 format=3 uid="uid://dtq5l1ul652um"]
 
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_5e32w"]
-[ext_resource type="PackedScene" uid="uid://bsuajf7jgeb52" path="res://scenes/main.tscn" id="2_kvpgb"]
 [ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_ii31w"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="3_pnpj1"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="5_ohlgh"]
@@ -19,7 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
 script = ExtResource("5_ohlgh")
-main_scene = ExtResource("2_kvpgb")
 
 [node name="StartBackground" type="TextureRect" parent="."]
 texture_filter = 1

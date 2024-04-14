@@ -87,6 +87,7 @@ func _process(_delta):
 				conneted_nodes.push_back(node)
 				node.modulate = Color(1,1,1,1);
 				node.scale = Vector2.ONE * 2;
+				(node.get_node("AudioStreamPlayer") as AudioStreamPlayer).play()
 				# Move last point to the new node
 				line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
 				# Add a new point that will follow the mouse cursor
