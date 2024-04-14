@@ -165,9 +165,13 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			if spell.area_of_effect_scene:
 				var effect = spell.area_of_effect_scene.instantiate()
 				add_child(effect)
-			for mob : Mob in get_tree().get_nodes_in_group("mob"):
-				if position.distance_to(mob.position) < spell.attack_range:
-					add_experience(mob.take_damage(spell.attack_damage))
+			if spell.attack_damage != 0:
+				for mob : Mob in get_tree().get_nodes_in_group("mob"):
+					if position.distance_to(mob.position) < spell.attack_range:
+						add_experience(mob.take_damage(spell.attack_damage))
+			print("HEAl?", spell.heal)
+			if spell.heal > 0:
+				hp = min(max_hp, hp + spell.heal)
 		Spell.SpellEffectAreaBehavior.TIMED:
 			print ("hej")
 			current_aoe_effect_spells.push_back(SpellTimer.new(self, spell))
