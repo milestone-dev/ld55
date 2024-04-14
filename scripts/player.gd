@@ -28,6 +28,7 @@ signal level_change
 ];
 
 @export var projectile_scene : PackedScene;
+@export var lose_scene : PackedScene;
 
 @export var animation_tree : AnimationTree;
 
@@ -186,5 +187,4 @@ func flash_damage():
 	modulate = Color.WHITE
 
 func die():
-	hud.add_message("You died and lost everything.");
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_packed(lose_scene)

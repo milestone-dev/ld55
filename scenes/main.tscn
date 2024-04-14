@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsuajf7jgeb52"]
+[gd_scene load_steps=12 format=3 uid="uid://bsuajf7jgeb52"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ppxc1"]
 [ext_resource type="Texture2D" uid="uid://dnwn3hf12nt7" path="res://assets/tilemap/ground-tilemap.png" id="3_arkel"]
 [ext_resource type="PackedScene" uid="uid://de8jmpdoukjsq" path="res://scenes/player.tscn" id="3_ft68t"]
+[ext_resource type="PackedScene" uid="uid://bjuplon0na42d" path="res://scenes/win.tscn" id="3_r8d6s"]
+[ext_resource type="PackedScene" uid="uid://cylxgd1if3n0t" path="res://scenes/death.tscn" id="4_l1gvq"]
 [ext_resource type="PackedScene" uid="uid://fx4257b48mvr" path="res://scenes/mob.tscn" id="4_qe38e"]
 [ext_resource type="PackedScene" uid="uid://bdw5itmowgm3s" path="res://scenes/doodads/tree_large.tscn" id="5_jcdjo"]
 [ext_resource type="PackedScene" uid="uid://bimeqwgpdxko2" path="res://scenes/doodads/tree_medium.tscn" id="5_s7wl4"]
@@ -1053,6 +1055,8 @@ player = NodePath("WorldEntities/Player")
 mob_scene = ExtResource("4_qe38e")
 mob_spawn_timer = NodePath("MobSpawnTimer")
 world_entities = NodePath("WorldEntities")
+win_scene = ExtResource("3_r8d6s")
+lose_scene = ExtResource("4_l1gvq")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

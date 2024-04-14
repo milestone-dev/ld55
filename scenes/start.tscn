@@ -1,29 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://2yvmuo6gjmrr"]
+[gd_scene load_steps=8 format=3 uid="uid://dtq5l1ul652um"]
 
-[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_w7n0a"]
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_5e32w"]
+[ext_resource type="PackedScene" uid="uid://bsuajf7jgeb52" path="res://scenes/main.tscn" id="2_kvpgb"]
 [ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_ii31w"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="3_pnpj1"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="5_ohlgh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
-[node name="Start" type="Panel" node_paths=PackedStringArray("spell_texture_1", "spell_texture_2", "spell_texture_3", "spell_button_1", "spell_button_2", "spell_button_3")]
+[node name="Start" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
-script = ExtResource("1_w7n0a")
-spell_texture_1 = NodePath("")
-spell_texture_2 = NodePath("")
-spell_texture_3 = NodePath("")
-spell_button_1 = NodePath("StartBackground/Button/StartButton")
-spell_button_2 = NodePath("")
-spell_button_3 = NodePath("")
+script = ExtResource("5_ohlgh")
+main_scene = ExtResource("2_kvpgb")
 
 [node name="StartBackground" type="TextureRect" parent="."]
 texture_filter = 1
@@ -82,4 +78,4 @@ bbcode_enabled = true
 text = "[center]Survive the Night"
 fit_content = true
 
-[connection signal="pressed" from="StartBackground/Button/StartButton" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="StartBackground/Button/StartButton" to="." method="_on_start_button_pressed"]

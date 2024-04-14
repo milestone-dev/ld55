@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_w35my"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="2_807ht"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label", "log_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ script = ExtResource("1_w35my")
 hp_bar = NodePath("HPProgressBar")
 exp_bar = NodePath("EXPProgressBar")
 label = NodePath("Label")
+log_container = NodePath("VBoxContainer")
 
 [node name="HPProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(128, 16)

@@ -8,6 +8,9 @@ class_name Main
 @export var mob_spawn_timer : Timer
 @export var world_entities : Node2D
 
+@export var win_scene : PackedScene
+@export var lose_scene : PackedScene
+
 var mobtypes: Array[Mobtype]
 var levels : Array[Level]
 var current_level : Level;
@@ -33,7 +36,7 @@ func start_level():
 func _process(_delta):
 	if paused: return;
 	if Input.is_action_just_pressed("dev_restart"):
-		get_tree().reload_current_scene()
+		player.die()
 	if Input.is_action_just_pressed("dev_godmode"):
 		player.god_mode = !player.god_mode;
 		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
@@ -89,4 +92,7 @@ func _on_player_level_change() -> void:
 	current_spawn_cooldown_target = current_level.mob_spawn_cooldown
 
 func win():
-	player.hud.add_message("You win!")
+	get_tree().change_scene_to_packed(win_scene)
+	
+func lose():
+	get_tree().change_scene_to_packed(lose_scene)

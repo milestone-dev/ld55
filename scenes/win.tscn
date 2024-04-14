@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://brkf73cguuqmr"]
+[gd_scene load_steps=8 format=3 uid="uid://bjuplon0na42d"]
 
-[ext_resource type="Script" path="res://scripts/shop_screen.gd" id="1_wwd5f"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_4p20b"]
+[ext_resource type="PackedScene" uid="uid://bsuajf7jgeb52" path="res://scenes/main.tscn" id="2_4gxhx"]
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_lyj2q"]
 [ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_a6xfu"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="4_enub8"]
@@ -10,15 +11,15 @@ bg_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
-[node name="Win" type="Panel" node_paths=PackedStringArray("spell_button_1")]
+[node name="Win" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
-script = ExtResource("1_wwd5f")
-spell_button_1 = NodePath("WinBackground/Button/WinButton")
+script = ExtResource("1_4p20b")
+main_scene = ExtResource("2_4gxhx")
 
 [node name="WinBackground" type="TextureRect" parent="."]
 texture_filter = 1
@@ -77,4 +78,4 @@ bbcode_enabled = true
 text = "[center]You survived the night"
 fit_content = true
 
-[connection signal="pressed" from="WinBackground/Button/WinButton" to="." method="_on_spell_button_1_pressed"]
+[connection signal="pressed" from="WinBackground/Button/WinButton" to="." method="_on_win_button_pressed"]
