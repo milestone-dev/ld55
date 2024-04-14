@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dqris1g4qyf60" path="res://assets/sprites/HERO.png" id="2_56rh0"]
 [ext_resource type="PackedScene" uid="uid://dxxp6lhv44dw1" path="res://scenes/projectiles/template.tscn" id="2_r1x5o"]
 [ext_resource type="PackedScene" uid="uid://cylxgd1if3n0t" path="res://scenes/death.tscn" id="3_2ceeo"]
-[ext_resource type="Resource" uid="uid://c65bmbitkb7e0" path="res://resources/spells/SUN_B1.tres" id="3_sq18q"]
+[ext_resource type="Resource" uid="uid://bv650obtxelr4" path="res://resources/base_attack_spell.tres" id="4_4kooh"]
 [ext_resource type="PackedScene" uid="uid://c50c2o4r2knhr" path="res://scenes/hud.tscn" id="4_n0tr4"]
 [ext_resource type="PackedScene" uid="uid://cp65vrskbyisf" path="res://scenes/shop_screen.tscn" id="6_3tdcy"]
 
@@ -277,7 +277,7 @@ shop = NodePath("CanvasLayer/ShopScreen")
 lose_scene = ExtResource("3_2ceeo")
 default_projectile_scene = ExtResource("2_r1x5o")
 animation_tree = NodePath("BaseSprite/AnimationTree")
-base_attack_spell = ExtResource("3_sq18q")
+base_attack_spell = ExtResource("4_4kooh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_so115")
