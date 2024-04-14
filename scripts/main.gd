@@ -12,6 +12,10 @@ var mobtypes: Array[Mobtype]
 var levels : Array[Level]
 var current_level : Level;
 
+const DEFAULT_SPAWN_COOLDOWN = 1
+var current_spawn_cooldown : float = DEFAULT_SPAWN_COOLDOWN;
+var current_spawn_cooldown_target : float = 0;
+
 var paused = false
 
 # Called when the node enters the scene tree for the first time.
@@ -44,7 +48,12 @@ func _on_mob_spawn_timer_timeout():
 	if paused: return;
 	if not mob_scene or not current_level: return
 	if get_tree().get_nodes_in_group("mob").size() > current_level.max_concurrent_mobs - 1: return;
-	mob_spawn_timer.wait_time = current_level.mob_spawn_cooldown
+	
+	# Reset spawn cooldown	
+	current_spawn_cooldown = lerp(current_spawn_cooldown, current_spawn_cooldown_target, 0.01);
+	mob_spawn_timer.wait_time = current_spawn_cooldown
+	print (current_spawn_cooldown)
+	
 	var mob = mob_scene.instantiate();
 	mob.main = self;
 	mob.type = current_level.get_mob_type()
@@ -77,6 +86,8 @@ func _on_player_level_change() -> void:
 		current_level = null
 		win()	
 	else: current_level = levels[player.level]
+	current_spawn_cooldown = DEFAULT_SPAWN_COOLDOWN
+	current_spawn_cooldown_target = current_level.mob_spawn_cooldown
 
 func win():
 	player.hud.add_message("You win!")
