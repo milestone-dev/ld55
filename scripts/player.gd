@@ -172,7 +172,7 @@ func take_damage(damage : float):
 	if hp <= 0: die();
 	
 func flash_damage():
-	if not get_tree(): return
+	if not is_inside_tree(): return
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE
