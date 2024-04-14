@@ -1083,5 +1083,3 @@ position = Vector2(-156, 7)
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
 [connection signal="level_change" from="WorldEntities/Player" to="." method="_on_player_level_change"]
-[connection signal="request_pause" from="WorldEntities/Player" to="." method="_on_player_request_pause"]
-[connection signal="request_unpause" from="WorldEntities/Player" to="." method="_on_player_request_unpause"]

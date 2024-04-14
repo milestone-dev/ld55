@@ -28,7 +28,7 @@ func _ready():
 func start_level():
 	player.hud.add_message("Welcome to your TrollDoom!")
 	player.shop.present_spell_choice(player.available_spells, player.learned_spells)
-	toggle_pause(true)
+	Global.paused = true
 	
 func _process(_delta):
 	if paused: return;
@@ -52,7 +52,6 @@ func _on_mob_spawn_timer_timeout():
 	# Reset spawn cooldown	
 	current_spawn_cooldown = lerp(current_spawn_cooldown, current_spawn_cooldown_target, 0.01);
 	mob_spawn_timer.wait_time = current_spawn_cooldown
-	print (current_spawn_cooldown)
 	
 	var mob = mob_scene.instantiate();
 	mob.main = self;
@@ -91,13 +90,3 @@ func _on_player_level_change() -> void:
 
 func win():
 	player.hud.add_message("You win!")
-
-func toggle_pause(pause : bool):
-	paused = pause
-	player.paused = pause
-
-func _on_player_request_pause() -> void:
-	toggle_pause(true)
-
-func _on_player_request_unpause() -> void:
-	toggle_pause(false)
