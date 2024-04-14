@@ -1046,7 +1046,7 @@ sources/0 = SubResource("TileSetAtlasSource_ky1vt")
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player", "mob_spawn_timer")]
 script = ExtResource("1_ppxc1")
-player = NodePath("Player")
+player = NodePath("Objects/Player")
 mob_scene = ExtResource("4_qe38e")
 mob_spawn_timer = NodePath("MobSpawnTimer")
 
@@ -1067,6 +1067,9 @@ layer_3/tile_data = PackedInt32Array(1572852, 655360, 17, 1638388, 655360, 18, 1
 wait_time = 0.1
 autostart = true
 
-[node name="Player" parent="." instance=ExtResource("3_ft68t")]
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" instance=ExtResource("3_ft68t")]
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]

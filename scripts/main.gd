@@ -30,11 +30,16 @@ func _on_mob_spawn_timer_timeout():
 	if get_tree().get_nodes_in_group("mob").size() > current_level.max_concurrent_mobs - 1: return;
 	mob_spawn_timer.wait_time = current_level.mob_spawn_cooldown
 	var mob = mob_scene.instantiate();
+<<<<<<< HEAD
 	mob.type = current_level.get_mob_type()
 	if not mob.type:
 		push_warning("No valid mob")
 		return;
 	add_child(mob);
+=======
+	mob.type = mobtypes.pick_random()
+	$Objects.add_child(mob);
+>>>>>>> 98fba6e (y sort enabled)
 	mob.position = _random_new_mob_position()
 	
 func _screen_to_world(pos: Vector2) -> Vector2:
