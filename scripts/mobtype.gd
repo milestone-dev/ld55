@@ -11,6 +11,7 @@ class_name Mobtype
 @export var color : Color = Color.WHITE;
 @export var scale : float = 1;
 @export var animation_speed : float = 1;
+@export var mob_sfx : Array[AudioStream];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

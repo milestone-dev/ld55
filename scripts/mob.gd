@@ -9,6 +9,9 @@ var alive = true
 var hp = 0;
 var attack_cooldown = 0;
 
+var mob_sfx_cooldown_max = 3;
+var mob_sfx_cooldown = 1;
+
 var player_target : Player;
 var main : Main;
 
@@ -30,6 +33,14 @@ func _physics_process(delta):
 		if not player_target: return
 
 	if !alive: return
+
+	if position.distance_to(player_target.position) < 64:
+		if mob_sfx_cooldown <= 0:
+			$MobSfx.stream = type.mob_sfx.pick_random()
+			$MobSfx.play()
+			mob_sfx_cooldown = randf_range(mob_sfx_cooldown_max, mob_sfx_cooldown_max * 3);
+		else: mob_sfx_cooldown -= delta;
+
 	if position.distance_to(player_target.position) < type.attack_range:
 		if attack_cooldown <= 0:
 			attack_cooldown = type.attack_cooldown_max

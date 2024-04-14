@@ -196,3 +196,5 @@ tree_root = SubResource("AnimationNodeStateMachine_meef1")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Die/blend_position = 0.00109887
 parameters/Walk/blend_position = -0.306593
+
+[node name="MobSfx" type="AudioStreamPlayer2D" parent="."]
