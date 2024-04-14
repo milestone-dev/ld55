@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://fx4257b48mvr"]
+[gd_scene load_steps=19 format=3 uid="uid://fx4257b48mvr"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_8hhfd"]
 [ext_resource type="Texture2D" uid="uid://bd1dveiihl6g0" path="res://assets/sprites/NMY-VITTRA-Sheet.png" id="2_3fp5a"]
+[ext_resource type="AudioStream" uid="uid://bd84k5u17s87k" path="res://assets/audio/sfx/SFX_IMPACT2.ogg" id="3_ecbas"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 4.0
@@ -200,4 +201,5 @@ parameters/Walk/blend_position = -0.306593
 [node name="MobSfx" type="AudioStreamPlayer2D" parent="."]
 
 [node name="MobImpactSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ecbas")
 volume_db = -10.0

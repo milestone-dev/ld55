@@ -62,6 +62,8 @@ func _physics_process(delta):
 
 func take_damage(damage : float) -> int:
 	hp -= damage;
+	$MobImpactSfx.pitch_scale = randf_range(0.9, 1.1);
+	$MobImpactSfx.play();
 	if hp <= 0: 
 		die();
 		return type.experience;
@@ -69,8 +71,6 @@ func take_damage(damage : float) -> int:
 	return 0;
 
 func flash_damage():
-	$MobImpactSfx.pitch_scale = randf_range(0.9, 1.1);
-	$MobImpactSfx.play();
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = type.color
