@@ -26,7 +26,7 @@ enum SpellEffectAreaBehavior {
 @export var heal : float = 0;
 
 # Effect to spawn at cast location
-@export var hit_effect: PackedScene
+@export var effect: PackedScene
 
 
 @export var projectile_scene: PackedScene

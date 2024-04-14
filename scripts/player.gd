@@ -158,8 +158,8 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	
 	match spell.effect_area_behavior:
 		Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
-			if spell.effect:
-				var effect = spell.effect.instantiate()
+			if spell.area_of_effect_scene:
+				var effect = spell.area_of_effect_scene.instantiate()
 				add_child(effect)
 			for mob : Mob in get_tree().get_nodes_in_group("mob"):
 				if position.distance_to(mob.position) < spell.attack_range:
