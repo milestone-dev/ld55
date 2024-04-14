@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://d1hpeibakmitc"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_8wbn6"]
-[ext_resource type="Resource" uid="uid://dt2q0hjoocd36" path="res://resources/spells/preserve_2.tres" id="1_yls48"]
+[ext_resource type="Resource" uid="uid://dt2q0hjoocd36" path="res://resources/spells/MUN_B2.tres" id="1_yls48"]
 
 [resource]
 script = ExtResource("1_8wbn6")
