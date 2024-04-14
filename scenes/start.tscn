@@ -10,7 +10,7 @@ bg_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
-[node name="Start" type="Panel" node_paths=PackedStringArray("spell_texture_1", "spell_texture_2", "spell_texture_3", "spell_button_1", "spell_button_2", "spell_button_3")]
+[node name="Start" type="Panel" node_paths=PackedStringArray("spell_button_1")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,12 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
 script = ExtResource("1_w7n0a")
-spell_texture_1 = NodePath("")
-spell_texture_2 = NodePath("")
-spell_texture_3 = NodePath("")
 spell_button_1 = NodePath("StartBackground/Button/StartButton")
-spell_button_2 = NodePath("")
-spell_button_3 = NodePath("")
 
 [node name="StartBackground" type="TextureRect" parent="."]
 texture_filter = 1
