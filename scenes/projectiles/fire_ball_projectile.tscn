@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://d01c8jof0ioou"]
+
+[ext_resource type="Texture2D" uid="uid://duj1nlyxrcax6" path="res://assets/sprites/projectile_fireball.png" id="1_wit02"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="2_3vl7e"]
+[ext_resource type="Material" uid="uid://dutv2x8181ujv" path="res://shaders/ice_ball.tres" id="3_wwc0u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qil6e"]
+
+[sub_resource type="Curve" id="Curve_hsdw5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.469466, 0.0332279), 0.0, 0.0, 0, 0, Vector2(0.679389, 0.0743672), 0.0, 0.0, 0, 0, Vector2(0.919847, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_3efl6"]
+curve = SubResource("Curve_hsdw5")
+
+[sub_resource type="Curve" id="Curve_gxulu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e8t7p"]
+curve = SubResource("Curve_gxulu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c3uiy"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 6.29
+angle_min = -119.2
+angle_max = 288.0
+direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+spread = 0.0
+gravity = Vector3(2.08165e-12, -98, 2.08165e-12)
+scale_min = 2.0
+scale_max = 8.9
+scale_curve = SubResource("CurveTexture_e8t7p")
+alpha_curve = SubResource("CurveTexture_3efl6")
+turbulence_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_owx1o"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nyfht"]
+gradient = SubResource("Gradient_owx1o")
+fill = 1
+fill_from = Vector2(0.508547, 0.517094)
+fill_to = Vector2(0.858974, 0.183761)
+
+[node name="Projectile" type="Sprite2D" node_paths=PackedStringArray("area")]
+texture_filter = 1
+texture = ExtResource("1_wit02")
+script = ExtResource("2_3vl7e")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qil6e")
+
+[node name="fire_emitter" type="GPUParticles2D" parent="."]
+material = ExtResource("3_wwc0u")
+position = Vector2(3, 0)
+amount = 108
+process_material = SubResource("ParticleProcessMaterial_c3uiy")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.639216, 0.545098, 1)
+texture = SubResource("GradientTexture2D_nyfht")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
