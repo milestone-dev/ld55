@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://br1y4y1veyyl6"]
 
-[ext_resource type="Resource" uid="uid://cx8npx15nya73" path="res://resources/spells/moon_2.tres" id="1_60pf0"]
+[ext_resource type="Resource" uid="uid://cx8npx15nya73" path="res://resources/spells/MUN_A2.tres" id="1_60pf0"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_v6jyv"]
 
 [resource]
