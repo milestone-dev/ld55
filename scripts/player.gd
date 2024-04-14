@@ -69,9 +69,10 @@ func _physics_process(delta):
 		if current_single_fire_projectile_spell != null:
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
-		elif attack_cooldown <= 0:
 			attack_cooldown = attack_cooldown_max
+		elif attack_cooldown <= 0:
 			shoot_projectile();
+			attack_cooldown = attack_cooldown_max
 			
 	# process timers
 	for projectile_spell_timer : SpellTimer in current_timed_projectile_spells:
