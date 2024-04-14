@@ -67,9 +67,9 @@ texture = SubResource("GradientTexture2D_8dp5x")
 
 [node name="SpellButton1" type="Button" parent="SpellRune1"]
 layout_mode = 0
-offset_left = 96.0
+offset_left = 32.0
 offset_top = 528.0
-offset_right = 321.0
+offset_right = 399.0
 offset_bottom = 592.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -100,9 +100,9 @@ texture = SubResource("GradientTexture2D_8dp5x")
 
 [node name="SpellButton2" type="Button" parent="SpellRune2"]
 layout_mode = 0
-offset_left = 96.0
+offset_left = 9.0
 offset_top = 528.0
-offset_right = 321.0
+offset_right = 408.0
 offset_bottom = 592.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -133,9 +133,9 @@ texture = SubResource("GradientTexture2D_8dp5x")
 
 [node name="SpellButton3" type="Button" parent="SpellRune3"]
 layout_mode = 0
-offset_left = 96.0
+offset_left = 40.0
 offset_top = 528.0
-offset_right = 321.0
+offset_right = 393.0
 offset_bottom = 592.0
 theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
