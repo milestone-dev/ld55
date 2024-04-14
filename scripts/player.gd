@@ -181,6 +181,7 @@ func add_experience(input_experience : int):
 		level_up()
 
 func level_up():
+	hp = max_hp
 	level += 1
 	max_experience = level_experience_requirements[level]
 	level_change.emit()
