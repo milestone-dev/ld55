@@ -8,7 +8,7 @@ class_name CastingUI
 @export var debug_node: Panel;
 @export var valid: Array[Panel];
 @export var player: Player;
-
+@export var hint_runes : Array[TextureRect];
 
 @export_group("Spell drawing")
 @export var magnet_enabled = true;
@@ -56,6 +56,12 @@ func _process(_delta):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
 	if is_holding_activation_key and not active:
+		for tr : TextureRect in hint_runes:
+			tr.hide()
+			var index = hint_runes.find(tr)
+			if player.learned_spells.size() >= index+1 and player.learned_spells[index] != null:
+				tr.texture = player.learned_spells[index].spell_guide
+				tr.show()
 		visible = true;
 		#Input.warp_mouse(panel.position + first_node.position + first_node.pivot_offset)
 		mouse_origin = get_viewport().get_mouse_position();
