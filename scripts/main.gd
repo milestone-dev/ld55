@@ -52,7 +52,6 @@ func _on_mob_spawn_timer_timeout():
 	# Reset spawn cooldown	
 	current_spawn_cooldown = lerp(current_spawn_cooldown, current_spawn_cooldown_target, 0.01);
 	mob_spawn_timer.wait_time = current_spawn_cooldown
-	print (current_spawn_cooldown)
 	
 	var mob = mob_scene.instantiate();
 	mob.main = self;
