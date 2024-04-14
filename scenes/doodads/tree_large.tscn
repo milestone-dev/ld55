@@ -2,23 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://dnwn3hf12nt7" path="res://assets/tilemap/ground-tilemap.png" id="1_u6akg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7xw75"]
-radius = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xthdp"]
+size = Vector2(28, 51.6667)
 
 [node name="TreeLarge" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_u6akg")
-offset = Vector2(2.08165e-12, -36)
+offset = Vector2(2.08165e-12, -38)
 region_enabled = true
 region_rect = Rect2(112, 320, 64, 80)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0, -12)
-scale = Vector2(1, 0.24)
-shape = SubResource("CircleShape2D_7xw75")
+position = Vector2(1.42109e-14, -5)
+scale = Vector2(1.40708, 0.185966)
+shape = SubResource("RectangleShape2D_xthdp")

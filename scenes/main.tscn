@@ -1072,18 +1072,85 @@ autostart = true
 [node name="WorldEntities" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="WorldEntities" instance=ExtResource("3_ft68t")]
+[node name="WorldObjects" type="Node2D" parent="WorldEntities"]
+y_sort_enabled = true
 
-[node name="WorldObjects" type="Node2D" parent="."]
+[node name="TreeLarge" parent="WorldEntities/WorldObjects" instance=ExtResource("5_jcdjo")]
+position = Vector2(-160, -56)
 
-[node name="TreeLarge" parent="WorldObjects" instance=ExtResource("5_jcdjo")]
-position = Vector2(-121, -9)
-
-[node name="TreeSmall" parent="WorldObjects" instance=ExtResource("7_fjfkf")]
+[node name="TreeSmall" parent="WorldEntities/WorldObjects" instance=ExtResource("7_fjfkf")]
 position = Vector2(-153, 50)
 
-[node name="TreeMedium" parent="WorldObjects" instance=ExtResource("5_s7wl4")]
+[node name="TreeSmall2" parent="WorldEntities/WorldObjects" instance=ExtResource("7_fjfkf")]
+position = Vector2(-168, 132)
+
+[node name="TreeSmall3" parent="WorldEntities/WorldObjects" instance=ExtResource("7_fjfkf")]
+position = Vector2(-152, 144)
+
+[node name="TreeSmall5" parent="WorldEntities/WorldObjects" instance=ExtResource("7_fjfkf")]
+position = Vector2(-11, 180)
+
+[node name="TreeSmall4" parent="WorldEntities/WorldObjects" instance=ExtResource("7_fjfkf")]
+position = Vector2(8, 168)
+
+[node name="TreeMedium" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
 position = Vector2(-156, 7)
+
+[node name="TreeMedium2" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-192, 40)
+
+[node name="TreeLarge2" parent="WorldEntities/WorldObjects" instance=ExtResource("5_jcdjo")]
+position = Vector2(-256, -14)
+
+[node name="TreeLarge3" parent="WorldEntities/WorldObjects" instance=ExtResource("5_jcdjo")]
+position = Vector2(-216, 228)
+
+[node name="TreeMedium4" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-252, 27)
+
+[node name="TreeMedium5" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-288, 64)
+
+[node name="TreeMedium3" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-128, -81)
+
+[node name="TreeMedium6" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-240, 88)
+
+[node name="TreeMedium7" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-336, 108)
+
+[node name="TreeMedium8" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-216, -32)
+
+[node name="TreeMedium9" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-208, 128)
+
+[node name="TreeMedium12" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-168, 176)
+
+[node name="TreeMedium14" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-192, 184)
+
+[node name="TreeMedium15" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-176, 208)
+
+[node name="TreeMedium13" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-112, 168)
+
+[node name="TreeMedium16" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-80, 224)
+
+[node name="TreeMedium17" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-104, 240)
+
+[node name="TreeMedium10" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-336, 108)
+
+[node name="TreeMedium11" parent="WorldEntities/WorldObjects" instance=ExtResource("5_s7wl4")]
+position = Vector2(-208, -64)
+
+[node name="Player" parent="WorldEntities" instance=ExtResource("3_ft68t")]
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_mob_spawn_timer_timeout"]
 [connection signal="level_change" from="WorldEntities/Player" to="." method="_on_player_level_change"]
