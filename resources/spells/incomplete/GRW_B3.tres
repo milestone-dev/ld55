@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://dfw4almdl75yt"]
 
-[ext_resource type="Resource" uid="uid://b0wv6xs81fyrt" path="res://resources/spells/GRW_B2.tres" id="1_4fyb8"]
+[ext_resource type="Resource" uid="uid://b0wv6xs81fyrt" path="res://resources/spells/incomplete/GRW_B2.tres" id="1_4fyb8"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_02405"]
 [ext_resource type="Texture2D" uid="uid://khyqj07uba8d" path="res://assets/sprites/GUIDE_GRWB3.png" id="3_ipd4p"]
 [ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="3_kce0y"]

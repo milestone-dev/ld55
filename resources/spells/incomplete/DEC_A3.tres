@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://ce0sjfauxjoj2"]
 
-[ext_resource type="Resource" uid="uid://0bj58u5f68vm" path="res://resources/spells/DEC_A2.tres" id="1_cdc4l"]
+[ext_resource type="Resource" uid="uid://0bj58u5f68vm" path="res://resources/spells/incomplete/DEC_A2.tres" id="1_cdc4l"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="2_echv7"]
 [ext_resource type="Texture2D" uid="uid://c3hohm0rnhfwt" path="res://assets/sprites/DEC-SYMBOL.png" id="3_axmcf"]
 [ext_resource type="Texture2D" uid="uid://dcltc3hj2j6hh" path="res://assets/sprites/GUIDE_DECA3.png" id="3_on3ju"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://cx8npx15nya73"]
 
-[ext_resource type="Resource" uid="uid://dsgll07j5ifnq" path="res://resources/spells/MUN_A1.tres" id="1_5us6c"]
+[ext_resource type="Resource" uid="uid://dsgll07j5ifnq" path="res://resources/spells/incomplete/MUN_A1.tres" id="1_5us6c"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_ex1s2"]
 [ext_resource type="PackedScene" uid="uid://deyyfb3ulcu16" path="res://scenes/area_of_effect/swiftstep_aoe_effect.tscn" id="1_lwago"]
 [ext_resource type="Texture2D" uid="uid://dpdoip06ob4gx" path="res://assets/sprites/MUN-SYMBOL.png" id="3_5cf1v"]

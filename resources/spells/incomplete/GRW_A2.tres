@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://40bb3jssivp5"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_3hieo"]
-[ext_resource type="Resource" uid="uid://ckwghlbfjy7nl" path="res://resources/spells/GRW_A1.tres" id="1_4oj8t"]
+[ext_resource type="Resource" uid="uid://ckwghlbfjy7nl" path="res://resources/spells/incomplete/GRW_A1.tres" id="1_4oj8t"]
 [ext_resource type="Texture2D" uid="uid://8fg8j6erk081" path="res://assets/sprites/GUIDE_GRWA2.png" id="3_4nkvk"]
 [ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="3_sm6db"]
 [ext_resource type="Texture2D" uid="uid://cb2w1yke1vmil" path="res://assets/sprites/GRWA2-FIREMINES.png" id="4_nf2mq"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://d1hpeibakmitc"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_8wbn6"]
-[ext_resource type="Resource" uid="uid://dt2q0hjoocd36" path="res://resources/spells/MUN_B2.tres" id="1_yls48"]
+[ext_resource type="Resource" uid="uid://dt2q0hjoocd36" path="res://resources/spells/incomplete/MUN_B2.tres" id="1_yls48"]
 [ext_resource type="Texture2D" uid="uid://dpdoip06ob4gx" path="res://assets/sprites/MUN-SYMBOL.png" id="3_bcnnb"]
 [ext_resource type="Texture2D" uid="uid://2qq4da5a14fw" path="res://assets/sprites/GUIDE_MUNB3.png" id="3_tkah2"]
 [ext_resource type="Texture2D" uid="uid://dcvbss3hu50pq" path="res://assets/sprites/MUNB3-FOGFORM.png" id="4_0rcw3"]
