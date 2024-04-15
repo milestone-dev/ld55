@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dtq5l1ul652um"]
+[gd_scene load_steps=22 format=3 uid="uid://dtq5l1ul652um"]
 
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_5e32w"]
 [ext_resource type="PackedScene" uid="uid://dwstw7delvn03" path="res://scenes/projectiles/base_drum_shot.tscn" id="2_vprv1"]
@@ -11,6 +11,10 @@
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="5_ohlgh"]
 [ext_resource type="PackedScene" uid="uid://c6ewrdmowsa11" path="res://scenes/cone_effects/fire_breath.tscn" id="6_6ohpq"]
 [ext_resource type="PackedScene" uid="uid://blc7ouwk26mgc" path="res://scenes/cone_effects/poison_spray_cone_effect.tscn" id="7_lbj0c"]
+[ext_resource type="PackedScene" uid="uid://0uw608v3woka" path="res://scenes/area_of_effect/heal_aoe_effect.tscn" id="8_pdwcy"]
+[ext_resource type="PackedScene" uid="uid://xpukq7c4o5ru" path="res://scenes/area_of_effect/inferno_aoe_effect.tscn" id="9_ft8kf"]
+[ext_resource type="PackedScene" uid="uid://87t61r1qk6nr" path="res://scenes/area_of_effect/sunlight_area_of_effect.tscn" id="10_100aw"]
+[ext_resource type="PackedScene" uid="uid://deyyfb3ulcu16" path="res://scenes/area_of_effect/swiftstep_aoe_effect.tscn" id="11_him57"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
@@ -92,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
 script = ExtResource("5_ohlgh")
-preload_scenes = Array[PackedScene]([ExtResource("2_vprv1"), ExtResource("3_2xoad"), ExtResource("4_5qmlu"), ExtResource("5_o4wdi"), ExtResource("6_6ohpq"), ExtResource("7_lbj0c")])
+preload_scenes = Array[PackedScene]([ExtResource("2_vprv1"), ExtResource("3_2xoad"), ExtResource("4_5qmlu"), ExtResource("5_o4wdi"), ExtResource("6_6ohpq"), ExtResource("7_lbj0c"), ExtResource("8_pdwcy"), ExtResource("9_ft8kf"), ExtResource("10_100aw"), ExtResource("11_him57")])
 
 [node name="StartBackground" type="TextureRect" parent="."]
 texture_filter = 1
