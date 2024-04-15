@@ -231,7 +231,7 @@ theme = SubResource("Theme_npwjt")
 theme_override_fonts/normal_font = ExtResource("4_ga4lh")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center]Select a spell"
+text = "[center]Learn a new spell"
 fit_content = true
 
 [connection signal="pressed" from="SpellRune1/SpellButton1" to="." method="_on_spell_button_1_pressed"]
