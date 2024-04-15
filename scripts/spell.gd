@@ -26,6 +26,7 @@ enum SpellEffectAreaBehavior {
 @export_category("Projectile")
 @export var projectile_scene: PackedScene
 @export var projectile_behavior : SpellProjectileBehavior;
+@export var projectile_max_hits: int = 1;
 @export_category("Effect")
 @export var area_of_effect_scene: PackedScene
 @export var area_of_effect_on_player : = true;

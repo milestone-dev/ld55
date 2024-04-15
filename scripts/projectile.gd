@@ -16,6 +16,7 @@ var age: float;
 var alive = true
 
 func _ready() -> void:
+	hits = spell.projectile_max_hits;
 	if align_rotation:
 		look_at(position + velocity)
 	if particle_effect:
