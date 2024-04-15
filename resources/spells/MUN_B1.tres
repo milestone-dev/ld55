@@ -24,5 +24,5 @@ effect_cooldown_max = 0.0
 speed_multiplier = 0.0
 heal = 0.0
 damage_over_time = 10.0
-attack_damage = 1.0
+attack_damage = 5.0
 attack_range = 32.0
