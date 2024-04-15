@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://bgq7h5f7iesjr"]
+[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://bgq7h5f7iesjr"]
 
 [ext_resource type="PackedScene" uid="uid://87t61r1qk6nr" path="res://scenes/area_of_effect/sunlight_area_of_effect.tscn" id="1_g0tkt"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_xwxar"]
 [ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="2_843e3"]
 [ext_resource type="Texture2D" uid="uid://yo7v6kmt25xn" path="res://assets/sprites/GUIDE_SUNA1.png" id="2_cbyhp"]
 [ext_resource type="Texture2D" uid="uid://fpcq6a7lw35n" path="res://assets/sprites/SUNA1-LIGHTBURST.png" id="3_1qywn"]
+[ext_resource type="AudioStream" uid="uid://de72kobrrdt7f" path="res://assets/audio/sfx/confirm.ogg" id="4_4uxvp"]
 
 [resource]
 script = ExtResource("1_xwxar")
@@ -15,13 +16,16 @@ weight = 1.0
 store_texture = ExtResource("3_1qywn")
 store_icon = ExtResource("2_843e3")
 spell_guide = ExtResource("2_cbyhp")
+spell_sfx = ExtResource("4_4uxvp")
 projectile_behavior = 0
+projectile_max_hits = 1
 area_of_effect_scene = ExtResource("1_g0tkt")
 area_of_effect_on_player = true
 effect_area_behavior = 2
 effect_duration = 0.2
 effect_cooldown_max = 0.1
+speed_multiplier = 1.0
 heal = 0.0
 damage_over_time = 0.0
 attack_damage = 30.0
-attack_range = 35.0
+attack_range = 60.0

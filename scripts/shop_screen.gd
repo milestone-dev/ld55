@@ -21,6 +21,7 @@ signal learn_spell
 @export var spells: Array[Spell];
 
 func present_spell_choice(available_spells : Array[Spell], learned_spells : Array[Spell]):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	spells.clear();
 	for spell : Spell in available_spells:
 		if !learned_spells.has(spell) and (not spell.dependency or learned_spells.has(spell.dependency)):

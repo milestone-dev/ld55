@@ -2,7 +2,7 @@ extends Object
 class_name Resources
 
 static func full_path(dir: DirAccess, filename: String):
-	if OS.has_feature("web"): # HAX: workaround web resources loading on web bug
+	if OS.has_feature("web") or OS.has_feature("macos") or OS.has_feature("windows"): # HAX: workaround web resources loading on web bug
 		return dir.get_current_dir() + "/" + filename.trim_suffix(".remap")
 	return dir.get_current_dir() + "/" + filename
 

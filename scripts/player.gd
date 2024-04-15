@@ -20,12 +20,11 @@ var level_experience_requirements = [
 	1600,
 	3200,
 	6000,
-	8000,
-	12000,
-	17000,
-	40000,
-	100000,
-	500000
+	10000,
+	18000,
+	35000,
+	57000,
+	78000,
 ];
 
 @export_category("TrollDOOM")
@@ -165,6 +164,9 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		hud.add_message("You don't know that spell...");
 		return
 	
+	if !Global.sfx_muted:
+		$SpellCastStreamPlayer.stream = spell.spell_sfx
+		$SpellCastStreamPlayer.play()
 	match spell.effect_area_behavior:
 		Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
 			if spell.area_of_effect_scene:

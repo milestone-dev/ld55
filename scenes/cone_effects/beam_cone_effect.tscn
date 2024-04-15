@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://bb3yr5ptwmjpt"]
+
+[ext_resource type="Script" path="res://scenes/cone_effects/cone_effect.gd" id="1_20egj"]
+
+[sub_resource type="Curve" id="Curve_or875"]
+_data = [Vector2(0.0206186, 0), 0.0, 0.0, 0, 0, Vector2(0.262887, 0.369565), 0.0, 0.0, 0, 0, Vector2(0.546392, 0.255435), 0.0, 0.0, 0, 0, Vector2(0.783505, 0.402174), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_srdvf"]
+curve = SubResource("Curve_or875")
+
+[sub_resource type="Curve" id="Curve_e7p52"]
+_data = [Vector2(0.00381679, 0.0229431), 0.0, 0.0, 0, 0, Vector2(0.221374, 0.660601), 2.33534, 2.33534, 0, 0, Vector2(0.603053, 0.835443), 0.0, 0.0, 0, 0, Vector2(0.862595, 0.598892), 0.0, 0.0, 0, 0, Vector2(1, 0.0126582), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_q2dro"]
+curve = SubResource("Curve_e7p52")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j8dpx"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 10, 1)
+emission_shape = 3
+emission_box_extents = Vector3(300, 1, 1)
+spread = 1.607
+initial_velocity_max = 75.22
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+tangential_accel_min = -20.0
+tangential_accel_max = 30.0
+damping_min = 3.982
+damping_max = 15.929
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_q2dro")
+color = Color(16.0588, 32.1216, 0, 1)
+alpha_curve = SubResource("CurveTexture_srdvf")
+
+[sub_resource type="Gradient" id="Gradient_b2gij"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hejeb"]
+gradient = SubResource("Gradient_b2gij")
+fill = 1
+fill_from = Vector2(0.466463, 0.469512)
+fill_to = Vector2(0.493902, 0)
+
+[sub_resource type="Gradient" id="Gradient_y7k3r"]
+offsets = PackedFloat32Array(0, 0.522727, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fjg8n"]
+gradient = SubResource("Gradient_y7k3r")
+fill_from = Vector2(0.516447, 0.875)
+fill_to = Vector2(0.490132, 0.144737)
+
+[node name="ConeEffect" type="Node2D" node_paths=PackedStringArray("collider")]
+script = ExtResource("1_20egj")
+angle = 3.214
+range = 131.667
+collider = NodePath("Area2D")
+look_at_pointer = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(2, 4, 131.615, 3.69244, 131.615, -3.69244, 2, -3)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(300, 2.08165e-12)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_j8dpx")
+texture = SubResource("GradientTexture2D_hejeb")
+lifetime = 1.31667
+randomness = 0.6
+
+[node name="Beam" type="Line2D" parent="."]
+points = PackedVector2Array(8, 0, 600, 2.08165e-12)
+default_color = Color(1, 0.882353, 0, 1)
+texture = SubResource("GradientTexture2D_fjg8n")
+texture_mode = 1
+begin_cap_mode = 2

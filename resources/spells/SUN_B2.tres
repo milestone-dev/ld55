@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://7gmy857wkjq1"]
+[gd_resource type="Resource" script_class="Spell" load_steps=8 format=3 uid="uid://7gmy857wkjq1"]
 
 [ext_resource type="PackedScene" uid="uid://c6ewrdmowsa11" path="res://scenes/cone_effects/fire_breath.tscn" id="1_4cn65"]
 [ext_resource type="Resource" uid="uid://c65bmbitkb7e0" path="res://resources/spells/SUN_B1.tres" id="1_34wse"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_r10lt"]
 [ext_resource type="Texture2D" uid="uid://cbtgls36n2j" path="res://assets/sprites/GUIDE_SUNB2.png" id="3_elk5w"]
 [ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="4_bq2g6"]
+[ext_resource type="AudioStream" uid="uid://de72kobrrdt7f" path="res://assets/audio/sfx/confirm.ogg" id="5_8feim"]
 [ext_resource type="Texture2D" uid="uid://smthwbtv8xki" path="res://assets/sprites/SUNB2-FLAMEBREATH.png" id="5_w665g"]
 
 [resource]
@@ -14,15 +15,19 @@ code = "A0,B0,B1,C1,C2"
 description = "Rotating flamethrower for N seconds"
 dependency = ExtResource("1_34wse")
 weight = 1.0
-attack_damage = 50.0
-attack_range = 32.0
-heal = 0.0
-area_of_effect_scene = ExtResource("1_4cn65")
-area_of_effect_on_player = true
-effect_duration = 5.0
-effect_cooldown_max = 0.1
 store_texture = ExtResource("5_w665g")
 store_icon = ExtResource("4_bq2g6")
 spell_guide = ExtResource("3_elk5w")
+spell_sfx = ExtResource("5_8feim")
 projectile_behavior = 0
+projectile_max_hits = 1
+area_of_effect_scene = ExtResource("1_4cn65")
+area_of_effect_on_player = true
 effect_area_behavior = 1
+effect_duration = 5.0
+effect_cooldown_max = 0.1
+speed_multiplier = 1.0
+heal = 0.0
+damage_over_time = 0.0
+attack_damage = 50.0
+attack_range = 32.0

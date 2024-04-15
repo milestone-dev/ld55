@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://d24htvduusflc"]
+
+[ext_resource type="Texture2D" uid="uid://dqqxq0qvlgy4i" path="res://assets/sprites/projectile_hale.png" id="1_um6hk"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="2_5e185"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qil6e"]
+
+[sub_resource type="Gradient" id="Gradient_owx1o"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nyfht"]
+gradient = SubResource("Gradient_owx1o")
+fill = 1
+fill_from = Vector2(0.508547, 0.517094)
+fill_to = Vector2(0.858974, 0.183761)
+
+[node name="Projectile" type="Sprite2D" node_paths=PackedStringArray("area")]
+texture_filter = 1
+texture = ExtResource("1_um6hk")
+script = ExtResource("2_5e185")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qil6e")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.00392157, 0.266667, 0.976471, 1)
+texture = SubResource("GradientTexture2D_nyfht")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
