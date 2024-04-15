@@ -50,7 +50,7 @@ func _physics_process(delta):
 		if mob_sfx_cooldown <= 0:
 			$MobSfx.stream = type.mob_sfx.pick_random()
 			$MobSfx.pitch_scale = randf_range(0.9, 1.1);
-			$MobSfx.play()
+			if !Global.sfx_muted: $MobSfx.play()
 			mob_sfx_cooldown = randf_range(mob_sfx_cooldown_max, mob_sfx_cooldown_max * 3);
 		else: mob_sfx_cooldown -= delta;
 
@@ -75,7 +75,7 @@ func _physics_process(delta):
 func take_damage(damage : float) -> int:
 	hp -= damage;
 	$MobImpactSfx.pitch_scale = randf_range(0.9, 1.1);
-	$MobImpactSfx.play();
+	if !Global.sfx_muted: $MobImpactSfx.play();
 	if hp <= 0: 
 		die();
 		return type.experience;

@@ -77,13 +77,13 @@ func _physics_process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Global.speed_factor == 1:
 		if current_single_fire_projectile_spell != null:
 			$AttackStreamPlayer.pitch_scale = randf_range(0.9, 1.1);
-			$AttackStreamPlayer.play()
+			if !Global.sfx_muted: $AttackStreamPlayer.play()
 			shoot_projectile(current_single_fire_projectile_spell);
 			current_single_fire_projectile_spell = null
 			attack_cooldown = attack_cooldown_max
 		elif base_attack_spell and attack_cooldown <= 0:
 			$AttackStreamPlayer.pitch_scale = randf_range(0.9, 1.1);
-			$AttackStreamPlayer.play()
+			if !Global.sfx_muted: $AttackStreamPlayer.play()
 			shoot_projectile(base_attack_spell);
 			attack_cooldown = attack_cooldown_max
 			
@@ -213,7 +213,7 @@ func take_damage(damage : float):
 func flash_damage():
 	if not is_inside_tree(): return
 	$DamageStreamPlayer.pitch_scale = randf_range(0.9, 1.1);
-	$DamageStreamPlayer.play();
+	if !Global.sfx_muted: $DamageStreamPlayer.play();
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE
