@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cylxgd1if3n0t"]
+[gd_scene load_steps=8 format=3 uid="uid://cylxgd1if3n0t"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6iubc"]
 [ext_resource type="Texture2D" uid="uid://dvnljqtpw3nu3" path="res://assets/sprites/death.png" id="2_3y3ax"]
@@ -7,6 +7,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7s3s"]
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
@@ -56,6 +58,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_eo6d7")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i7s3s")
 text = "Try again"
 flat = true
 

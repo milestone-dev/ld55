@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjuplon0na42d"]
+[gd_scene load_steps=9 format=3 uid="uid://bjuplon0na42d"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_4p20b"]
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_lyj2q"]
@@ -7,6 +7,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ba66y"]
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
@@ -58,6 +60,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_enub8")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ba66y")
 text = "Start again"
 flat = true
 

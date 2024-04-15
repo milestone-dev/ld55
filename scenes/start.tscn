@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtq5l1ul652um"]
+[gd_scene load_steps=12 format=3 uid="uid://dtq5l1ul652um"]
 
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_5e32w"]
 [ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_ii31w"]
@@ -8,6 +8,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5w4hc"]
 
 [sub_resource type="Theme" id="Theme_npwjt"]
 
@@ -121,6 +123,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_pnpj1")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5w4hc")
 text = "Start game"
 flat = true
 
