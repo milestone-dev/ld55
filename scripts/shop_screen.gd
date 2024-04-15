@@ -27,12 +27,15 @@ func present_spell_choice(available_spells : Array[Spell], learned_spells : Arra
 			spells.push_back(spell)
 	update_spells()
 	visible = true
-	print (spells[0].name)
-	print (spells[1].name)
-	print (spells[2].name)
+	if spells.size() == 3:
+		print (spells[0].name)
+		print (spells[1].name)
+		print (spells[2].name)
+	else:
+		print("Why u no spells huh?")
 			
 func update_spells():
-	if spells.size() == 0: return
+	if spells.size() < 3: return
 	spells.shuffle()
 	spell_label_1.text = spells[0].name
 	spell_label_2.text = spells[1].name
