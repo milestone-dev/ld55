@@ -81,14 +81,14 @@ jobs:
       - name: Itch.io MacOS
         env: 
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
-        run: butler push ./build/mac/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:mac_x86
+        run: butler push ./build/mac/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:mac
 
       - name: Itch.io Windows
         env: 
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
-        run: butler push ./build/windows/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:windows_x86
+        run: butler push ./build/windows/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:windows
 
       - name: Itch.io Linux
         env: 
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
-        run: butler push ./build/linux/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:linux_x86
+        run: butler push ./build/linux/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:linux
