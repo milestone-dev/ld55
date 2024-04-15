@@ -73,6 +73,7 @@ func _physics_process(delta):
 	if Global.paused: return;
 	if attack_cooldown > 0: attack_cooldown -= delta
 	Global.time_survived += delta
+	hud.click_to_cast_label.visible = current_single_fire_projectile_spell != null;
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Global.speed_factor == 1:
 		if current_single_fire_projectile_spell != null:
 			$AttackStreamPlayer.pitch_scale = randf_range(0.9, 1.1);

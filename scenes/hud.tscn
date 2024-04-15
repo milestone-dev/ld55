@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50c2o4r2knhr"]
+[gd_scene load_steps=5 format=3 uid="uid://c50c2o4r2knhr"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_w35my"]
 [ext_resource type="Texture2D" uid="uid://drc50ew1hy6p1" path="res://assets/sprites/hud.png" id="2_si200"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="3_t7ut6"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label", "log_container")]
+[sub_resource type="LabelSettings" id="LabelSettings_qyobi"]
+font = ExtResource("3_t7ut6")
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.780392)
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "exp_bar", "label", "log_container", "click_to_cast_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,8 +20,9 @@ grow_vertical = 2
 script = ExtResource("1_w35my")
 hp_bar = NodePath("HPProgressBar")
 exp_bar = NodePath("EXPProgressBar")
-label = NodePath("Label")
+label = NodePath("InfoLabel")
 log_container = NodePath("VBoxContainer")
+click_to_cast_label = NodePath("ClickToCastLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -156,7 +163,7 @@ theme_override_fonts/font = ExtResource("3_t7ut6")
 theme_override_font_sizes/font_size = 20
 value = 20.0
 
-[node name="Label" type="Label" parent="."]
+[node name="InfoLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 16.0
@@ -180,3 +187,19 @@ offset_bottom = -479.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
+
+[node name="ClickToCastLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 35.0
+offset_right = 70.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to cast spell"
+label_settings = SubResource("LabelSettings_qyobi")

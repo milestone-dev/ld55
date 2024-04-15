@@ -6,6 +6,7 @@ class_name HUD
 @export var exp_bar : ProgressBar
 @export var label : Label
 @export var log_container : VBoxContainer
+@export var click_to_cast_label : Label;
 
 func add_message(message : String):
 	#print(message);
