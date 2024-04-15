@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brr25pyed7l4d"
-path="res://.godot/imported/troll.png-ea1f136fd732fac481f64b3c0f6d3ee0.ctex"
+uid="uid://dqfxfs3su8aq8"
+path="res://.godot/imported/NMY-TROLL-Sheet.png-4cf63719c5b910b50a5547aa2a3cbbe7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/troll.png"
-dest_files=["res://.godot/imported/troll.png-ea1f136fd732fac481f64b3c0f6d3ee0.ctex"]
+source_file="res://assets/sprites/NMY-TROLL-Sheet.png"
+dest_files=["res://.godot/imported/NMY-TROLL-Sheet.png-4cf63719c5b910b50a5547aa2a3cbbe7.ctex"]
 
 [params]
 

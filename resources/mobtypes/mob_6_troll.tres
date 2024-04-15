@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/mobtype.gd" id="1_lfbag"]
 [ext_resource type="AudioStream" uid="uid://d2srn51qrm8jr" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLL1.ogg" id="1_w7bdg"]
-[ext_resource type="Texture2D" uid="uid://brr25pyed7l4d" path="res://assets/sprites/troll.png" id="2_o6nka"]
 [ext_resource type="AudioStream" uid="uid://bknrbddhtiks" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLL2.ogg" id="2_s2lao"]
 [ext_resource type="AudioStream" uid="uid://on8036puphl3" path="res://assets/audio/sfx/mob/SFX_NMNY_TROLL3.ogg" id="3_acm70"]
+[ext_resource type="Texture2D" uid="uid://dqfxfs3su8aq8" path="res://assets/sprites/NMY-TROLL-Sheet.png" id="5_6xajx"]
 
 [resource]
 script = ExtResource("1_lfbag")
@@ -14,7 +14,7 @@ attack_damage = 30
 attack_cooldown_max = 0.3
 attack_range = 32
 experience = 390
-sprite = ExtResource("2_o6nka")
+sprite = ExtResource("5_6xajx")
 color = Color(1, 1, 1, 1)
 scale = 2.0
 animation_speed = 0.2
