@@ -6,13 +6,11 @@ extends AreaOfEffect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if not spell: return
 	if not collider:
 		collider = $Area2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not spell: return
 	if Engine.is_editor_hint():
 		var rad = deg_to_rad(angle)/2
 		$Area2D/CollisionPolygon2D.polygon[1].x = cos(rad)*range
