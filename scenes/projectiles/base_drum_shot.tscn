@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dqhl11ois83nq" path="res://assets/sprites/projectile_basic.png" id="1_8xip5"]
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="2_lsix5"]
-[ext_resource type="Material" uid="uid://co4wqi01slw7o" path="res://projectile_particle.tres" id="4_xnvfo"]
+[ext_resource type="Material" uid="uid://div6pxb2csrkc" path="res://projectile_particle.tres" id="4_xnvfo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qil6e"]
 
@@ -21,8 +21,9 @@ shape = SubResource("CircleShape2D_qil6e")
 
 [node name="wave_tails_emitter" type="GPUParticles2D" parent="."]
 rotation = -0.000112456
-amount = 50
 process_material = ExtResource("4_xnvfo")
 texture = ExtResource("1_8xip5")
+lifetime = 0.15
+speed_scale = 0.68
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
