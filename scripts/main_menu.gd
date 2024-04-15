@@ -3,10 +3,11 @@ extends Panel
 @export var score_subtitle : Label;
 
 @export var preload_scenes : Array[PackedScene]
+@export var preload_container : Control;
 
 func _ready() -> void:
 	for scene : PackedScene in preload_scenes:
-		scene.instantiate();
+		preload_container.add_child(scene.instantiate());
 	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if has_node("AnimationPlayer"):

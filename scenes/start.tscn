@@ -88,7 +88,7 @@ _data = {
 "blink_2": SubResource("Animation_y8gg1")
 }
 
-[node name="Start" type="Panel"]
+[node name="Start" type="Panel" node_paths=PackedStringArray("preload_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -97,6 +97,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
 script = ExtResource("5_ohlgh")
 preload_scenes = Array[PackedScene]([ExtResource("2_vprv1"), ExtResource("3_2xoad"), ExtResource("4_5qmlu"), ExtResource("5_o4wdi"), ExtResource("6_6ohpq"), ExtResource("7_lbj0c"), ExtResource("8_pdwcy"), ExtResource("9_ft8kf"), ExtResource("10_100aw"), ExtResource("11_him57")])
+preload_container = NodePath("PreloadDummyNode")
 
 [node name="StartBackground" type="TextureRect" parent="."]
 texture_filter = 1
@@ -201,5 +202,11 @@ offset_right = 1012.0
 offset_bottom = 128.0
 texture = ExtResource("5_0544c")
 stretch_mode = 5
+
+[node name="PreloadDummyNode" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="StartBackground/Button/StartButton" to="." method="_on_start_button_pressed"]
