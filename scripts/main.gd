@@ -37,11 +37,9 @@ func start_level():
 func _process(_delta):
 	if paused or not is_inside_tree(): return;
 	if Input.is_action_just_pressed("decrease_spell_mouse_sensitivity"):
-		Global.spell_mouse_sensitivity -= 0.1
-		player.hud.add_message("Spell mouse sensitivity decreased");		
+		Global.spell_mouse_sensitivity = max(0.1, Global.spell_mouse_sensitivity - 0.1);
 	if Input.is_action_just_pressed("increase_spell_mouse_sensitivity"):
-		Global.spell_mouse_sensitivity += 0.1
-		player.hud.add_message("Spell mouse sensitivity increased");
+		Global.spell_mouse_sensitivity = min(1, Global.spell_mouse_sensitivity + 0.1);
 	if Input.is_action_just_pressed("dev_restart"):
 		player.die()
 		return

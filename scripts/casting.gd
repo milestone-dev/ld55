@@ -79,7 +79,7 @@ func _process(_delta):
 		draw_line_to_node(first_node, false) #and one for the mouse pointer		
 		active = true;
 		Global.speed_factor = max(0.1, 0.05 * player.level)
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	
 	if active:
 		Global.speed_factor = max(0.1, 0.05 * player.level)
