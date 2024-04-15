@@ -47,7 +47,6 @@ func _input(event):
 	if not active: return;
 	
 	var mouse_event : InputEventMouseMotion = event as InputEventMouseMotion;
-	print (mouse_event.relative);
 	
 	Global.speed_factor = max(0.1, 0.05 * player.level)
 	#move last point to mouse

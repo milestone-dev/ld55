@@ -103,7 +103,7 @@ func _physics_process(delta):
 	hud.exp_bar.max_value = max_experience;
 	
 	hud.label.text = "\nLevel %d" % (level + 1);
-	if Global.spell_mouse_sensitivity != 1: hud.label.text += "\nMouse sensitivity: %1.2f" % Global.spell_mouse_sensitivity
+	if Global.spell_mouse_sensitivity != 0.7: hud.label.text += "\nMouse sensitivity: %1.2f" % Global.spell_mouse_sensitivity
 	
 	if false:
 		hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
