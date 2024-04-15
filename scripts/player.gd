@@ -164,6 +164,9 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		hud.add_message("You don't know that spell...");
 		return
 	
+	if !Global.sfx_muted:
+		$SpellCastStreamPlayer.stream = spell.spell_sfx
+		$SpellCastStreamPlayer.play()
 	match spell.effect_area_behavior:
 		Spell.SpellEffectAreaBehavior.SINGLE_FIRE:
 			if spell.area_of_effect_scene:

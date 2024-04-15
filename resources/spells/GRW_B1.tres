@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://ulf0sqaoq02m"]
+[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://ulf0sqaoq02m"]
 
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_s6nbc"]
 [ext_resource type="PackedScene" uid="uid://0uw608v3woka" path="res://scenes/area_of_effect/heal_aoe_effect.tscn" id="1_xaohv"]
 [ext_resource type="Texture2D" uid="uid://bio0igmld3njp" path="res://assets/sprites/GRW-SYMBOL.png" id="2_ilini"]
 [ext_resource type="Texture2D" uid="uid://bmo0ubs7s0sy3" path="res://assets/sprites/GUIDE_GRWB1.png" id="2_v2mni"]
 [ext_resource type="Texture2D" uid="uid://d2lmfodow7tyg" path="res://assets/sprites/GRWB1-HEAL.png" id="3_l54ye"]
+[ext_resource type="AudioStream" uid="uid://de72kobrrdt7f" path="res://assets/audio/sfx/confirm.ogg" id="4_p3d1t"]
 
 [resource]
 script = ExtResource("1_s6nbc")
@@ -12,15 +13,19 @@ name = "Heal"
 code = "A0,B6,B5"
 description = "Heal NHP"
 weight = 1.0
-attack_damage = 10.0
-attack_range = 32.0
-heal = 20.0
-area_of_effect_scene = ExtResource("1_xaohv")
-area_of_effect_on_player = true
-effect_duration = 2.0
-effect_cooldown_max = 0.0
 store_texture = ExtResource("3_l54ye")
 store_icon = ExtResource("2_ilini")
 spell_guide = ExtResource("2_v2mni")
+spell_sfx = ExtResource("4_p3d1t")
 projectile_behavior = 0
+projectile_max_hits = 1
+area_of_effect_scene = ExtResource("1_xaohv")
+area_of_effect_on_player = true
 effect_area_behavior = 2
+effect_duration = 2.0
+effect_cooldown_max = 0.0
+speed_multiplier = 1.0
+heal = 20.0
+damage_over_time = 0.0
+attack_damage = 10.0
+attack_range = 32.0

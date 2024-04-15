@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://yffggirdq2uf"]
+[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://yffggirdq2uf"]
 
 [ext_resource type="PackedScene" uid="uid://blc7ouwk26mgc" path="res://scenes/cone_effects/poison_spray_cone_effect.tscn" id="1_rsmrn"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_xc1mr"]
 [ext_resource type="Texture2D" uid="uid://nhf5j2r3t7lm" path="res://assets/sprites/GUIDE_MUNB1.png" id="3_m11fe"]
 [ext_resource type="Texture2D" uid="uid://dpdoip06ob4gx" path="res://assets/sprites/MUN-SYMBOL.png" id="4_o5ikg"]
+[ext_resource type="AudioStream" uid="uid://de72kobrrdt7f" path="res://assets/audio/sfx/confirm.ogg" id="4_sm552"]
 [ext_resource type="Texture2D" uid="uid://dgo0x1utetrl6" path="res://assets/sprites/MUNB1-VENOMSPEW.png" id="5_oyow1"]
 
 [resource]
@@ -15,6 +16,7 @@ weight = 1.0
 store_texture = ExtResource("5_oyow1")
 store_icon = ExtResource("4_o5ikg")
 spell_guide = ExtResource("3_m11fe")
+spell_sfx = ExtResource("4_sm552")
 projectile_behavior = 0
 projectile_max_hits = 1
 area_of_effect_scene = ExtResource("1_rsmrn")

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://dv0yil1myifhw"]
+[gd_resource type="Resource" script_class="Spell" load_steps=8 format=3 uid="uid://dv0yil1myifhw"]
 
 [ext_resource type="PackedScene" uid="uid://xpukq7c4o5ru" path="res://scenes/area_of_effect/inferno_aoe_effect.tscn" id="1_82ekx"]
 [ext_resource type="Resource" uid="uid://7gmy857wkjq1" path="res://resources/spells/SUN_B2.tres" id="1_iukkp"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_ivida"]
 [ext_resource type="Texture2D" uid="uid://bu1opumyuh8b2" path="res://assets/sprites/GUIDE_SUNB3.png" id="3_kp57e"]
 [ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="4_om6k0"]
+[ext_resource type="AudioStream" uid="uid://de72kobrrdt7f" path="res://assets/audio/sfx/confirm.ogg" id="5_5qv25"]
 [ext_resource type="Texture2D" uid="uid://dc4c2o6bxm3rr" path="res://assets/sprites/SUNB3-INFERNO.png" id="5_8e43w"]
 
 [resource]
@@ -17,6 +18,7 @@ weight = 1.0
 store_texture = ExtResource("5_8e43w")
 store_icon = ExtResource("4_om6k0")
 spell_guide = ExtResource("3_kp57e")
+spell_sfx = ExtResource("5_5qv25")
 projectile_behavior = 0
 projectile_max_hits = 1
 area_of_effect_scene = ExtResource("1_82ekx")

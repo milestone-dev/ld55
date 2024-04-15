@@ -22,6 +22,7 @@ enum SpellEffectAreaBehavior {
 @export var store_texture : Texture;
 @export var store_icon : Texture;
 @export var spell_guide : Texture;
+@export var spell_sfx : AudioStream;
 
 @export_category("Projectile")
 @export var projectile_scene: PackedScene
