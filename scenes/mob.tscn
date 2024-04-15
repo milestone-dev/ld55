@@ -201,6 +201,7 @@ parameters/Die/blend_position = 0.00109887
 parameters/Walk/blend_position = -0.306593
 
 [node name="MobSfx" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [node name="MobImpactSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ecbas")
