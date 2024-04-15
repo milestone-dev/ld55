@@ -16,15 +16,15 @@ signal level_change
 @export var shop : Shop
 
 var level_experience_requirements = [
-	0	,
-	1600	,
-	3200	,
-	6000	,
-	10000	,
-	18000	,
-	30000	,
-	47000	,
-	78000	,
+	0,
+	1600,
+	3200,
+	6000,
+	10000,
+	18000,
+	35000,
+	57000,
+	78000,
 ];
 
 @export_category("TrollDOOM")
