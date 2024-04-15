@@ -84,7 +84,8 @@ func _process(_delta):
 	if active:
 		Global.speed_factor = max(0.1, 0.05 * player.level)
 		#move last point to mouse
-		var d = get_viewport().get_mouse_position() - mouse_origin;
+		var d :Vector2 = get_viewport().get_mouse_position()-mouse_origin;
+		d = d * Global.spell_mouse_sensitivity;
 		var pos = line.points[0] + d;
 		if debug_node:
 			debug_node.position = pos - debug_node.pivot_offset;
