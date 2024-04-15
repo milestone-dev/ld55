@@ -4334,9 +4334,6 @@ position = Vector2(-1160, -85)
 [node name="TreeMedium717" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1186, -68)
 
-[node name="TreeMedium718" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-1206, -39)
-
 [node name="TreeMedium719" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1182, -28)
 
@@ -4433,17 +4430,11 @@ position = Vector2(1267, 320)
 [node name="TreeLarge277" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1283, 237)
 
-[node name="TreeMedium741" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1299, 261)
-
 [node name="TreeSmall299" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
 position = Vector2(1275, 735)
 
 [node name="TreeLarge278" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1291, 652)
-
-[node name="TreeMedium742" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1307, 676)
 
 [node name="TreeMedium743" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1259, 720)
@@ -4459,12 +4450,6 @@ position = Vector2(1259, -604)
 
 [node name="TreeMedium745" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1291, -230)
-
-[node name="TreeMedium746" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1303, -169)
-
-[node name="TreeMedium747" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1299, -528)
 
 [node name="TreeMedium748" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1273, -511)
@@ -4484,9 +4469,6 @@ position = Vector2(1270, -378)
 [node name="TreeLarge282" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1263, -439)
 
-[node name="TreeMedium752" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1303, -363)
-
 [node name="TreeMedium753" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1277, -346)
 
@@ -4495,9 +4477,6 @@ position = Vector2(1257, -317)
 
 [node name="TreeMedium755" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1281, -306)
-
-[node name="TreeMedium756" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1295, -428)
 
 [node name="TreeLarge283" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1254, -202)
@@ -4547,9 +4526,6 @@ position = Vector2(1267, 329)
 [node name="TreeLarge286" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1260, 268)
 
-[node name="TreeMedium769" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1300, 344)
-
 [node name="TreeMedium770" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1274, 361)
 
@@ -4568,9 +4544,6 @@ position = Vector2(1263, 517)
 [node name="TreeLarge288" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1256, 456)
 
-[node name="TreeMedium774" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1296, 532)
-
 [node name="TreeMedium775" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1270, 549)
 
@@ -4586,14 +4559,8 @@ position = Vector2(1272, 721)
 [node name="TreeLarge290" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1265, 660)
 
-[node name="TreeMedium778" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1305, 736)
-
 [node name="TreeMedium779" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1279, 753)
-
-[node name="TreeMedium780" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1297, 671)
 
 [node name="TreeMedium199" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-800, -520)
@@ -5414,584 +5381,11 @@ position = Vector2(704, -379)
 [node name="TreeSmall104" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
 position = Vector2(1300, -633)
 
-[node name="TreeSmall105" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -617)
-
-[node name="TreeSmall106" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -578)
-
-[node name="TreeSmall107" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -559)
-
 [node name="TreeSmall108" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
 position = Vector2(1300, -639)
 
-[node name="TreeSmall109" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -598)
-
-[node name="TreeSmall110" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -518)
-
-[node name="TreeSmall111" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -533)
-
-[node name="TreeSmall112" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -505)
-
-[node name="TreeSmall113" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -489)
-
-[node name="TreeSmall114" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -450)
-
-[node name="TreeSmall115" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -431)
-
-[node name="TreeSmall116" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -511)
-
-[node name="TreeSmall117" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -470)
-
-[node name="TreeSmall118" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, -390)
-
-[node name="TreeSmall119" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, -405)
-
-[node name="TreeSmall120" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -374)
-
-[node name="TreeSmall121" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -358)
-
-[node name="TreeSmall122" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -319)
-
-[node name="TreeSmall123" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -300)
-
-[node name="TreeSmall124" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -380)
-
-[node name="TreeSmall125" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -339)
-
-[node name="TreeSmall126" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -259)
-
-[node name="TreeSmall127" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -274)
-
-[node name="TreeSmall128" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -246)
-
-[node name="TreeSmall129" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -230)
-
-[node name="TreeSmall130" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -191)
-
-[node name="TreeSmall131" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -172)
-
-[node name="TreeSmall132" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -252)
-
-[node name="TreeSmall133" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -211)
-
-[node name="TreeSmall134" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, -131)
-
-[node name="TreeSmall135" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, -146)
-
-[node name="TreeSmall136" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -122)
-
-[node name="TreeSmall137" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -106)
-
-[node name="TreeSmall138" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -67)
-
-[node name="TreeSmall139" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -48)
-
-[node name="TreeSmall140" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -128)
-
-[node name="TreeSmall141" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, -87)
-
-[node name="TreeSmall142" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -7)
-
-[node name="TreeSmall143" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, -22)
-
-[node name="TreeSmall144" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 6)
-
-[node name="TreeSmall145" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 22)
-
-[node name="TreeSmall146" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 61)
-
-[node name="TreeSmall147" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 80)
-
-[node name="TreeSmall148" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 0)
-
-[node name="TreeSmall149" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 41)
-
-[node name="TreeSmall150" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, 121)
-
-[node name="TreeSmall151" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, 106)
-
-[node name="TreeSmall152" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 138)
-
-[node name="TreeSmall153" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 154)
-
-[node name="TreeSmall154" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 193)
-
-[node name="TreeSmall155" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 212)
-
-[node name="TreeSmall156" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 132)
-
-[node name="TreeSmall157" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 173)
-
-[node name="TreeSmall158" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 253)
-
-[node name="TreeSmall159" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 238)
-
-[node name="TreeSmall160" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 266)
-
-[node name="TreeSmall161" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 282)
-
-[node name="TreeSmall162" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 321)
-
-[node name="TreeSmall163" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 340)
-
-[node name="TreeSmall164" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 260)
-
-[node name="TreeSmall165" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 301)
-
-[node name="TreeSmall166" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, 381)
-
-[node name="TreeSmall167" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, 366)
-
-[node name="TreeSmall168" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 391)
-
-[node name="TreeSmall169" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 407)
-
-[node name="TreeSmall170" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 446)
-
-[node name="TreeSmall171" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 465)
-
-[node name="TreeSmall172" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 385)
-
-[node name="TreeSmall173" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1300, 426)
-
-[node name="TreeSmall174" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 506)
-
-[node name="TreeSmall175" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 491)
-
-[node name="TreeSmall176" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 519)
-
-[node name="TreeSmall177" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 535)
-
-[node name="TreeSmall178" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 574)
-
-[node name="TreeSmall179" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 593)
-
-[node name="TreeSmall180" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 513)
-
-[node name="TreeSmall181" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1305, 554)
-
-[node name="TreeSmall182" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, 634)
-
-[node name="TreeSmall183" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1310, 619)
-
-[node name="TreeSmall184" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1308, 646)
-
-[node name="TreeSmall185" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1308, 662)
-
-[node name="TreeSmall186" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1308, 701)
-
-[node name="TreeSmall187" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1308, 720)
-
-[node name="TreeSmall188" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1308, 640)
-
-[node name="TreeSmall189" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1308, 681)
-
-[node name="TreeSmall190" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1313, 761)
-
-[node name="TreeSmall191" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1313, 746)
-
-[node name="TreeSmall192" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1313, 774)
-
 [node name="TreeSmall193" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
 position = Vector2(1313, 790)
-
-[node name="TreeSmall196" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(1313, 768)
-
-[node name="TreeSmall194" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -719)
-
-[node name="TreeSmall195" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -703)
-
-[node name="TreeSmall197" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -664)
-
-[node name="TreeSmall198" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -645)
-
-[node name="TreeSmall199" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -725)
-
-[node name="TreeSmall200" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -684)
-
-[node name="TreeSmall201" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -604)
-
-[node name="TreeSmall202" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -619)
-
-[node name="TreeSmall203" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -591)
-
-[node name="TreeSmall204" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -575)
-
-[node name="TreeSmall205" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -536)
-
-[node name="TreeSmall206" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -517)
-
-[node name="TreeSmall207" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -597)
-
-[node name="TreeSmall208" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -556)
-
-[node name="TreeSmall209" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, -476)
-
-[node name="TreeSmall210" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, -491)
-
-[node name="TreeSmall211" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -460)
-
-[node name="TreeSmall212" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -444)
-
-[node name="TreeSmall213" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -405)
-
-[node name="TreeSmall214" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -386)
-
-[node name="TreeSmall215" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -466)
-
-[node name="TreeSmall216" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -425)
-
-[node name="TreeSmall217" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -345)
-
-[node name="TreeSmall218" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -360)
-
-[node name="TreeSmall219" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -332)
-
-[node name="TreeSmall220" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -316)
-
-[node name="TreeSmall221" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -277)
-
-[node name="TreeSmall222" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -258)
-
-[node name="TreeSmall223" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -338)
-
-[node name="TreeSmall224" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -297)
-
-[node name="TreeSmall225" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, -217)
-
-[node name="TreeSmall226" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, -232)
-
-[node name="TreeSmall227" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -208)
-
-[node name="TreeSmall228" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -192)
-
-[node name="TreeSmall229" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -153)
-
-[node name="TreeSmall230" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -134)
-
-[node name="TreeSmall231" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -214)
-
-[node name="TreeSmall232" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, -173)
-
-[node name="TreeSmall233" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -93)
-
-[node name="TreeSmall234" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -108)
-
-[node name="TreeSmall235" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -80)
-
-[node name="TreeSmall236" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -64)
-
-[node name="TreeSmall237" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -25)
-
-[node name="TreeSmall238" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -6)
-
-[node name="TreeSmall239" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -86)
-
-[node name="TreeSmall240" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, -45)
-
-[node name="TreeSmall241" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 35)
-
-[node name="TreeSmall242" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 20)
-
-[node name="TreeSmall243" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 52)
-
-[node name="TreeSmall244" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 68)
-
-[node name="TreeSmall245" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 107)
-
-[node name="TreeSmall246" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 126)
-
-[node name="TreeSmall247" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 46)
-
-[node name="TreeSmall248" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 87)
-
-[node name="TreeSmall249" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 167)
-
-[node name="TreeSmall250" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 152)
-
-[node name="TreeSmall251" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 180)
-
-[node name="TreeSmall252" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 196)
-
-[node name="TreeSmall253" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 235)
-
-[node name="TreeSmall254" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 254)
-
-[node name="TreeSmall255" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 174)
-
-[node name="TreeSmall256" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 215)
-
-[node name="TreeSmall257" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 295)
-
-[node name="TreeSmall258" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 280)
-
-[node name="TreeSmall259" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 305)
-
-[node name="TreeSmall260" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 321)
-
-[node name="TreeSmall261" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 360)
-
-[node name="TreeSmall262" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 379)
-
-[node name="TreeSmall263" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 299)
-
-[node name="TreeSmall264" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1220, 340)
-
-[node name="TreeSmall265" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 420)
-
-[node name="TreeSmall266" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 405)
-
-[node name="TreeSmall267" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 433)
-
-[node name="TreeSmall268" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 449)
-
-[node name="TreeSmall269" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 488)
-
-[node name="TreeSmall270" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 507)
-
-[node name="TreeSmall271" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 427)
-
-[node name="TreeSmall272" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 468)
-
-[node name="TreeSmall273" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 548)
-
-[node name="TreeSmall274" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 533)
-
-[node name="TreeSmall275" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1212, 560)
-
-[node name="TreeSmall276" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1212, 576)
-
-[node name="TreeSmall277" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1212, 615)
-
-[node name="TreeSmall278" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1212, 634)
-
-[node name="TreeSmall279" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1212, 554)
-
-[node name="TreeSmall280" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1212, 595)
-
-[node name="TreeSmall281" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1207, 675)
-
-[node name="TreeSmall282" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1207, 660)
-
-[node name="TreeSmall283" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1207, 688)
-
-[node name="TreeSmall284" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1207, 704)
-
-[node name="TreeSmall285" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1207, 682)
-
-[node name="TreeSmall286" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1213, 620)
-
-[node name="TreeSmall287" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 632)
-
-[node name="TreeSmall288" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 648)
-
-[node name="TreeSmall289" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 687)
-
-[node name="TreeSmall290" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 706)
-
-[node name="TreeSmall291" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 626)
-
-[node name="TreeSmall292" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1215, 667)
-
-[node name="TreeSmall293" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 747)
-
-[node name="TreeSmall294" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 732)
-
-[node name="TreeSmall295" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 760)
-
-[node name="TreeSmall296" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 776)
-
-[node name="TreeSmall297" parent="WorldEntities/Trees" instance=ExtResource("7_fjfkf")]
-position = Vector2(-1210, 754)
 
 [node name="TreeMedium346" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(680, -471)
@@ -6149,12 +5543,6 @@ position = Vector2(-578, -573)
 [node name="TreeMedium431" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-541, -796)
 
-[node name="TreeMedium437" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-590, -812)
-
-[node name="TreeMedium438" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-590, -812)
-
 [node name="TreeMedium436" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-570, -800)
 
@@ -6227,12 +5615,6 @@ position = Vector2(-1024, -741)
 [node name="TreeMedium447" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-875, -798)
 
-[node name="TreeMedium448" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-924, -814)
-
-[node name="TreeMedium449" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-924, -814)
-
 [node name="TreeMedium450" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-904, -802)
 
@@ -6265,12 +5647,6 @@ position = Vector2(-1201, -735)
 
 [node name="TreeMedium455" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1052, -792)
-
-[node name="TreeMedium456" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-1101, -808)
-
-[node name="TreeMedium457" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-1101, -808)
 
 [node name="TreeMedium458" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1081, -796)
@@ -6311,18 +5687,6 @@ position = Vector2(54, -758)
 [node name="TreeLarge127" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-15, -755)
 
-[node name="TreeMedium469" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(134, -812)
-
-[node name="TreeMedium470" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(85, -828)
-
-[node name="TreeMedium471" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(85, -828)
-
-[node name="TreeMedium472" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(105, -816)
-
 [node name="TreeMedium473" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(8, -778)
 
@@ -6331,9 +5695,6 @@ position = Vector2(28, -784)
 
 [node name="TreeMedium475" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(71, -807)
-
-[node name="TreeMedium476" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1, -808)
 
 [node name="TreeLarge128" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-51, -757)
@@ -6352,15 +5713,6 @@ position = Vector2(-192, -749)
 
 [node name="TreeMedium477" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-43, -806)
-
-[node name="TreeMedium478" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-92, -822)
-
-[node name="TreeMedium479" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-92, -822)
-
-[node name="TreeMedium480" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-72, -810)
 
 [node name="TreeMedium481" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-169, -772)
@@ -6389,29 +5741,11 @@ position = Vector2(-280, -760)
 [node name="TreeLarge137" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-349, -757)
 
-[node name="TreeMedium485" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-200, -814)
-
-[node name="TreeMedium486" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-249, -830)
-
-[node name="TreeMedium487" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-249, -830)
-
-[node name="TreeMedium488" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-229, -818)
-
 [node name="TreeMedium489" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-326, -780)
 
 [node name="TreeMedium490" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-306, -786)
-
-[node name="TreeMedium491" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-263, -809)
-
-[node name="TreeMedium492" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-333, -810)
 
 [node name="TreeLarge138" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-385, -759)
@@ -6427,18 +5761,6 @@ position = Vector2(-457, -754)
 
 [node name="TreeLarge142" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-526, -751)
-
-[node name="TreeMedium493" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-377, -808)
-
-[node name="TreeMedium494" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-426, -824)
-
-[node name="TreeMedium495" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-426, -824)
-
-[node name="TreeMedium496" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-406, -812)
 
 [node name="TreeMedium497" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-503, -774)
@@ -6479,15 +5801,6 @@ position = Vector2(643, -748)
 [node name="TreeMedium504" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(792, -805)
 
-[node name="TreeMedium505" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(743, -821)
-
-[node name="TreeMedium506" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(743, -821)
-
-[node name="TreeMedium507" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(763, -809)
-
 [node name="TreeMedium508" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(666, -771)
 
@@ -6517,12 +5830,6 @@ position = Vector2(466, -742)
 
 [node name="TreeMedium512" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(615, -799)
-
-[node name="TreeMedium513" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(566, -815)
-
-[node name="TreeMedium514" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(566, -815)
 
 [node name="TreeMedium515" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(586, -803)
@@ -6557,15 +5864,6 @@ position = Vector2(309, -750)
 [node name="TreeMedium520" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(458, -807)
 
-[node name="TreeMedium521" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(409, -823)
-
-[node name="TreeMedium522" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(409, -823)
-
-[node name="TreeMedium523" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(429, -811)
-
 [node name="TreeMedium536" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(836, -733)
 
@@ -6586,12 +5884,6 @@ position = Vector2(1042, -746)
 
 [node name="TreeMedium537" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1191, -803)
-
-[node name="TreeMedium538" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1142, -819)
-
-[node name="TreeMedium539" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1142, -819)
 
 [node name="TreeMedium540" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1162, -807)
@@ -6686,12 +5978,6 @@ position = Vector2(865, -740)
 [node name="TreeMedium545" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1014, -797)
 
-[node name="TreeMedium546" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(965, -813)
-
-[node name="TreeMedium547" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(965, -813)
-
 [node name="TreeMedium548" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(985, -801)
 
@@ -6715,15 +6001,6 @@ position = Vector2(812, -749)
 
 [node name="TreeMedium553" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(857, -805)
-
-[node name="TreeMedium554" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(808, -821)
-
-[node name="TreeMedium555" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(808, -821)
-
-[node name="TreeMedium556" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(828, -809)
 
 [node name="TreeMedium524" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(332, -773)
@@ -6755,12 +6032,6 @@ position = Vector2(132, -744)
 [node name="TreeMedium528" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(281, -801)
 
-[node name="TreeMedium529" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(232, -817)
-
-[node name="TreeMedium530" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(232, -817)
-
 [node name="TreeMedium531" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(252, -805)
 
@@ -6776,20 +6047,8 @@ position = Vector2(218, -796)
 [node name="TreeMedium535" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(148, -797)
 
-[node name="TreeLarge183" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-522, 834)
-
-[node name="TreeLarge184" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-559, 841)
-
 [node name="TreeLarge185" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-615, 797)
-
-[node name="TreeLarge186" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-594, 839)
-
-[node name="TreeLarge187" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-663, 842)
 
 [node name="TreeMedium569" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-514, 785)
@@ -6803,9 +6062,6 @@ position = Vector2(-563, 769)
 [node name="TreeMedium572" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-543, 781)
 
-[node name="TreeMedium573" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-640, 819)
-
 [node name="TreeMedium574" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-620, 813)
 
@@ -6815,20 +6071,8 @@ position = Vector2(-577, 790)
 [node name="TreeMedium576" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-647, 789)
 
-[node name="TreeLarge188" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-699, 840)
-
-[node name="TreeLarge189" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-736, 847)
-
 [node name="TreeLarge190" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-792, 803)
-
-[node name="TreeLarge191" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-771, 845)
-
-[node name="TreeLarge192" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-840, 848)
 
 [node name="TreeMedium577" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-691, 791)
@@ -6842,32 +6086,14 @@ position = Vector2(-740, 775)
 [node name="TreeMedium580" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-720, 787)
 
-[node name="TreeMedium581" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-817, 825)
-
-[node name="TreeMedium582" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-797, 819)
-
 [node name="TreeMedium583" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-754, 796)
 
 [node name="TreeMedium584" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-824, 795)
 
-[node name="TreeLarge193" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-856, 832)
-
-[node name="TreeLarge194" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-893, 839)
-
 [node name="TreeLarge195" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-949, 795)
-
-[node name="TreeLarge196" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-928, 837)
-
-[node name="TreeLarge197" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-997, 840)
 
 [node name="TreeMedium585" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-848, 783)
@@ -6893,20 +6119,8 @@ position = Vector2(-911, 788)
 [node name="TreeMedium592" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-981, 787)
 
-[node name="TreeLarge198" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-1033, 838)
-
-[node name="TreeLarge199" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-1070, 845)
-
 [node name="TreeLarge200" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-1126, 801)
-
-[node name="TreeLarge201" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-1105, 843)
-
-[node name="TreeLarge202" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-1174, 846)
 
 [node name="TreeMedium593" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1025, 789)
@@ -6920,9 +6134,6 @@ position = Vector2(-1074, 773)
 [node name="TreeMedium596" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1054, 785)
 
-[node name="TreeMedium597" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-1151, 823)
-
 [node name="TreeMedium598" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1131, 817)
 
@@ -6932,17 +6143,11 @@ position = Vector2(-1088, 794)
 [node name="TreeMedium600" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1158, 793)
 
-[node name="TreeLarge257" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-1106, 819)
-
 [node name="TreeLarge258" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-1162, 775)
 
 [node name="TreeLarge259" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-1141, 817)
-
-[node name="TreeLarge260" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-1210, 820)
 
 [node name="TreeMedium694" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1110, 747)
@@ -6965,29 +6170,8 @@ position = Vector2(-1124, 768)
 [node name="TreeMedium700" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-1194, 767)
 
-[node name="TreeMedium601" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-287, 840)
-
-[node name="TreeMedium602" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-395, 840)
-
-[node name="TreeMedium603" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(-194, 839)
-
-[node name="TreeLarge203" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(153, 818)
-
-[node name="TreeLarge204" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(116, 825)
-
 [node name="TreeLarge205" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(60, 781)
-
-[node name="TreeLarge206" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(81, 823)
-
-[node name="TreeLarge207" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(12, 826)
 
 [node name="TreeMedium604" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(161, 769)
@@ -7007,20 +6191,8 @@ position = Vector2(98, 774)
 [node name="TreeMedium609" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(28, 773)
 
-[node name="TreeLarge208" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-24, 824)
-
-[node name="TreeLarge209" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-61, 831)
-
 [node name="TreeLarge210" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-117, 787)
-
-[node name="TreeLarge211" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-96, 829)
-
-[node name="TreeLarge212" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-165, 832)
 
 [node name="TreeMedium610" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-16, 775)
@@ -7049,17 +6221,8 @@ position = Vector2(-149, 779)
 [node name="TreeLarge213" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-181, 816)
 
-[node name="TreeLarge214" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-218, 823)
-
 [node name="TreeLarge215" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-274, 779)
-
-[node name="TreeLarge216" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-253, 821)
-
-[node name="TreeLarge217" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-322, 824)
 
 [node name="TreeMedium618" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-173, 767)
@@ -7079,20 +6242,8 @@ position = Vector2(-236, 772)
 [node name="TreeMedium623" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-306, 771)
 
-[node name="TreeLarge218" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-358, 822)
-
-[node name="TreeLarge219" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-395, 829)
-
 [node name="TreeLarge220" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(-451, 785)
-
-[node name="TreeLarge221" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-430, 827)
-
-[node name="TreeLarge222" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(-499, 830)
 
 [node name="TreeMedium624" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-350, 773)
@@ -7118,29 +6269,8 @@ position = Vector2(-413, 778)
 [node name="TreeMedium631" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-483, 777)
 
-[node name="TreeMedium632" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(371, 847)
-
-[node name="TreeMedium633" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(263, 847)
-
-[node name="TreeMedium634" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(464, 846)
-
-[node name="TreeLarge223" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(811, 825)
-
-[node name="TreeLarge224" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(774, 832)
-
 [node name="TreeLarge225" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(718, 788)
-
-[node name="TreeLarge226" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(739, 830)
-
-[node name="TreeLarge227" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(670, 833)
 
 [node name="TreeMedium635" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(819, 776)
@@ -7166,20 +6296,8 @@ position = Vector2(756, 781)
 [node name="TreeMedium642" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(686, 780)
 
-[node name="TreeLarge228" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(634, 831)
-
-[node name="TreeLarge229" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(597, 838)
-
 [node name="TreeLarge230" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(541, 794)
-
-[node name="TreeLarge231" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(562, 836)
-
-[node name="TreeLarge232" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(493, 839)
 
 [node name="TreeMedium643" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(642, 782)
@@ -7205,20 +6323,8 @@ position = Vector2(579, 787)
 [node name="TreeMedium650" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(509, 786)
 
-[node name="TreeLarge233" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(477, 823)
-
-[node name="TreeLarge234" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(440, 830)
-
 [node name="TreeLarge235" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(384, 786)
-
-[node name="TreeLarge236" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(405, 828)
-
-[node name="TreeLarge237" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(336, 831)
 
 [node name="TreeMedium651" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(485, 774)
@@ -7232,23 +6338,8 @@ position = Vector2(436, 758)
 [node name="TreeMedium654" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(456, 770)
 
-[node name="TreeMedium655" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(863, 848)
-
-[node name="TreeLarge238" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(1210, 827)
-
-[node name="TreeLarge239" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(1173, 834)
-
 [node name="TreeLarge240" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1117, 790)
-
-[node name="TreeLarge241" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(1138, 832)
-
-[node name="TreeLarge242" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(1069, 835)
 
 [node name="TreeMedium656" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1218, 778)
@@ -7271,9 +6362,6 @@ position = Vector2(1112, 806)
 [node name="TreeMedium662" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1155, 783)
 
-[node name="TreeLarge243" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(1308, 848)
-
 [node name="TreeLarge244" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(1215, 811)
 
@@ -7289,29 +6377,14 @@ position = Vector2(1267, 783)
 [node name="TreeMedium666" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1287, 795)
 
-[node name="TreeMedium667" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(1210, 827)
-
 [node name="TreeMedium668" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1253, 804)
 
 [node name="TreeMedium669" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1085, 782)
 
-[node name="TreeLarge245" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(1033, 833)
-
-[node name="TreeLarge246" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(996, 840)
-
 [node name="TreeLarge247" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(940, 796)
-
-[node name="TreeLarge248" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(961, 838)
-
-[node name="TreeLarge249" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(892, 841)
 
 [node name="TreeMedium670" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1041, 784)
@@ -7325,9 +6398,6 @@ position = Vector2(992, 768)
 [node name="TreeMedium673" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(1012, 780)
 
-[node name="TreeMedium674" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
-position = Vector2(915, 818)
-
 [node name="TreeMedium675" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(935, 812)
 
@@ -7336,12 +6406,6 @@ position = Vector2(978, 789)
 
 [node name="TreeMedium677" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(908, 788)
-
-[node name="TreeLarge250" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(876, 825)
-
-[node name="TreeLarge251" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(839, 832)
 
 [node name="TreeMedium678" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(884, 776)
@@ -7367,20 +6431,8 @@ position = Vector2(422, 779)
 [node name="TreeMedium685" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(352, 778)
 
-[node name="TreeLarge252" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(300, 829)
-
-[node name="TreeLarge253" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(263, 836)
-
 [node name="TreeLarge254" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
 position = Vector2(207, 792)
-
-[node name="TreeLarge255" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(228, 834)
-
-[node name="TreeLarge256" parent="WorldEntities/Trees" instance=ExtResource("5_jcdjo")]
-position = Vector2(159, 837)
 
 [node name="TreeMedium686" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(308, 780)
