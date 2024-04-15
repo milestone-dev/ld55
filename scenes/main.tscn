@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsuajf7jgeb52"]
+[gd_scene load_steps=13 format=3 uid="uid://bsuajf7jgeb52"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ppxc1"]
 [ext_resource type="Texture2D" uid="uid://dnwn3hf12nt7" path="res://assets/tilemap/ground-tilemap.png" id="3_arkel"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bdw5itmowgm3s" path="res://scenes/doodads/tree_large.tscn" id="5_jcdjo"]
 [ext_resource type="PackedScene" uid="uid://bimeqwgpdxko2" path="res://scenes/doodads/tree_medium.tscn" id="5_s7wl4"]
 [ext_resource type="PackedScene" uid="uid://8igsjconudkf" path="res://scenes/doodads/tree_small.tscn" id="7_fjfkf"]
+[ext_resource type="PackedScene" uid="uid://buhinix0nyhfk" path="res://scenes/doodads/head_1.tscn" id="9_dlbrx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ky1vt"]
 texture = ExtResource("3_arkel")
@@ -6466,6 +6467,21 @@ position = Vector2(-570, -605)
 
 [node name="TreeMedium420" parent="WorldEntities/Trees" instance=ExtResource("5_s7wl4")]
 position = Vector2(-185, -424)
+
+[node name="Head1" parent="WorldEntities/Trees" instance=ExtResource("9_dlbrx")]
+position = Vector2(-400, -288)
+
+[node name="Head2" parent="WorldEntities/Trees" instance=ExtResource("9_dlbrx")]
+position = Vector2(1152, -304)
+
+[node name="Head3" parent="WorldEntities/Trees" instance=ExtResource("9_dlbrx")]
+position = Vector2(-1000, 328)
+
+[node name="Head4" parent="WorldEntities/Trees" instance=ExtResource("9_dlbrx")]
+position = Vector2(-1072, -560)
+
+[node name="Head5" parent="WorldEntities/Trees" instance=ExtResource("9_dlbrx")]
+position = Vector2(792, 648)
 
 [node name="Player" parent="WorldEntities" instance=ExtResource("3_ft68t")]
 
