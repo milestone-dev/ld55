@@ -25,12 +25,18 @@ func present_spell_choice(available_spells : Array[Spell], learned_spells : Arra
 	for spell : Spell in available_spells:
 		if !learned_spells.has(spell) and (not spell.dependency or learned_spells.has(spell.dependency)):
 			spells.push_back(spell)
-	update_spells()
-	visible = true
-			
-func update_spells():
-	if spells.size() < 3: return
+
 	spells.shuffle()
+	
+	spell_label_1.hide()
+	spell_texture_1.hide()
+	spell_icon_1.hide()
+	spell_label_2.hide()
+	spell_texture_2.hide()
+	spell_icon_2.hide()
+	spell_label_3.hide()
+	spell_texture_3.hide()
+	spell_icon_3.hide()
 
 	if spells.size() >= 1:
 		spell_label_1.text = spells[0].name
@@ -39,10 +45,6 @@ func update_spells():
 		spell_label_1.show()
 		spell_texture_1.show()
 		spell_icon_1.show()
-	else:
-		spell_label_1.hide()
-		spell_texture_1.hide()
-		spell_icon_1.hide()
 
 	if spells.size() >= 2:
 		spell_label_2.text = spells[1].name
@@ -51,10 +53,6 @@ func update_spells():
 		spell_label_2.show()
 		spell_texture_2.show()
 		spell_icon_2.show()
-	else:
-		spell_label_2.hide()
-		spell_texture_2.hide()
-		spell_icon_2.hide()
 
 	if spells.size() >= 3:
 		spell_label_3.text = spells[2].name
@@ -63,10 +61,7 @@ func update_spells():
 		spell_label_3.show()
 		spell_texture_3.show()
 		spell_icon_3.show()
-	else:
-		spell_label_3.hide()
-		spell_texture_3.hide()
-		spell_icon_3.hide()
+	visible = true
 
 func _on_spell_button_1_pressed() -> void:
 	if spells.size() >= 1:

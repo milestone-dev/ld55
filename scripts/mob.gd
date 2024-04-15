@@ -92,6 +92,7 @@ func flash_damage():
 
 func die():
 	Global.mobs_killed += 1
+	if not is_inside_tree(): return;
 	animation_tree.get("parameters/playback").travel("Die")
 	alive = false
 	await get_tree().create_timer(1).timeout
