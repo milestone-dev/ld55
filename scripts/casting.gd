@@ -78,11 +78,11 @@ func _process(_delta):
 		draw_line_to_node(first_node, true)
 		draw_line_to_node(first_node, false) #and one for the mouse pointer		
 		active = true;
-		Global.speed_factor = 0.2
+		Global.speed_factor = max(0.1, 0.05 * player.level)
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	if active:
-		Global.speed_factor = 0.2
+		Global.speed_factor = max(0.1, 0.05 * player.level)
 		#move last point to mouse
 		var d = get_viewport().get_mouse_position() - mouse_origin;
 		var pos = line.points[0] + d;

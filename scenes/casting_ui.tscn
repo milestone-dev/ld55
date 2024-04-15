@@ -83,6 +83,7 @@ pivot_offset = Vector2(8, 8)
 theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/A0"]
+volume_db = -15.0
 
 [node name="B0" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -103,6 +104,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B0"]
 stream = ExtResource("5_b5tsf")
+volume_db = -15.0
 
 [node name="B1" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -123,6 +125,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B1"]
 stream = ExtResource("6_vvx1h")
+volume_db = -15.0
 
 [node name="B2" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -143,6 +146,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B2"]
 stream = ExtResource("7_ht335")
+volume_db = -15.0
 
 [node name="B3" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -163,6 +167,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B3"]
 stream = ExtResource("8_02ecl")
+volume_db = -15.0
 
 [node name="B4" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -183,6 +188,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B4"]
 stream = ExtResource("9_1dp0i")
+volume_db = -15.0
 
 [node name="B5" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -203,6 +209,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B5"]
 stream = ExtResource("10_2n1of")
+volume_db = -15.0
 
 [node name="B6" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -223,6 +230,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B6"]
 stream = ExtResource("11_scg4n")
+volume_db = -15.0
 
 [node name="B7" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -243,6 +251,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/B7"]
 stream = ExtResource("12_y8680")
+volume_db = -15.0
 
 [node name="C0" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -263,6 +272,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C0"]
 stream = ExtResource("13_v3wct")
+volume_db = -15.0
 
 [node name="C1" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -283,6 +293,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C1"]
 stream = ExtResource("14_gag1b")
+volume_db = -15.0
 
 [node name="C2" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -303,6 +314,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C2"]
 stream = ExtResource("15_atyjf")
+volume_db = -15.0
 
 [node name="C3" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -323,6 +335,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C3"]
 stream = ExtResource("16_lpw85")
+volume_db = -15.0
 
 [node name="C4" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -343,7 +356,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C4"]
 stream = ExtResource("17_plukr")
-volume_db = 1.406
+volume_db = -15.0
 
 [node name="C5" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -364,6 +377,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C5"]
 stream = ExtResource("18_150cf")
+volume_db = -15.0
 
 [node name="C6" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -384,6 +398,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C6"]
 stream = ExtResource("19_ogir0")
+volume_db = -15.0
 
 [node name="C7" type="Panel" parent="NodeContainers"]
 custom_minimum_size = Vector2(16, 16)
@@ -404,6 +419,7 @@ theme_override_styles/panel = ExtResource("3_1q3rr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NodeContainers/C7"]
 stream = ExtResource("20_pyrhe")
+volume_db = -15.0
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(3, 3)

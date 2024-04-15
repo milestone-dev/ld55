@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://c65bmbitkb7e0"]
+[gd_resource type="Resource" script_class="Spell" load_steps=7 format=3 uid="uid://c65bmbitkb7e0"]
 
 [ext_resource type="PackedScene" uid="uid://d01c8jof0ioou" path="res://scenes/projectiles/fire_ball_projectile.tscn" id="1_jwiyd"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_rrb4r"]
 [ext_resource type="Texture2D" uid="uid://begt2luibm50b" path="res://assets/sprites/GUIDE_SUNB1.png" id="3_6j502"]
 [ext_resource type="Texture2D" uid="uid://ceronhbv5bvmv" path="res://assets/sprites/SUN-SYMBOL.png" id="3_b7jdg"]
+[ext_resource type="AudioStream" uid="uid://de72kobrrdt7f" path="res://assets/audio/sfx/confirm.ogg" id="4_7bb8d"]
 [ext_resource type="Texture2D" uid="uid://cv2jsr14se474" path="res://assets/sprites/SUNB1-FIREBALL.png" id="4_tp4xq"]
 
 [resource]
@@ -15,6 +16,7 @@ weight = 1.0
 store_texture = ExtResource("4_tp4xq")
 store_icon = ExtResource("3_b7jdg")
 spell_guide = ExtResource("3_6j502")
+spell_sfx = ExtResource("4_7bb8d")
 projectile_scene = ExtResource("1_jwiyd")
 projectile_behavior = 3
 projectile_max_hits = 4

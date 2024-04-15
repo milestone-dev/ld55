@@ -376,5 +376,9 @@ volume_db = -10.0
 stream = ExtResource("10_ix48j")
 volume_db = -10.0
 
+[node name="SpellCastStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ix48j")
+volume_db = -10.0
+
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="cast_complete" from="CanvasLayer/CastingUI" to="." method="_on_casting_ui_cast_complete"]
