@@ -31,7 +31,6 @@ func _ready():
 	start_level()
 
 func start_level():
-	player.hud.add_message("Welcome to your TrollDoom!")
 	player.shop.present_spell_choice(player.available_spells, player.learned_spells)
 	Global.paused = true
 	
@@ -42,14 +41,14 @@ func _process(_delta):
 		return
 	if Input.is_action_just_pressed("dev_godmode"):
 		player.god_mode = !player.god_mode;
-		player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
+		#player.hud.add_message("GOD MODE " + ("enabled" if player.god_mode else "disabled"));
 	if Input.is_action_just_pressed("dev_allspells"):
 		player.learned_spells = player.available_spells
-		player.hud.add_message("Learned all spells");
+		#player.hud.add_message("Learned all spells");
 	if Input.is_action_just_pressed("dev_clearscreen"):
 		for mob :Mob in get_tree().get_nodes_in_group("mob"):
 			player.add_experience(mob.take_damage(100000))
-		player.hud.add_message("Killing all enemies");
+		#player.hud.add_message("Killing all enemies");
 		
 	for mob : Mob in get_tree().get_nodes_in_group("mob"):
 		if mob.global_position.distance_to(player.global_position) > 640:

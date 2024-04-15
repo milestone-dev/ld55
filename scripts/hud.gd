@@ -11,6 +11,9 @@ func add_message(message : String):
 	#print(message);
 	var label = Label.new()
 	label.text = message;
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER;
+	label.add_theme_font_override("font", load("res://assets/fonts/IMFellDWPica-Regular.ttf"));
+	label.add_theme_font_size_override("font", 18);
 	log_container.add_child(label);
 	await get_tree().create_timer(3).timeout
 	label.queue_free()

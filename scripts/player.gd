@@ -161,7 +161,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			break
 			
 	if not spell:
-		hud.add_message("No spell or spell not known");
+		hud.add_message("You don't know that spell...");
 		return
 	
 	match spell.effect_area_behavior:
@@ -187,8 +187,6 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			pass
 		Spell.SpellProjectileBehavior.SINGLE_FIRE:
 			current_single_fire_projectile_spell = spell
-		
-	hud.add_message("Casting spell " + spell.name);
 
 func add_experience(input_experience : int):
 	experience += input_experience
