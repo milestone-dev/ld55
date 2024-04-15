@@ -42,28 +42,53 @@ jobs:
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
-          godot --headless --verbose --export-release "Windows Desktop" build/windows/$EXPORT_NAME.exe
+          godot --headless --verbose --export-release "Windows Desktop" build/windows/$EXPORT_NAME.zip
 
-      - name: Upload Artifact
+      - name: Linux Build
+        run: |
+          mkdir -v -p build/linux
+          godot --headless --verbose --export-release "Linux/X11" build/linux/$EXPORT_NAME.zip
+
+      - name: Upload Artifact web
         uses: actions/upload-artifact@v1
         with:
           name: Web
           path: ./build/web/
 
-      - name: Upload Artifact
+      - name: Upload Artifact Windows
         uses: actions/upload-artifact@v1
         with:
           name: Windows
           path: ./build/windows/
 
-      - name: Upload Artifact
+      - name: Upload Artifact MacOS
         uses: actions/upload-artifact@v1
         with:
           name: MacOS
           path: ./build/mac/
 
+      - name: Upload Artifact Linux
+        uses: actions/upload-artifact@v1
+        with:
+          name: Linux
+          path: ./build/linux/
   
-      - name: Itch.io
+      - name: Itch.io web
         env: 
           BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
         run: butler push ./build/web ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:web
+
+      - name: Itch.io MacOS
+        env: 
+          BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
+        run: butler push ./build/mac/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:mac_x86
+
+      - name: Itch.io Windows
+        env: 
+          BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
+        run: butler push ./build/windows/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:windows_x86
+
+      - name: Itch.io Linux
+        env: 
+          BUTLER_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
+        run: butler push ./build/linux/$EXPORT_NAME.zip ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:linux_x86
