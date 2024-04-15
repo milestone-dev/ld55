@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://blnvvm8f071dv"]
+[gd_scene load_steps=24 format=3 uid="uid://blnvvm8f071dv"]
 
 [ext_resource type="Script" path="res://scripts/casting.gd" id="1_0enga"]
 [ext_resource type="Texture2D" uid="uid://vg6sdt34jcyw" path="res://assets/sprites/Trolltrumma-blank.png" id="2_u3fis"]
@@ -21,12 +21,15 @@
 [ext_resource type="AudioStream" uid="uid://cqbvw5sg3egca" path="res://assets/audio/sfx/DRUM15.ogg" id="19_ogir0"]
 [ext_resource type="AudioStream" uid="uid://uo3xnqrmj4wr" path="res://assets/audio/sfx/DRUM16.ogg" id="20_pyrhe"]
 [ext_resource type="Texture2D" uid="uid://bdtkat6fvtmf1" path="res://assets/sprites/GUIDE_DECA1.png" id="21_ralcp"]
+[ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="22_mprdl"]
 
-[sub_resource type="Curve" id="Curve_l25wa"]
-_data = [Vector2(0, 1), 0.0, -0.14947, 0, 0, Vector2(1, 0.3962), -1.03478, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="LabelSettings" id="LabelSettings_1j8b2"]
+font = ExtResource("22_mprdl")
+font_size = 28
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.780392)
 
-[node name="CastingUI" type="Control" node_paths=PackedStringArray("node_container", "line", "first_node", "hint_runes")]
+[node name="CastingUI" type="Control" node_paths=PackedStringArray("node_container", "line", "first_node", "hint_runes", "hint_labels")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_0enga")
@@ -34,9 +37,11 @@ node_container = NodePath("NodeContainers")
 line = NodePath("Line2D")
 first_node = NodePath("NodeContainers/A0")
 hint_runes = [NodePath("Hints/0"), NodePath("Hints/1"), NodePath("Hints/2"), NodePath("Hints/3"), NodePath("Hints/4"), NodePath("Hints/5"), NodePath("Hints/6"), NodePath("Hints/7")]
+hint_labels = [NodePath("Hints/Label0"), NodePath("Hints/Label1"), NodePath("Hints/Label2"), NodePath("Hints/Label3"), NodePath("Hints/Label4"), NodePath("Hints/Label5"), NodePath("Hints/Label6"), NodePath("Hints/Label7")]
+snap_distance = 8
 
 [node name="DrumBase" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.235294)
+modulate = Color(1, 1, 1, 0.301961)
 layout_mode = 0
 offset_left = -80.0
 offset_top = -114.0
@@ -403,7 +408,6 @@ stream = ExtResource("20_pyrhe")
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(3, 3)
 width = 9.0
-width_curve = SubResource("Curve_l25wa")
 joint_mode = 1
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -413,82 +417,210 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Label0" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -64.0
+offset_right = -141.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label1" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 352.0
+offset_top = -64.0
+offset_right = 443.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = 88.0
+offset_right = -189.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = 88.0
+offset_right = 491.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = 240.0
+offset_right = -189.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = 240.0
+offset_right = 491.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = 392.0
+offset_right = -141.0
+offset_bottom = 392.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Hints"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 352.0
+offset_top = 392.0
+offset_right = 443.0
+offset_bottom = 392.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spell Name"
+label_settings = SubResource("LabelSettings_1j8b2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="0" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 96.0
-offset_top = -176.0
-offset_right = 136.0
-offset_bottom = -136.0
+offset_left = -208.0
+offset_top = -144.0
+offset_right = -168.0
+offset_bottom = -104.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="1" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 288.0
-offset_top = -88.0
-offset_right = 328.0
-offset_bottom = -48.0
+offset_left = 376.0
+offset_top = -144.0
+offset_right = 416.0
+offset_bottom = -104.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="2" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 344.0
-offset_top = 88.0
-offset_right = 384.0
-offset_bottom = 128.0
+offset_left = -256.0
+offset_top = 8.0
+offset_right = -216.0
+offset_bottom = 48.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="3" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 304.0
-offset_top = 296.0
-offset_right = 344.0
-offset_bottom = 336.0
+offset_left = 424.0
+offset_top = 8.0
+offset_right = 464.0
+offset_bottom = 48.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="4" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 96.0
-offset_top = 384.0
-offset_right = 136.0
-offset_bottom = 424.0
+offset_left = -256.0
+offset_top = 160.0
+offset_right = -216.0
+offset_bottom = 200.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="5" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -104.0
-offset_top = 304.0
-offset_right = -64.0
-offset_bottom = 344.0
+offset_left = 424.0
+offset_top = 160.0
+offset_right = 464.0
+offset_bottom = 200.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="6" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -168.0
-offset_top = 88.0
-offset_right = -128.0
-offset_bottom = 128.0
+offset_left = -208.0
+offset_top = 312.0
+offset_right = -168.0
+offset_bottom = 352.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")
 
 [node name="7" type="TextureRect" parent="Hints"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -88.0
-offset_top = -96.0
-offset_right = -48.0
-offset_bottom = -56.0
+offset_left = 376.0
+offset_top = 312.0
+offset_right = 416.0
+offset_bottom = 352.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_ralcp")

@@ -5,6 +5,7 @@ signal level_change
 
 @export var max_hp : float = 100;
 @export var max_speed : float = 8000;
+@export var speed_multiplier : float = 1;
 @export var attack_cooldown_max : float = 0.85;
 @export var default_attack_damage : float = 50;
 
@@ -102,10 +103,9 @@ func _physics_process(delta):
 	hud.exp_bar.max_value = max_experience;
 	
 	hud.label.text = "\nLevel %d" % (level + 1);
-	hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 	
-	if true:
-		hud.label.text += "\n\n"
+	if false:
+		hud.label.text += "\nMobs: %d" % (get_tree().get_nodes_in_group("mob").size());
 		hud.label.text += "\nHP %s/%s" % [hp, max_hp]
 		hud.label.text += "\nEXP %s/%s" % [experience, max_experience]
 		hud.label.text += "\nP: Test Shop"
@@ -117,7 +117,7 @@ func _physics_process(delta):
 	
 	velocity.x = Input.get_axis("move_left", "move_right")
 	velocity.y = Input.get_axis("move_up", "move_down")
-	velocity = velocity.normalized() *  max_speed * delta;
+	velocity = velocity.normalized() * max_speed * delta * speed_multiplier;
 	
 	if velocity == Vector2.ZERO:
 		animation_tree.get("parameters/playback").travel("Idle")
@@ -173,7 +173,6 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			if spell.heal > 0:
 				hp = min(max_hp, hp + spell.heal)
 		Spell.SpellEffectAreaBehavior.TIMED:
-			print ("hej")
 			current_aoe_effect_spells.push_back(SpellTimer.new(self, spell))
 	
 	match spell.projectile_behavior:
@@ -209,9 +208,11 @@ func take_damage(damage : float):
 	
 func flash_damage():
 	if not is_inside_tree(): return
+	$DamageStreamPlayer.pitch_scale = randf_range(0.9, 1.1);
+	$DamageStreamPlayer.play();
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE
-
+	
 func die():
 	get_tree().change_scene_to_packed(lose_scene)
