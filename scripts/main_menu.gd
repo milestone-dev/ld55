@@ -4,8 +4,8 @@ extends Panel
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if $AnimationPlayer:
-		$AnimationPlayer.play("blink")
+	if has_node("AnimationPlayer"):
+		get_node("AnimationPlayer").play("blink")
 	if score_subtitle != null:
 		score_subtitle.text = "You survived for %d seconds and killed %d monsters" % [Global.time_survived, Global.mobs_killed];	
 	
