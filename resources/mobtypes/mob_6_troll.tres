@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("1_lfbag")
 max_hp = 300
-speed = 500
+speed = 2000
 attack_damage = 30
 attack_cooldown_max = 0.3
 attack_range = 32

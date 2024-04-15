@@ -150,6 +150,7 @@ libraries = {
 
 [node name="Eyes1" type="TextureRect" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 432.0
 offset_top = 133.0
 offset_right = 452.0
@@ -159,6 +160,7 @@ stretch_mode = 5
 
 [node name="Eyes2" type="TextureRect" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 240.0
 offset_top = 152.0
 offset_right = 260.0
@@ -168,6 +170,7 @@ stretch_mode = 5
 
 [node name="Eyes3" type="TextureRect" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 800.0
 offset_top = 136.0
 offset_right = 820.0
@@ -177,6 +180,7 @@ stretch_mode = 5
 
 [node name="Eyes4" type="TextureRect" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 992.0
 offset_top = 120.0
 offset_right = 1012.0
