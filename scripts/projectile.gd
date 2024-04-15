@@ -16,6 +16,7 @@ var age: float;
 var alive = true
 
 func _ready() -> void:
+	if not spell: return
 	hits = spell.projectile_max_hits;
 	if align_rotation:
 		look_at(position + velocity)
@@ -27,6 +28,7 @@ func _ready() -> void:
 			mat.angle_min = 360 - rotation_degrees
 
 func _process(delta: float) -> void:
+	if not spell: return
 	if alive:
 		position += velocity * (speed * Global.speed_factor) * delta
 		

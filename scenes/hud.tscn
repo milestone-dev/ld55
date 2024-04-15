@@ -37,84 +37,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 288.0
+offset_left = 262.0
 offset_top = 744.0
-offset_right = 480.0
-offset_bottom = 768.0
+offset_right = 479.0
+offset_bottom = 770.0
 grow_horizontal = 2
 size_flags_vertical = 8
 theme_override_fonts/normal_font = ExtResource("3_t7ut6")
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "[center]Hold space: Summon spell"
-fit_content = true
-
-[node name="Title2" type="RichTextLabel" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 77.0
-offset_top = 744.0
-offset_right = 117.0
-offset_bottom = 776.0
-grow_horizontal = 2
-size_flags_vertical = 8
-theme_override_fonts/normal_font = ExtResource("3_t7ut6")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]W"
-fit_content = true
-
-[node name="Title3" type="RichTextLabel" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 126.0
-offset_top = 744.0
-offset_right = 166.0
-offset_bottom = 776.0
-grow_horizontal = 2
-size_flags_vertical = 8
-theme_override_fonts/normal_font = ExtResource("3_t7ut6")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]A"
-fit_content = true
-
-[node name="Title4" type="RichTextLabel" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 179.0
-offset_top = 744.0
-offset_right = 219.0
-offset_bottom = 776.0
-grow_horizontal = 2
-size_flags_vertical = 8
-theme_override_fonts/normal_font = ExtResource("3_t7ut6")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]S"
-fit_content = true
-
-[node name="Title5" type="RichTextLabel" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 227.0
-offset_top = 744.0
-offset_right = 267.0
-offset_bottom = 776.0
-grow_horizontal = 2
-size_flags_vertical = 8
-theme_override_fonts/normal_font = ExtResource("3_t7ut6")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]D"
+text = "[center]Hold Space: Summon spell"
 fit_content = true
 
 [node name="Title6" type="RichTextLabel" parent="TextureRect"]
@@ -129,7 +61,7 @@ offset_bottom = 776.0
 grow_horizontal = 2
 size_flags_vertical = 8
 theme_override_fonts/normal_font = ExtResource("3_t7ut6")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "[center]Left Click: Fire"
 fit_content = true
@@ -143,9 +75,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
-offset_top = -56.0
-offset_right = 48.0
-offset_bottom = -29.0
+offset_top = -60.0
+offset_right = 46.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_t7ut6")
@@ -155,10 +87,10 @@ value = 100.0
 [node name="EXPProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(300, 12)
 layout_mode = 0
-offset_left = 400.0
+offset_left = 395.0
 offset_top = 32.0
-offset_right = 848.0
-offset_bottom = 59.0
+offset_right = 852.0
+offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("3_t7ut6")
 theme_override_font_sizes/font_size = 20
 

@@ -8,5 +8,6 @@ class_name AreaOfEffect
 @export var particle_system: GPUParticles2D
 
 func _ready():
+	if not spell: return
 	if particle_system and particle_system.one_shot:
 		particle_system.emitting = true

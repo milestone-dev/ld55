@@ -14,6 +14,9 @@ config/name="TrollDoom"
 config/description="Survive the dark night"
 run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/image="res://assets/icons/dubpot_logo.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://assets/icons/app_icon.png"
 
 [autoload]
