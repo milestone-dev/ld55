@@ -42,6 +42,43 @@ func draw_line_to_node(node:Control, add_node : bool):
 	line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 	#line.add_point(node.position + node.pivot_offset - Vector2(line.width/2,line.width/2))
 
+func _input(event):
+	if not event is InputEventMouseMotion: return;
+	if not active: return;
+	
+	var mouse_event : InputEventMouseMotion = event as InputEventMouseMotion;
+	print (mouse_event.relative);
+	
+	Global.speed_factor = max(0.1, 0.05 * player.level)
+	#move last point to mouse
+	var d :Vector2 = mouse_event.relative
+	d = d * Global.spell_mouse_sensitivity;
+	var pos = line.points[0] + d;
+	if debug_node:
+		debug_node.position = pos - debug_node.pivot_offset;
+
+	#print(get_viewport().get_mouse_position() - mouse_origin);
+	line.points[line.points.size() - 1] += d;
+	var spell_pos = gravitate_towards(line.points[line.points.size() - 1])
+	
+
+	for node : Control in node_container.get_children():
+		if (node in conneted_nodes): continue;
+		
+		# Found node within snapping distance, create a new point
+		if (node.position + node.pivot_offset).distance_to(spell_pos) < snap_distance:
+			# Add node to connected nodes list
+			conneted_nodes.push_back(node)
+			node.modulate = Color.WHITE;
+			node.scale = Vector2.ONE * 1.5;
+			if !Global.sfx_muted: (node.get_node("AudioStreamPlayer") as AudioStreamPlayer).play()
+			# Move last point to the new node
+			line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
+			# Add a new point that will follow the mouse cursor
+			line.add_point(line.points[line.points.size() - 1]);
+			# Move the mouse origin to the new node
+			mouse_origin += pos - (node.position + node.pivot_offset)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Global.paused: return;
@@ -79,36 +116,7 @@ func _process(_delta):
 		draw_line_to_node(first_node, false) #and one for the mouse pointer		
 		active = true;
 		Global.speed_factor = max(0.1, 0.05 * player.level)
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
-	if active:
-		Global.speed_factor = max(0.1, 0.05 * player.level)
-		#move last point to mouse
-		var d = get_viewport().get_mouse_position() - mouse_origin;
-		var pos = line.points[0] + d;
-		if debug_node:
-			debug_node.position = pos - debug_node.pivot_offset;
-		var spell_pos = gravitate_towards(pos);
-		
-		#print(get_viewport().get_mouse_position() - mouse_origin);
-		line.points[line.points.size() - 1] = spell_pos;
-		
-		for node : Control in node_container.get_children():
-			if (node in conneted_nodes): continue;
-			
-			# Found node within snapping distance, create a new point
-			if (node.position + node.pivot_offset).distance_to(spell_pos) < snap_distance:
-				# Add node to connected nodes list
-				conneted_nodes.push_back(node)
-				node.modulate = Color.WHITE;
-				node.scale = Vector2.ONE * 1.5;
-				if !Global.sfx_muted: (node.get_node("AudioStreamPlayer") as AudioStreamPlayer).play()
-				# Move last point to the new node
-				line.points[line.points.size() - 1] = node.position + node.pivot_offset - Vector2(line.width/2,line.width/2);
-				# Add a new point that will follow the mouse cursor
-				line.add_point(line.points[line.points.size() - 1]);
-				# Move the mouse origin to the new node
-				mouse_origin += pos - (node.position + node.pivot_offset)
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED	
 
 func gravitate_towards(pos: Vector2) -> Vector2:
 	if not magnet_enabled: return pos;
