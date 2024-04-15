@@ -202,10 +202,13 @@ func add_experience(input_experience : int):
 func level_up():
 	hp = max_hp
 	level += 1
-	max_experience = level_experience_requirements[level+1]
-	level_change.emit()
-	shop.present_spell_choice(available_spells, learned_spells)
-	Global.paused = true
+	if level <= 7:
+		max_experience = level_experience_requirements[level+1]
+		shop.present_spell_choice(available_spells, learned_spells)
+		Global.paused = true
+		level_change.emit()
+	else:
+		get_tree().change_scene_to_file("res://scenes/win.tscn");	
 
 func take_damage(damage : float):
 	# prints("take damage", damage);

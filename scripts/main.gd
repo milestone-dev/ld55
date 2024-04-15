@@ -102,14 +102,10 @@ func _random_new_mob_position() -> Vector2:
 func _on_player_level_change() -> void:
 	if player.level > levels.size() - 1:
 		current_level = null
-		win()
 		return
 	else: current_level = levels[player.level]
 	current_spawn_cooldown = DEFAULT_SPAWN_COOLDOWN
 	current_spawn_cooldown_target = current_level.mob_spawn_cooldown
 
-func win():
-	get_tree().change_scene_to_packed(win_scene)
-	
 func lose():
 	get_tree().change_scene_to_packed(lose_scene)
