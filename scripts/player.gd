@@ -165,6 +165,7 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 		hud.add_message("You don't know that spell...");
 		return
 	
+	hud.add_message("Casting " + spell.name + "!");
 	if !Global.sfx_muted:
 		$SpellCastStreamPlayer.stream = spell.spell_sfx
 		$SpellCastStreamPlayer.play()
