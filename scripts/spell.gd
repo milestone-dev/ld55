@@ -33,7 +33,7 @@ enum SpellEffectAreaBehavior {
 @export var effect_area_behavior : SpellEffectAreaBehavior;
 @export var effect_duration : float = 1;
 @export var effect_cooldown_max : float = 0.3;
-@export var speed_multiplier: float = 0
+@export var speed_multiplier: float = 1
 @export var heal : float = 0;
 @export_category("Damage")
 @export var damage_over_time: float = 0 #duration of the dot.
