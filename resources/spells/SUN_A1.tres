@@ -21,7 +21,6 @@ area_of_effect_on_player = true
 effect_area_behavior = 2
 effect_duration = 0.2
 effect_cooldown_max = 0.1
-speed_multiplier = 0.0
 heal = 0.0
 damage_over_time = 0.0
 attack_damage = 30.0
