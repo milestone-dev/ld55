@@ -18,30 +18,28 @@ enum SpellEffectAreaBehavior {
 @export var code : String;
 @export var description : String = "";
 @export var dependency : Spell
-
 @export var weight : float = 1;
-
-@export var attack_damage : float = 10;
-@export var attack_range : float = 32;
-@export var heal : float = 0;
-@export var speed_multiplier: float = 0
-
-# Effect to spawn at cast location
-@export var effect: PackedScene
-
-
-@export var projectile_scene: PackedScene
-@export var area_of_effect_scene: PackedScene
-@export var area_of_effect_on_player : = true;
-
-@export var effect_duration : float = 1;
-@export var effect_cooldown_max : float = 0.3;
-
 @export var store_texture : Texture;
 @export var store_icon : Texture;
 @export var spell_guide : Texture;
+
+@export_category("Projectile")
+@export var projectile_scene: PackedScene
 @export var projectile_behavior : SpellProjectileBehavior;
+@export_category("Effect")
+@export var area_of_effect_scene: PackedScene
+@export var area_of_effect_on_player : = true;
 @export var effect_area_behavior : SpellEffectAreaBehavior;
+@export var effect_duration : float = 1;
+@export var effect_cooldown_max : float = 0.3;
+@export var speed_multiplier: float = 0
+@export var heal : float = 0;
+@export_category("Damage")
+@export var damage_over_time: float = 0 #duration of the dot.
+@export var attack_damage : float = 10;
+@export var attack_range : float = 32;
+
+
 
 
 # Called when the node enters the scene tree for the first time.

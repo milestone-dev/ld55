@@ -25,6 +25,8 @@ collider = NodePath("Area2D")
 look_at_pointer = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(2, 4, 92.388, 38.2683, 92.388, -38.2683, 2, -3)

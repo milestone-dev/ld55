@@ -145,6 +145,10 @@ func shoot_projectile(projectile_spell : Spell, random_direction = false):
 		
 	get_parent().add_child(proj)
 	
+func free_after(node: Node2D, time: float):
+	await get_tree().create_timer(time).timeout
+	node.queue_free()
+	
 func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 	var code : String = "";
 	for node : Control in nodes:
@@ -165,11 +169,12 @@ func _on_casting_ui_cast_complete(nodes: Array[Control]) -> void:
 			if spell.area_of_effect_scene:
 				var effect = spell.area_of_effect_scene.instantiate()
 				add_child(effect)
+				if spell.effect_duration > 0:
+					free_after(effect, spell.effect_duration)
 			if spell.attack_damage != 0:
 				for mob : Mob in get_tree().get_nodes_in_group("mob"):
 					if position.distance_to(mob.position) < spell.attack_range:
 						add_experience(mob.take_damage(spell.attack_damage))
-			print("HEAl?", spell.heal)
 			if spell.heal > 0:
 				hp = min(max_hp, hp + spell.heal)
 		Spell.SpellEffectAreaBehavior.TIMED:
@@ -208,6 +213,8 @@ func take_damage(damage : float):
 	
 func flash_damage():
 	if not is_inside_tree(): return
+	$DamageStreamPlayer.pitch_scale = randf_range(0.9, 1.1);
+	$DamageStreamPlayer.play();
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://fx4257b48mvr"]
+[gd_scene load_steps=19 format=3 uid="uid://fx4257b48mvr"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_8hhfd"]
 [ext_resource type="Texture2D" uid="uid://bd1dveiihl6g0" path="res://assets/sprites/NMY-VITTRA-Sheet.png" id="2_3fp5a"]
+[ext_resource type="AudioStream" uid="uid://bd84k5u17s87k" path="res://assets/audio/sfx/SFX_IMPACT2.ogg" id="3_ecbas"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so115"]
 radius = 4.0
@@ -168,6 +169,8 @@ states/Walk/position = Vector2(358, 88)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_t5r0f"), "Walk", "Die", SubResource("AnimationNodeStateMachineTransition_bmo6e")]
 
 [node name="Mob" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree") groups=["mob"]]
+collision_layer = 257
+collision_mask = 257
 motion_mode = 1
 script = ExtResource("1_8hhfd")
 animation_tree = NodePath("AnimationTree")
@@ -179,7 +182,7 @@ shape = SubResource("CircleShape2D_so115")
 texture_filter = 1
 texture = ExtResource("2_3fp5a")
 hframes = 12
-frame = 7
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationTree")
@@ -198,3 +201,7 @@ parameters/Die/blend_position = 0.00109887
 parameters/Walk/blend_position = -0.306593
 
 [node name="MobSfx" type="AudioStreamPlayer2D" parent="."]
+
+[node name="MobImpactSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ecbas")
+volume_db = -10.0

@@ -15,6 +15,11 @@ var mob_sfx_cooldown = 1;
 var player_target : Player;
 var main : Main;
 
+
+var dot_damage = 0
+var dot_time = 0
+var dot_second = 1
+
 func _ready():
 	if not type or not get_tree(): return
 	$Sprite2D.texture = type.sprite
@@ -33,6 +38,13 @@ func _physics_process(delta):
 		if not player_target: return
 
 	if !alive: return
+	
+	if dot_time > 0:
+		dot_second -= delta
+		if dot_second <= 0:
+			dot_second = 1
+			dot_time -= 1
+			player_target.add_experience(take_damage(dot_damage))
 
 	if position.distance_to(player_target.position) < 96:
 		if mob_sfx_cooldown <= 0:
@@ -62,6 +74,8 @@ func _physics_process(delta):
 
 func take_damage(damage : float) -> int:
 	hp -= damage;
+	$MobImpactSfx.pitch_scale = randf_range(0.9, 1.1);
+	$MobImpactSfx.play();
 	if hp <= 0: 
 		die();
 		return type.experience;
@@ -69,7 +83,10 @@ func take_damage(damage : float) -> int:
 	return 0;
 
 func flash_damage():
-	modulate = Color.RED
+	if dot_time > 0:
+		modulate = Color.LAWN_GREEN
+	else:
+		modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = type.color
 
