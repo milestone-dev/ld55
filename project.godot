@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="LD55 - Summoning"
+config/name="TrollDoom"
+config/description="Survive the dark night"
 run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/icons/icon.svg"
+config/icon="res://assets/icons/app_icon.png"
 
 [autoload]
 
