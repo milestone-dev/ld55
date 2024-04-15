@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=6 format=3 uid="uid://yffggirdq2uf"]
+[gd_resource type="Resource" script_class="Spell" load_steps=3 format=3 uid="uid://yffggirdq2uf"]
 
 [ext_resource type="PackedScene" uid="uid://blc7ouwk26mgc" path="res://scenes/cone_effects/poison_spray_cone_effect.tscn" id="1_rsmrn"]
 [ext_resource type="Script" path="res://scripts/spell.gd" id="1_xc1mr"]
@@ -12,16 +12,14 @@ name = "Venom Spit"
 code = "A0,B4,B3"
 description = "Wide cone of poison - give DoT to affected MOBS"
 weight = 1.0
-attack_damage = 10.0
-attack_range = 32.0
-heal = 0.0
-speed_multiplier = 0.0
+projectile_behavior = 0
 area_of_effect_scene = ExtResource("1_rsmrn")
 area_of_effect_on_player = true
+effect_area_behavior = 1
 effect_duration = 2.0
 effect_cooldown_max = 0.0
-store_texture = ExtResource("3_v8o2y")
-store_icon = ExtResource("2_c5p6e")
-spell_guide = ExtResource("2_j76lu")
-projectile_behavior = 0
-effect_area_behavior = 1
+speed_multiplier = 0.0
+heal = 0.0
+damage_over_time = 10.0
+attack_damage = 1.0
+attack_range = 32.0

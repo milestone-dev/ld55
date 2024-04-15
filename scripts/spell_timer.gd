@@ -54,7 +54,11 @@ func update(delta:float) -> bool:
 						var bodies = area_of_effect_node.collider.get_overlapping_bodies()
 						for mob : Mob in player.get_tree().get_nodes_in_group("mob"):
 							if bodies.has(mob):
-								player.add_experience(mob.take_damage(spell.attack_damage))
+								if spell.damage_over_time:
+									mob.dot_damage = spell.attack_damage
+									mob.dot_time = spell.damage_over_time
+								else:
+									player.add_experience(mob.take_damage(spell.attack_damage))
 					else:
 						for mob : Mob in player.get_tree().get_nodes_in_group("mob"):
 							if area_of_effect_node.global_position.distance_to(mob.global_position) < spell.attack_range:

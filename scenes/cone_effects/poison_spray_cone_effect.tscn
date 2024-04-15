@@ -42,6 +42,8 @@ collider = NodePath("Area2D")
 look_at_pointer = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(2, 4, 92.388, 38.2683, 92.388, -38.2683, 2, -3)
@@ -52,4 +54,3 @@ amount = 60
 process_material = SubResource("ParticleProcessMaterial_r7w48")
 texture = ExtResource("2_nuqys")
 randomness = 0.6
-local_coords = true
