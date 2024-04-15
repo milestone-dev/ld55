@@ -1,10 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtq5l1ul652um"]
+[gd_scene load_steps=18 format=3 uid="uid://dtq5l1ul652um"]
 
 [ext_resource type="Texture2D" uid="uid://kert4br102nv" path="res://assets/sprites/intro.png" id="2_5e32w"]
+[ext_resource type="PackedScene" uid="uid://dwstw7delvn03" path="res://scenes/projectiles/base_drum_shot.tscn" id="2_vprv1"]
+[ext_resource type="PackedScene" uid="uid://d01c8jof0ioou" path="res://scenes/projectiles/fire_ball_projectile.tscn" id="3_2xoad"]
 [ext_resource type="Texture2D" uid="uid://bssrt3asaqbr6" path="res://assets/sprites/intro-button.png" id="3_ii31w"]
 [ext_resource type="FontFile" uid="uid://dlsvdxtmmnmde" path="res://assets/fonts/IMFellDWPica-Regular.ttf" id="3_pnpj1"]
+[ext_resource type="PackedScene" uid="uid://d24htvduusflc" path="res://scenes/projectiles/hale_burst_projectile.tscn" id="4_5qmlu"]
 [ext_resource type="Texture2D" uid="uid://bwyl8k3gvhl2y" path="res://assets/sprites/eyes.png" id="5_0544c"]
+[ext_resource type="PackedScene" path="res://scenes/cone_effects/beam_cone_effect.tscn" id="5_o4wdi"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="5_ohlgh"]
+[ext_resource type="PackedScene" uid="uid://c6ewrdmowsa11" path="res://scenes/cone_effects/fire_breath.tscn" id="6_6ohpq"]
+[ext_resource type="PackedScene" uid="uid://blc7ouwk26mgc" path="res://scenes/cone_effects/poison_spray_cone_effect.tscn" id="7_lbj0c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_722ai"]
 bg_color = Color(0, 0, 0, 0.686275)
@@ -86,6 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_722ai")
 script = ExtResource("5_ohlgh")
+preload_scenes = Array[PackedScene]([ExtResource("2_vprv1"), ExtResource("3_2xoad"), ExtResource("4_5qmlu"), ExtResource("5_o4wdi"), ExtResource("6_6ohpq"), ExtResource("7_lbj0c")])
 
 [node name="StartBackground" type="TextureRect" parent="."]
 texture_filter = 1

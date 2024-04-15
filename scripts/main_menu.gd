@@ -2,7 +2,12 @@ extends Panel
 
 @export var score_subtitle : Label;
 
+@export var preload_scenes : Array[PackedScene]
+
 func _ready() -> void:
+	for scene : PackedScene in preload_scenes:
+		scene.instantiate();
+	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if has_node("AnimationPlayer"):
 		get_node("AnimationPlayer").play("blink")
