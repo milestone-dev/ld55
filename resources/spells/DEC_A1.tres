@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("2_04k1y")
-name = "Quickfire"
+name = "Drumroll"
 code = "A0,B2,B1"
 description = "Replace projectile with fast firing fire projectiles for N seconds"
 weight = 1.0
