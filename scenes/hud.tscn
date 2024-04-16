@@ -67,6 +67,7 @@ text = "[center]Left Click: Fire"
 fit_content = true
 
 [node name="HPProgressBar" type="ProgressBar" parent="."]
+self_modulate = Color(0.886275, 0.2, 0.160784, 1)
 custom_minimum_size = Vector2(128, 16)
 layout_mode = 1
 anchors_preset = 7
@@ -85,6 +86,7 @@ theme_override_font_sizes/font_size = 20
 value = 100.0
 
 [node name="EXPProgressBar" type="ProgressBar" parent="."]
+self_modulate = Color(0.32549, 0.521569, 0.882353, 1)
 custom_minimum_size = Vector2(300, 12)
 layout_mode = 0
 offset_left = 395.0
